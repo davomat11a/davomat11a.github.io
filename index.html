@@ -1,1 +1,3374 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ================= SEO ================= -->
+
+<title>Davomat Jurnali — 11-A sinf</title>
+
+<meta name="description"
+content="Davomat Jurnali — 11-A sinf o‘quvchilari davomati, kunlik, haftalik va oylik davomatni qulay boshqarish uchun elektron jurnal.">
+
+<meta name="keywords"
+content="davomat jurnali, elektron jurnal, davomat, o‘quvchilar davomati, maktab davomat, 11-A sinf">
+
+<meta name="author"
+content="Abdulloh Habibullayev">
+
+<meta name="robots"
+content="index, follow">
+
+<meta name="googlebot"
+content="index, follow">
+
+<link rel="canonical"
+href="https://abdullohhabibullayev2009-alt.github.io/davomat-jurnali/">
+
+<!-- Google / Social -->
+
+<meta property="og:title"
+content="Davomat Jurnali — 11-A sinf">
+
+<meta property="og:description"
+content="11-A sinf o‘quvchilari davomati uchun qulay elektron jurnal.">
+
+<meta property="og:type"
+content="website">
+
+<meta property="og:url"
+content="https://abdullohhabibullayev2009-alt.github.io/davomat-jurnali/">
+
+<meta name="theme-color"
+content="#1976d2">
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+button,
+input {
+    font-family: Arial, sans-serif;
+}
+
+/* ================= LOGIN ================= */
+
+#loginPage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 380px;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+}
+
+.dark .login-box {
+    background: #1e1e1e;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.dark .login-box input {
+    background: #2b2b2b;
+    color: white;
+    border-color: #555;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 48px !important;
+}
+
+.eye-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent !important;
+    color: #555;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.dark .eye-button {
+    color: #ddd;
+}
+
+.login-box button:not(.eye-button) {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #1976d2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#loginError {
+    color: #e53935;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ================= HEADER ================= */
+
+#mainPage,
+#reportPage {
+    display: none;
+}
+
+header {
+    background: #1976d2;
+    color: white;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.header-buttons button {
+    border: none;
+    border-radius: 8px;
+    padding: 9px 12px;
+    cursor: pointer;
+    background: white;
+    color: #1976d2;
+    font-weight: bold;
+}
+
+.container,
+.report-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 15px;
+}
+
+/* ================= INFO ================= */
+
+.info {
+    background: white;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.dark .info {
+    background: #1e1e1e;
+}
+
+.firebase-status {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.dark .table-wrapper {
+    background: #1e1e1e;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 900px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 7px;
+}
+
+.dark th,
+.dark td {
+    border-color: #444;
+}
+
+th {
+    background: #1976d2;
+    color: white;
+}
+
+.name-column {
+    min-width: 210px;
+    text-align: left;
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: white;
+}
+
+.dark .name-column {
+    background: #1e1e1e;
+}
+
+th.name-column {
+    background: #1976d2;
+}
+
+.date-column {
+    width: 55px;
+    min-width: 55px;
+}
+
+/* ================= BUGUNGI SANA ================= */
+
+.today-column {
+    background: #fff3cd !important;
+    color: #222 !important;
+    font-weight: bold;
+}
+
+.dark .today-column {
+    background: #ffffff !important;
+    color: #111 !important;
+}
+
+/* ================= DAVOMAT ================= */
+
+.attendance-cell {
+    width: 55px;
+    min-width: 55px;
+    height: 42px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.attendance-cell.plus {
+    color: #1976d2;
+}
+
+.attendance-cell.minus {
+    color: #e53935;
+}
+
+.today-attendance.plus {
+    color: #1976d2 !important;
+}
+
+.today-attendance.minus {
+    color: #e53935 !important;
+}
+
+/* ================= BLOKLANGAN ================= */
+
+.locked {
+    background: #eeeeee;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.dark .locked {
+    background: #333;
+    color: #aaa;
+}
+
+/* ================= REPORT ================= */
+
+.search-box {
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 500px;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.dark .search-box input {
+    background: #2b2b2b;
+    color: white;
+    border-color: #555;
+}
+
+.report-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.report-tabs button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    background: #ddd;
+    font-weight: bold;
+}
+
+.dark .report-tabs button {
+    background: #333;
+    color: white;
+}
+
+.report-tabs button.active {
+    background: #1976d2;
+    color: white;
+}
+
+.report-section {
+    display: none;
+}
+
+.report-section.active {
+    display: block;
+}
+
+/* ================= CARDS ================= */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.dark .card {
+    background: #1e1e1e;
+}
+
+.card-title {
+    font-size: 14px;
+    color: #777;
+}
+
+.dark .card-title {
+    color: #aaa;
+}
+
+.card-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.blue {
+    color: #1976d2;
+}
+
+.red {
+    color: #e53935;
+}
+
+.green {
+    color: #2e7d32;
+}
+
+/* ================= STUDENT DETAIL ================= */
+
+.student-detail {
+    margin-top: 15px;
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.dark .student-detail {
+    background: #1e1e1e;
+}
+
+.student-detail h3 {
+    margin-top: 0;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.detail-card {
+    padding: 15px;
+    border-radius: 10px;
+    background: #f2f4f7;
+}
+
+.dark .detail-card {
+    background: #2a2a2a;
+}
+
+.detail-card .title {
+    font-size: 13px;
+    color: #777;
+}
+
+.dark .detail-card .title {
+    color: #aaa;
+}
+
+.detail-card .value {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h2 {
+        font-size: 17px;
+    }
+
+    .header-buttons {
+        width: 100%;
+    }
+
+    .header-buttons button {
+        flex: 1;
+    }
+
+    .container,
+    .report-container {
+        padding: 10px;
+    }
+
+    .name-column {
+        min-width: 180px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<div id="loginPage">
+
+    <div class="login-box">
+
+        <h2>🔐 Davomat jurnali</h2>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Login"
+        >
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Parol"
+            >
+
+            <button
+                type="button"
+                class="eye-button"
+                id="eyeButton"
+            >
+                👁️
+            </button>
+
+        </div>
+
+        <label class="remember">
+
+            <input
+                type="checkbox"
+                id="rememberLogin"
+            >
+
+            Loginni eslab qolish
+
+        </label>
+
+        <button id="loginButton">
+            Kirish
+        </button>
+
+        <div id="loginError"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div id="mainPage">
+
+<header>
+
+    <div class="header-inner">
+
+        <h2>📋 11-A sinf davomati</h2>
+
+        <div class="header-buttons">
+
+            <button id="reportButton">
+                📊 Hisobot
+            </button>
+
+            <button id="darkButton">
+                🌙 Dark
+            </button>
+
+            <button id="logoutButton">
+                🚪 Chiqish
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<div class="container">
+
+    <div class="info">
+
+        <b>📅 O‘quv yili:</b>
+        28.09.2026 — 25.05.2027
+
+        <br><br>
+
+        <b>Belgilar:</b>
+
+        <span class="blue">+</span>
+        Keldi
+
+        &nbsp;&nbsp;
+
+        <span class="red">-</span>
+        Qoldirdi
+
+        &nbsp;&nbsp;
+
+        🔒 Bloklangan kun
+
+        <div
+            id="firebaseStatus"
+            class="firebase-status"
+        >
+            🔄 Firebase ulanmoqda...
+        </div>
+
+    </div>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr id="dateHeader">
+
+                    <th>№</th>
+
+                    <th class="name-column">
+                        Ism va Familya
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="attendanceBody"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     REPORT
+===================================================== -->
+
+<div id="reportPage">
+
+<header>
+
+    <div class="header-inner">
+
+        <h2>📊 Davomat hisoboti</h2>
+
+        <div class="header-buttons">
+
+            <button id="backButton">
+                ← Ortga
+            </button>
+
+            <button id="reportDarkButton">
+                🌙 Dark
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<div class="report-container">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="studentSearch"
+            placeholder="🔎 O‘quvchini qidiring..."
+        >
+
+    </div>
+
+    <div class="report-tabs">
+
+        <button
+            id="tabStudents"
+            class="active"
+        >
+            👨‍🎓 O‘quvchilar
+        </button>
+
+        <button id="tabDaily">
+            📅 Kunlik
+        </button>
+
+        <button id="tabWeekly">
+            📆 Haftalik
+        </button>
+
+        <button id="tabMonthly">
+            🗓️ Oylik
+        </button>
+
+    </div>
+
+
+    <!-- O‘QUVCHILAR -->
+
+    <div
+        id="studentsSection"
+        class="report-section active"
+    >
+
+        <div class="summary">
+
+            <div class="card">
+
+                <div class="card-title">
+                    👨‍🎓 O‘quvchilar
+                </div>
+
+                <div
+                    class="card-value"
+                    id="studentCount"
+                >
+                    0
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    🔵 Jami kelgan
+                </div>
+
+                <div
+                    class="card-value blue"
+                    id="totalPlus"
+                >
+                    0
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    🔴 Jami qoldirilgan
+                </div>
+
+                <div
+                    class="card-value red"
+                    id="totalMinus"
+                >
+                    0
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    📅 Jami belgilangan
+                </div>
+
+                <div
+                    class="card-value"
+                    id="totalMarked"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>№</th>
+                        <th>Ism va Familya</th>
+                        <th>🔵 Keldi</th>
+                        <th>🔴 Qoldirdi</th>
+                        <th>📅 Jami</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="reportBody"></tbody>
+
+            </table>
+
+        </div>
+
+
+        <div
+            id="studentDetail"
+            class="student-detail"
+            style="display:none;"
+        >
+
+            <h3 id="selectedStudentName"></h3>
+
+            <div class="detail-grid">
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        📆 Shu hafta jami dars
+                    </div>
+
+                    <div
+                        class="value"
+                        id="selectedWeekTotal"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        🔵 Shu hafta kelgan
+                    </div>
+
+                    <div
+                        class="value blue"
+                        id="selectedWeekPlus"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        🔴 Shu hafta qoldirgan
+                    </div>
+
+                    <div
+                        class="value red"
+                        id="selectedWeekMinus"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        📊 Haftalik davomat
+                    </div>
+
+                    <div
+                        class="value green"
+                        id="selectedWeekPercent"
+                    >
+                        0%
+                    </div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        🗓️ Shu oy jami dars
+                    </div>
+
+                    <div
+                        class="value"
+                        id="selectedMonthTotal"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        🔵 Shu oy kelgan
+                    </div>
+
+                    <div
+                        class="value blue"
+                        id="selectedMonthPlus"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        🔴 Shu oy qoldirgan
+                    </div>
+
+                    <div
+                        class="value red"
+                        id="selectedMonthMinus"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        📊 Oylik davomat
+                    </div>
+
+                    <div
+                        class="value green"
+                        id="selectedMonthPercent"
+                    >
+                        0%
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- KUNLIK -->
+
+    <div
+        id="dailySection"
+        class="report-section"
+    >
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Sana</th>
+                        <th>🔵 Kelgan</th>
+                        <th>🔴 Qolgan</th>
+                        <th>📊 Jami</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="dailyBody"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- HAFTALIK -->
+
+    <div
+        id="weeklySection"
+        class="report-section"
+    >
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Hafta</th>
+                        <th>🔵 Kelgan</th>
+                        <th>🔴 Qolgan</th>
+                        <th>📊 Jami</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="weeklyBody"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- OYLIK -->
+
+    <div
+        id="monthlySection"
+        class="report-section"
+    >
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Oy</th>
+                        <th>🔵 Kelgan</th>
+                        <th>🔴 Qolgan</th>
+                        <th>📊 Jami</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="monthlyBody"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<script type="module">
+
+/* =====================================================
+   FIREBASE
+===================================================== */
+
+import {
+    initializeApp
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    onValue,
+    set
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyAo-tioaUvivf965VRhRjJao-WXyU0AVTY",
+
+    authDomain:
+        "davomat-jurnali.firebaseapp.com",
+
+    databaseURL:
+        "https://davomat-jurnali-default-rtdb.firebaseio.com",
+
+    projectId:
+        "davomat-jurnali",
+
+    storageBucket:
+        "davomat-jurnali.firebasestorage.app",
+
+    messagingSenderId:
+        "859496944977",
+
+    appId:
+        "1:859496944977:web:ce853ba3191f6a086cef70",
+
+    measurementId:
+        "G-8CMSQF83T6"
+
+};
+
+
+const app =
+    initializeApp(firebaseConfig);
+
+const db =
+    getDatabase(app);
+
+const attendanceRef =
+    ref(db, "davomat_jurnali");
+
+
+/* =====================================================
+   O‘QUVCHILAR
+===================================================== */
+
+const students = [
+
+    "Abdumannobova Ruqiyaxon",
+    "Abdumutallibov Muhammadali",
+    "Abdug‘offorova Muslimaxon",
+    "Anvarova Muharram",
+    "Arabbekova Ruqiyaxon",
+    "Baxromova Xabibaxon",
+    "Baxodirjonova Kimyoxon",
+    "Habibullayev Abdulloh",
+    "Ibroximova Mo'minaxon",
+    "Jo'rayev Hikmatillo",
+    "Komilova Oydinoy",
+    "Komilova Rayyona",
+    "Muhammadsidiqova Shaxodatxon",
+    "Muqimjonova Muzayyanaxon",
+    "Muhammadkomilov Abduraxmon",
+    "Nishonboyeva Mo'mina",
+    "O'ktamov Rahmatillo",
+    "Oribjonova Robiyaxon",
+    "Qosimova Rayyona",
+    "Soyibjonov Abduqodir",
+    "Soyibjonova Mohlaroy",
+    "Ubaydullayeva Bibisora",
+    "Yaqubov Abdulboriy",
+    "Yo'ldashboyeva Rayyona",
+    "Yuldasheva Muhlisaxon"
+
+];
+
+
+/* =====================================================
+   SANALAR
+===================================================== */
+
+const startDate =
+    new Date("2026-09-28T00:00:00");
+
+const endDate =
+    new Date("2027-05-25T00:00:00");
+
+
+/* =====================================================
+   HAFTALIK DARSLAR — JAMI 32 SOAT
+===================================================== */
+
+const lessonsPerDay = {
+
+    0: 0,
+    1: 5,
+    2: 6,
+    3: 6,
+    4: 5,
+    5: 6,
+    6: 4
+
+};
+
+
+/* =====================================================
+   BAYRAMLAR
+===================================================== */
+
+const holidays = {
+
+    "2026-10-01":
+        "O‘qituvchi va murabbiylar kuni",
+
+    "2026-12-08":
+        "Konstitutsiya kuni",
+
+    "2027-01-01":
+        "Yangi yil",
+
+    "2027-03-08":
+        "Xotin-qizlar kuni",
+
+    "2027-03-21":
+        "Navro‘z",
+
+    "2027-05-09":
+        "Xotira va qadrlash kuni"
+
+};
+
+
+/* =====================================================
+   TA’TILLAR
+===================================================== */
+
+const vacations = [
+
+    {
+        start: "2026-11-04",
+        end: "2026-11-09",
+        name: "Kuzgi ta’til"
+    },
+
+    {
+        start: "2026-12-28",
+        end: "2027-01-10",
+        name: "Qishki ta’til"
+    },
+
+    {
+        start: "2027-03-21",
+        end: "2027-03-27",
+        name: "Bahorgi ta’til"
+    }
+
+];
+
+
+let attendanceData = {};
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+const LOGIN =
+    "abdulloh04072009";
+
+const PASSWORD =
+    "abdulloh2009.";
+
+
+function login() {
+
+    const username =
+        document.getElementById(
+            "username"
+        ).value.trim();
+
+    const password =
+        document.getElementById(
+            "password"
+        ).value;
+
+    const remember =
+        document.getElementById(
+            "rememberLogin"
+        ).checked;
+
+
+    if (
+        username === LOGIN &&
+        password === PASSWORD
+    ) {
+
+        sessionStorage.setItem(
+            "davomat_login",
+            "true"
+        );
+
+
+        if (remember) {
+
+            localStorage.setItem(
+                "davomat_remember",
+                "true"
+            );
+
+        } else {
+
+            localStorage.removeItem(
+                "davomat_remember"
+            );
+
+        }
+
+
+        showMain();
+
+    } else {
+
+        document.getElementById(
+            "loginError"
+        ).textContent =
+            "Login yoki parol noto‘g‘ri!";
+
+    }
+
+}
+
+
+function logout() {
+
+    sessionStorage.removeItem(
+        "davomat_login"
+    );
+
+    localStorage.removeItem(
+        "davomat_remember"
+    );
+
+    document.getElementById(
+        "mainPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "reportPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "loginPage"
+    ).style.display = "flex";
+
+}
+
+
+function showMain() {
+
+    document.getElementById(
+        "loginPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "reportPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "mainPage"
+    ).style.display = "block";
+
+}
+
+
+/* =====================================================
+   PAROLNI KO‘RSATISH
+===================================================== */
+
+document.getElementById(
+    "eyeButton"
+).addEventListener(
+    "click",
+    function() {
+
+        const input =
+            document.getElementById(
+                "password"
+            );
+
+        if (
+            input.type === "password"
+        ) {
+
+            input.type = "text";
+            this.textContent = "🙈";
+
+        } else {
+
+            input.type = "password";
+            this.textContent = "👁️";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+function toggleDark() {
+
+    document.body.classList.toggle(
+        "dark"
+    );
+
+    localStorage.setItem(
+        "davomat_dark",
+        document.body.classList.contains(
+            "dark"
+        )
+    );
+
+}
+
+
+if (
+    localStorage.getItem(
+        "davomat_dark"
+    ) === "true"
+) {
+
+    document.body.classList.add(
+        "dark"
+    );
+
+}
+
+
+/* =====================================================
+   SANA
+===================================================== */
+
+function dateKey(date) {
+
+    const year =
+        date.getFullYear();
+
+    const month =
+        String(
+            date.getMonth() + 1
+        ).padStart(2, "0");
+
+    const day =
+        String(
+            date.getDate()
+        ).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+
+}
+
+
+function formatDate(value) {
+
+    const p =
+        value.split("-");
+
+    return `${p[2]}.${p[1]}.${p[0]}`;
+
+}
+
+
+function getTodayKey() {
+
+    return dateKey(
+        new Date()
+    );
+
+}
+
+
+/* =====================================================
+   BLOKLANISH
+===================================================== */
+
+function getLockReason(dateString) {
+
+    const date =
+        new Date(
+            dateString +
+            "T00:00:00"
+        );
+
+
+    const today =
+        new Date();
+
+    today.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    /*
+       Bugungi sana ochiq.
+
+       Kechagi va undan oldingi
+       kunlar 00:00 dan boshlab blok.
+    */
+
+    if (
+        date < today
+    ) {
+
+        return "🔒 Kun yakunlangan";
+
+    }
+
+
+    if (
+        date.getDay() === 0
+    ) {
+
+        return "Yakshanba";
+
+    }
+
+
+    if (
+        holidays[dateString]
+    ) {
+
+        return holidays[dateString];
+
+    }
+
+
+    for (
+        const vacation of vacations
+    ) {
+
+        if (
+            dateString >= vacation.start &&
+            dateString <= vacation.end
+        ) {
+
+            return vacation.name;
+
+        }
+
+    }
+
+
+    return null;
+
+}
+
+
+/* =====================================================
+   SANALAR
+===================================================== */
+
+function generateDates() {
+
+    const result = [];
+
+    const current =
+        new Date(startDate);
+
+
+    while (
+        current <= endDate
+    ) {
+
+        result.push(
+            dateKey(current)
+        );
+
+        current.setDate(
+            current.getDate() + 1
+        );
+
+    }
+
+
+    return result;
+
+}
+
+
+const dates =
+    generateDates();
+
+
+/* =====================================================
+   DAVOMATNI OLISH
+===================================================== */
+
+function getAttendance(
+    dateString,
+    studentIndex
+) {
+
+    if (
+        !attendanceData[dateString]
+    ) {
+
+        return "";
+
+    }
+
+
+    return (
+        attendanceData[
+            dateString
+        ][studentIndex] || ""
+    );
+
+}
+
+
+/* =====================================================
+   RANG
+===================================================== */
+
+function updateCellColor(
+    cell,
+    value
+) {
+
+    cell.classList.remove(
+        "plus",
+        "minus"
+    );
+
+
+    if (
+        value === "+"
+    ) {
+
+        cell.classList.add(
+            "plus"
+        );
+
+    }
+
+
+    if (
+        value === "-"
+    ) {
+
+        cell.classList.add(
+            "minus"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   JADVAL
+===================================================== */
+
+function renderTable() {
+
+    const header =
+        document.getElementById(
+            "dateHeader"
+        );
+
+    const body =
+        document.getElementById(
+            "attendanceBody"
+        );
+
+
+    const todayKey =
+        getTodayKey();
+
+
+    header.innerHTML = `
+
+        <th>№</th>
+
+        <th class="name-column">
+            Ism va Familya
+        </th>
+
+    `;
+
+
+    dates.forEach(
+        dateString => {
+
+            const th =
+                document.createElement(
+                    "th"
+                );
+
+            th.className =
+                "date-column";
+
+
+            if (
+                dateString === todayKey
+            ) {
+
+                th.classList.add(
+                    "today-column"
+                );
+
+                th.textContent =
+                    "📅 " +
+                    formatDate(
+                        dateString
+                    );
+
+                th.title =
+                    "Bugungi sana";
+
+            } else {
+
+                th.textContent =
+                    formatDate(
+                        dateString
+                    );
+
+            }
+
+
+            header.appendChild(th);
+
+        }
+    );
+
+
+    body.innerHTML = "";
+
+
+    students.forEach(
+        (
+            student,
+            studentIndex
+        ) => {
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            const number =
+                document.createElement(
+                    "td"
+                );
+
+            number.textContent =
+                studentIndex + 1;
+
+
+            const name =
+                document.createElement(
+                    "td"
+                );
+
+            name.className =
+                "name-column";
+
+            name.textContent =
+                student;
+
+
+            tr.appendChild(number);
+            tr.appendChild(name);
+
+
+            dates.forEach(
+                dateString => {
+
+                    const td =
+                        document.createElement(
+                            "td"
+                        );
+
+                    td.className =
+                        "attendance-cell";
+
+
+                    const isToday =
+                        dateString ===
+                        todayKey;
+
+
+                    const lock =
+                        getLockReason(
+                            dateString
+                        );
+
+
+                    if (
+                        isToday
+                    ) {
+
+                        td.classList.add(
+                            "today-attendance"
+                        );
+
+                    }
+
+
+                    if (
+                        lock
+                    ) {
+
+                        td.classList.add(
+                            "locked"
+                        );
+
+                        td.contentEditable =
+                            "false";
+
+
+                        const saved =
+                            getAttendance(
+                                dateString,
+                                studentIndex
+                            );
+
+
+                        td.textContent =
+                            saved || "🔒";
+
+
+                        td.title =
+                            lock;
+
+
+                        updateCellColor(
+                            td,
+                            saved
+                        );
+
+
+                    } else {
+
+                        td.contentEditable =
+                            "true";
+
+                        td.spellcheck =
+                            false;
+
+
+                        const saved =
+                            getAttendance(
+                                dateString,
+                                studentIndex
+                            );
+
+
+                        if (
+                            saved
+                        ) {
+
+                            td.textContent =
+                                saved;
+
+                            updateCellColor(
+                                td,
+                                saved
+                            );
+
+                        }
+
+
+                        td.addEventListener(
+                            "input",
+                            function() {
+
+                                let value =
+                                    td.textContent
+                                    .trim();
+
+
+                                if (
+                                    value !== "+" &&
+                                    value !== "-"
+                                ) {
+
+                                    value = "";
+
+                                    td.textContent =
+                                        "";
+
+                                }
+
+
+                                if (
+                                    !attendanceData[
+                                        dateString
+                                    ]
+                                ) {
+
+                                    attendanceData[
+                                        dateString
+                                    ] = {};
+
+                                }
+
+
+                                attendanceData[
+                                    dateString
+                                ][
+                                    studentIndex
+                                ] = value;
+
+
+                                updateCellColor(
+                                    td,
+                                    value
+                                );
+
+
+                                saveData();
+
+                            }
+                        );
+
+                    }
+
+
+                    tr.appendChild(td);
+
+                }
+            );
+
+
+            body.appendChild(tr);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   FIREBASE SAQLASH
+===================================================== */
+
+function saveData() {
+
+    set(
+        attendanceRef,
+        {
+
+            attendance:
+                attendanceData,
+
+            updatedAt:
+                Date.now()
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   FIREBASE
+===================================================== */
+
+onValue(
+    attendanceRef,
+    snapshot => {
+
+        const data =
+            snapshot.val();
+
+
+        if (
+            data &&
+            data.attendance
+        ) {
+
+            attendanceData =
+                data.attendance;
+
+        } else {
+
+            attendanceData = {};
+
+        }
+
+
+        renderTable();
+
+
+        document.getElementById(
+            "firebaseStatus"
+        ).textContent =
+            "🟢 Firebase bilan sinxronlangan.";
+
+
+        if (
+            document.getElementById(
+                "reportPage"
+            ).style.display === "block"
+        ) {
+
+            renderReport();
+
+        }
+
+    },
+
+    error => {
+
+        console.error(error);
+
+        document.getElementById(
+            "firebaseStatus"
+        ).textContent =
+            "🔴 Firebase ulanishida xatolik.";
+
+    }
+);
+
+
+/* =====================================================
+   HISOBOT
+===================================================== */
+
+function openReport() {
+
+    document.getElementById(
+        "mainPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "reportPage"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "studentSearch"
+    ).value = "";
+
+
+    document.getElementById(
+        "studentDetail"
+    ).style.display = "none";
+
+
+    showReportTab(
+        "students"
+    );
+
+}
+
+
+function closeReport() {
+
+    document.getElementById(
+        "reportPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "mainPage"
+    ).style.display = "block";
+
+}
+
+
+/* =====================================================
+   REPORT TAB
+===================================================== */
+
+function showReportTab(tab) {
+
+    const sections = [
+        "students",
+        "daily",
+        "weekly",
+        "monthly"
+    ];
+
+
+    sections.forEach(
+        name => {
+
+            document.getElementById(
+                name + "Section"
+            ).classList.remove(
+                "active"
+            );
+
+
+            document.getElementById(
+                "tab" +
+                name.charAt(0)
+                .toUpperCase() +
+                name.slice(1)
+            ).classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    document.getElementById(
+        tab + "Section"
+    ).classList.add(
+        "active"
+    );
+
+
+    document.getElementById(
+        "tab" +
+        tab.charAt(0)
+        .toUpperCase() +
+        tab.slice(1)
+    ).classList.add(
+        "active"
+    );
+
+
+    renderReport();
+
+}
+
+
+/* =====================================================
+   O‘QUVCHI UMUMIY
+===================================================== */
+
+function getStudentStats(index) {
+
+    let plus = 0;
+    let minus = 0;
+
+
+    dates.forEach(
+        dateString => {
+
+            const value =
+                getAttendance(
+                    dateString,
+                    index
+                );
+
+
+            if (
+                value === "+"
+            ) {
+
+                plus++;
+
+            }
+
+
+            if (
+                value === "-"
+            ) {
+
+                minus++;
+
+            }
+
+        }
+    );
+
+
+    return {
+
+        plus,
+        minus,
+        total:
+            plus + minus
+
+    };
+
+}
+
+
+/* =====================================================
+   HAFTA BOSHI
+===================================================== */
+
+function getMonday(date) {
+
+    const result =
+        new Date(date);
+
+    const day =
+        result.getDay();
+
+
+    const difference =
+        day === 0
+            ? -6
+            : 1 - day;
+
+
+    result.setDate(
+        result.getDate() +
+        difference
+    );
+
+
+    result.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    return result;
+
+}
+
+
+/* =====================================================
+   O‘QUVCHI HAFTALIK
+===================================================== */
+
+function getStudentWeekStats(index) {
+
+    const today =
+        new Date();
+
+
+    const monday =
+        getMonday(today);
+
+
+    const saturday =
+        new Date(monday);
+
+
+    saturday.setDate(
+        saturday.getDate() + 5
+    );
+
+
+    let plus = 0;
+    let minus = 0;
+    let total = 0;
+
+
+    dates.forEach(
+        dateString => {
+
+            const date =
+                new Date(
+                    dateString +
+                    "T00:00:00"
+                );
+
+
+            if (
+                date < monday ||
+                date > saturday
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                getLockReason(
+                    dateString
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            const lessons =
+                lessonsPerDay[
+                    date.getDay()
+                ] || 0;
+
+
+            const value =
+                getAttendance(
+                    dateString,
+                    index
+                );
+
+
+            if (
+                value === "+"
+            ) {
+
+                plus += lessons;
+
+            }
+
+
+            if (
+                value === "-"
+            ) {
+
+                minus += lessons;
+
+            }
+
+
+            if (
+                value === "+" ||
+                value === "-"
+            ) {
+
+                total += lessons;
+
+            }
+
+        }
+    );
+
+
+    return {
+        plus,
+        minus,
+        total
+    };
+
+}
+
+
+/* =====================================================
+   O‘QUVCHI OYLIK
+===================================================== */
+
+function getStudentMonthStats(index) {
+
+    const today =
+        new Date();
+
+
+    const year =
+        today.getFullYear();
+
+    const month =
+        today.getMonth();
+
+
+    let plus = 0;
+    let minus = 0;
+    let total = 0;
+
+
+    dates.forEach(
+        dateString => {
+
+            const date =
+                new Date(
+                    dateString +
+                    "T00:00:00"
+                );
+
+
+            if (
+                date.getFullYear() !==
+                year ||
+                date.getMonth() !==
+                month
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                getLockReason(
+                    dateString
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            const lessons =
+                lessonsPerDay[
+                    date.getDay()
+                ] || 0;
+
+
+            const value =
+                getAttendance(
+                    dateString,
+                    index
+                );
+
+
+            if (
+                value === "+"
+            ) {
+
+                plus += lessons;
+
+            }
+
+
+            if (
+                value === "-"
+            ) {
+
+                minus += lessons;
+
+            }
+
+
+            if (
+                value === "+" ||
+                value === "-"
+            ) {
+
+                total += lessons;
+
+            }
+
+        }
+    );
+
+
+    return {
+        plus,
+        minus,
+        total
+    };
+
+}
+
+
+/* =====================================================
+   O‘QUVCHI DETAIL
+===================================================== */
+
+function showStudentDetail(index) {
+
+    const week =
+        getStudentWeekStats(index);
+
+    const month =
+        getStudentMonthStats(index);
+
+
+    document.getElementById(
+        "studentDetail"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "selectedStudentName"
+    ).textContent =
+        "👨‍🎓 " +
+        students[index];
+
+
+    document.getElementById(
+        "selectedWeekTotal"
+    ).textContent =
+        week.total +
+        " dars";
+
+
+    document.getElementById(
+        "selectedWeekPlus"
+    ).textContent =
+        week.plus +
+        " dars";
+
+
+    document.getElementById(
+        "selectedWeekMinus"
+    ).textContent =
+        week.minus +
+        " dars";
+
+
+    const weekPercent =
+        week.total > 0
+            ? (
+                week.plus /
+                week.total *
+                100
+            ).toFixed(1)
+            : "0.0";
+
+
+    document.getElementById(
+        "selectedWeekPercent"
+    ).textContent =
+        weekPercent +
+        "%";
+
+
+    document.getElementById(
+        "selectedMonthTotal"
+    ).textContent =
+        month.total +
+        " dars";
+
+
+    document.getElementById(
+        "selectedMonthPlus"
+    ).textContent =
+        month.plus +
+        " dars";
+
+
+    document.getElementById(
+        "selectedMonthMinus"
+    ).textContent =
+        month.minus +
+        " dars";
+
+
+    const monthPercent =
+        month.total > 0
+            ? (
+                month.plus /
+                month.total *
+                100
+            ).toFixed(1)
+            : "0.0";
+
+
+    document.getElementById(
+        "selectedMonthPercent"
+    ).textContent =
+        monthPercent +
+        "%";
+
+}
+
+
+/* =====================================================
+   ASOSIY HISOBOT
+===================================================== */
+
+function renderReport() {
+
+    const search =
+        document.getElementById(
+            "studentSearch"
+        ).value
+        .toLowerCase()
+        .trim();
+
+
+    const body =
+        document.getElementById(
+            "reportBody"
+        );
+
+
+    body.innerHTML = "";
+
+
+    let totalPlus = 0;
+    let totalMinus = 0;
+
+
+    students.forEach(
+        (
+            student,
+            index
+        ) => {
+
+            const stats =
+                getStudentStats(
+                    index
+                );
+
+
+            totalPlus +=
+                stats.plus;
+
+            totalMinus +=
+                stats.minus;
+
+
+            if (
+                search &&
+                !student
+                    .toLowerCase()
+                    .includes(search)
+            ) {
+
+                return;
+
+            }
+
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            tr.style.cursor =
+                "pointer";
+
+
+            tr.addEventListener(
+                "click",
+                function() {
+
+                    showStudentDetail(
+                        index
+                    );
+
+                }
+            );
+
+
+            tr.innerHTML = `
+
+                <td>
+                    ${index + 1}
+                </td>
+
+                <td style="text-align:left">
+                    ${student}
+                </td>
+
+                <td class="blue">
+                    ${stats.plus}
+                </td>
+
+                <td class="red">
+                    ${stats.minus}
+                </td>
+
+                <td>
+                    ${stats.total}
+                </td>
+
+            `;
+
+
+            body.appendChild(tr);
+
+        }
+    );
+
+
+    document.getElementById(
+        "studentCount"
+    ).textContent =
+        students.length;
+
+
+    document.getElementById(
+        "totalPlus"
+    ).textContent =
+        totalPlus;
+
+
+    document.getElementById(
+        "totalMinus"
+    ).textContent =
+        totalMinus;
+
+
+    document.getElementById(
+        "totalMarked"
+    ).textContent =
+        totalPlus +
+        totalMinus;
+
+
+    renderDailyReport();
+    renderWeeklyReport();
+    renderMonthlyReport();
+
+}
+
+
+/* =====================================================
+   KUNLIK HISOBOT
+===================================================== */
+
+function renderDailyReport() {
+
+    const body =
+        document.getElementById(
+            "dailyBody"
+        );
+
+
+    body.innerHTML = "";
+
+
+    dates.forEach(
+        dateString => {
+
+            let plus = 0;
+            let minus = 0;
+
+
+            students.forEach(
+                (
+                    _,
+                    index
+                ) => {
+
+                    const value =
+                        getAttendance(
+                            dateString,
+                            index
+                        );
+
+
+                    if (
+                        value === "+"
+                    ) {
+
+                        plus++;
+
+                    }
+
+
+                    if (
+                        value === "-"
+                    ) {
+
+                        minus++;
+
+                    }
+
+                }
+            );
+
+
+            const total =
+                plus + minus;
+
+
+            if (
+                total === 0
+            ) {
+
+                return;
+
+            }
+
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            tr.innerHTML = `
+
+                <td>
+                    ${formatDate(
+                        dateString
+                    )}
+                </td>
+
+                <td class="blue">
+                    ${plus}
+                </td>
+
+                <td class="red">
+                    ${minus}
+                </td>
+
+                <td>
+                    ${total}
+                </td>
+
+            `;
+
+
+            body.appendChild(tr);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   HAFTALIK HISOBOT
+===================================================== */
+
+function renderWeeklyReport() {
+
+    const body =
+        document.getElementById(
+            "weeklyBody"
+        );
+
+
+    body.innerHTML = "";
+
+
+    const weeks = {};
+
+
+    dates.forEach(
+        dateString => {
+
+            const date =
+                new Date(
+                    dateString +
+                    "T00:00:00"
+                );
+
+
+            const monday =
+                getMonday(date);
+
+
+            const key =
+                dateKey(monday);
+
+
+            if (
+                !weeks[key]
+            ) {
+
+                weeks[key] = {
+
+                    plus: 0,
+                    minus: 0,
+                    total: 0
+
+                };
+
+            }
+
+
+            const lessons =
+                lessonsPerDay[
+                    date.getDay()
+                ] || 0;
+
+
+            students.forEach(
+                (
+                    _,
+                    index
+                ) => {
+
+                    const value =
+                        getAttendance(
+                            dateString,
+                            index
+                        );
+
+
+                    if (
+                        value === "+"
+                    ) {
+
+                        weeks[key].plus +=
+                            lessons;
+
+                    }
+
+
+                    if (
+                        value === "-"
+                    ) {
+
+                        weeks[key].minus +=
+                            lessons;
+
+                    }
+
+
+                    if (
+                        value === "+" ||
+                        value === "-"
+                    ) {
+
+                        weeks[key].total +=
+                            lessons;
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    Object.keys(weeks)
+        .sort()
+        .forEach(
+            key => {
+
+                const data =
+                    weeks[key];
+
+
+                if (
+                    data.total === 0
+                ) {
+
+                    return;
+
+                }
+
+
+                const monday =
+                    new Date(
+                        key +
+                        "T00:00:00"
+                    );
+
+
+                const saturday =
+                    new Date(monday);
+
+
+                saturday.setDate(
+                    saturday.getDate() + 5
+                );
+
+
+                const tr =
+                    document.createElement(
+                        "tr"
+                    );
+
+
+                tr.innerHTML = `
+
+                    <td>
+                        ${formatDate(key)}
+                        —
+                        ${formatDate(
+                            dateKey(
+                                saturday
+                            )
+                        )}
+                    </td>
+
+                    <td class="blue">
+                        ${data.plus}
+                    </td>
+
+                    <td class="red">
+                        ${data.minus}
+                    </td>
+
+                    <td>
+                        ${data.total}
+                    </td>
+
+                `;
+
+
+                body.appendChild(tr);
+
+            }
+        );
+
+}
+
+
+/* =====================================================
+   OYLAR
+===================================================== */
+
+const monthNames = [
+
+    "Yanvar",
+    "Fevral",
+    "Mart",
+    "Aprel",
+    "May",
+    "Iyun",
+    "Iyul",
+    "Avgust",
+    "Sentabr",
+    "Oktabr",
+    "Noyabr",
+    "Dekabr"
+
+];
+
+
+/* =====================================================
+   OYLIK HISOBOT
+===================================================== */
+
+function renderMonthlyReport() {
+
+    const body =
+        document.getElementById(
+            "monthlyBody"
+        );
+
+
+    body.innerHTML = "";
+
+
+    const months = {};
+
+
+    dates.forEach(
+        dateString => {
+
+            const date =
+                new Date(
+                    dateString +
+                    "T00:00:00"
+                );
+
+
+            const year =
+                date.getFullYear();
+
+            const month =
+                date.getMonth();
+
+
+            const key =
+                `${year}-${String(
+                    month + 1
+                ).padStart(2, "0")}`;
+
+
+            if (
+                !months[key]
+            ) {
+
+                months[key] = {
+
+                    year,
+                    month,
+                    plus: 0,
+                    minus: 0,
+                    total: 0
+
+                };
+
+            }
+
+
+            const lessons =
+                lessonsPerDay[
+                    date.getDay()
+                ] || 0;
+
+
+            students.forEach(
+                (
+                    _,
+                    index
+                ) => {
+
+                    const value =
+                        getAttendance(
+                            dateString,
+                            index
+                        );
+
+
+                    if (
+                        value === "+"
+                    ) {
+
+                        months[key].plus +=
+                            lessons;
+
+                    }
+
+
+                    if (
+                        value === "-"
+                    ) {
+
+                        months[key].minus +=
+                            lessons;
+
+                    }
+
+
+                    if (
+                        value === "+" ||
+                        value === "-"
+                    ) {
+
+                        months[key].total +=
+                            lessons;
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    Object.keys(months)
+        .sort()
+        .forEach(
+            key => {
+
+                const data =
+                    months[key];
+
+
+                if (
+                    data.total === 0
+                ) {
+
+                    return;
+
+                }
+
+
+                const tr =
+                    document.createElement(
+                        "tr"
+                    );
+
+
+                tr.innerHTML = `
+
+                    <td>
+                        ${monthNames[
+                            data.month
+                        ]}
+                        ${data.year}
+                    </td>
+
+                    <td class="blue">
+                        ${data.plus}
+                    </td>
+
+                    <td class="red">
+                        ${data.minus}
+                    </td>
+
+                    <td>
+                        ${data.total}
+                    </td>
+
+                `;
+
+
+                body.appendChild(tr);
+
+            }
+        );
+
+}
+
+
+/* =====================================================
+   LOGINNI TEKSHIRISH
+===================================================== */
+
+if (
+    sessionStorage.getItem(
+        "davomat_login"
+    ) === "true" ||
+    localStorage.getItem(
+        "davomat_remember"
+    ) === "true"
+) {
+
+    showMain();
+
+} else {
+
+    document.getElementById(
+        "loginPage"
+    ).style.display =
+        "flex";
+
+}
+
+
+/* =====================================================
+   TUGMALAR
+===================================================== */
+
+document.getElementById(
+    "loginButton"
+).addEventListener(
+    "click",
+    login
+);
+
+
+document.getElementById(
+    "reportButton"
+).addEventListener(
+    "click",
+    openReport
+);
+
+
+document.getElementById(
+    "darkButton"
+).addEventListener(
+    "click",
+    toggleDark
+);
+
+
+document.getElementById(
+    "logoutButton"
+).addEventListener(
+    "click",
+    logout
+);
+
+
+document.getElementById(
+    "backButton"
+).addEventListener(
+    "click",
+    closeReport
+);
+
+
+document.getElementById(
+    "reportDarkButton"
+).addEventListener(
+    "click",
+    toggleDark
+);
+
+
+document.getElementById(
+    "tabStudents"
+).addEventListener(
+    "click",
+    () => showReportTab("students")
+);
+
+
+document.getElementById(
+    "tabDaily"
+).addEventListener(
+    "click",
+    () => showReportTab("daily")
+);
+
+
+document.getElementById(
+    "tabWeekly"
+).addEventListener(
+    "click",
+    () => showReportTab("weekly")
+);
+
+
+document.getElementById(
+    "tabMonthly"
+).addEventListener(
+    "click",
+    () => showReportTab("monthly")
+);
+
+
+document.getElementById(
+    "studentSearch"
+).addEventListener(
+    "input",
+    renderReport
+);
+
+
+/* ENTER */
+
+document.getElementById(
+    "password"
+).addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            login();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   HAR KUNI 00:00 DA YANGILANISH
+===================================================== */
+
+function scheduleMidnightRefresh() {
+
+    const now =
+        new Date();
+
+
+    const tomorrow =
+        new Date(now);
+
+
+    tomorrow.setDate(
+        tomorrow.getDate() + 1
+    );
+
+
+    tomorrow.setHours(
+        0,
+        0,
+        1,
+        0
+    );
+
+
+    const delay =
+        tomorrow.getTime() -
+        now.getTime();
+
+
+    setTimeout(
+        function() {
+
+            renderTable();
+            renderReport();
+
+            scheduleMidnightRefresh();
+
+        },
+        delay
+    );
+
+}
+
+
+/* =====================================================
+   BOSHLASH
+===================================================== */
+
+renderTable();
+
+scheduleMidnightRefresh();
+
+</script>
+
+</body>
+</html>
 
