@@ -8,16 +8,12 @@
 <title>Davomat Jurnali — 11-A sinf</title>
 
 <meta name="description"
-content="Davomat Jurnali — 11-A sinf o‘quvchilari davomati, kunlik, haftalik va oylik davomatni qulay boshqarish uchun elektron jurnal.">
-
-<meta name="keywords"
-content="davomat jurnali, elektron jurnal, davomat, o‘quvchilar davomati, maktab davomat, 11-A sinf">
+content="Davomat Jurnali — 11-A sinf o‘quvchilari davomati uchun elektron jurnal.">
 
 <meta name="author"
 content="Abdulloh Habibullayev">
 
 <meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
 
 <link rel="canonical"
 href="https://davomat11a.github.io/">
@@ -33,75 +29,177 @@ content="11-A sinf o‘quvchilari davomati uchun qulay elektron jurnal.">
 <meta property="og:url"
 content="https://davomat11a.github.io/">
 
-<meta name="theme-color" content="#1976d2">
+<meta name="theme-color" content="#229ED9">
 
 
 <style>
+
+/* =====================================================
+   ASOSIY
+===================================================== */
 
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    color: #222;
+html {
+    scroll-behavior: smooth;
 }
 
-body.dark {
-    background: #121212;
-    color: #eee;
+body {
+    margin: 0;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef5ff,
+            #f7faff
+        );
+
+    color: #202124;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 button,
 input {
-    font-family: Arial, sans-serif;
+    font-family: inherit;
 }
 
 
-/* ================= LOGIN ================= */
+/* =====================================================
+   LOGIN
+===================================================== */
 
 #loginPage {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #d8efff,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #dfe9ff,
+            transparent 40%
+        );
 }
 
 .login-box {
     width: 100%;
-    max-width: 380px;
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+    max-width: 400px;
+
+    padding: 32px;
+
+    border-radius: 24px;
+
+    background: rgba(255,255,255,0.94);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.12);
+
+    backdrop-filter: blur(12px);
+
+    animation:
+        loginAppear 0.5s ease;
 }
 
-.dark .login-box {
-    background: #1e1e1e;
+@keyframes loginAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.login-logo {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #229ED9,
+            #0077b6
+        );
+
+    color: white;
+
+    font-size: 38px;
+
+    box-shadow:
+        0 10px 25px rgba(34,158,217,0.35);
 }
 
 .login-box h2 {
     text-align: center;
-    margin-top: 0;
+    margin: 0 0 8px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 14px;
 }
 
 .login-box input[type="text"],
 .login-box input[type="password"] {
+
     width: 100%;
-    padding: 13px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+
+    padding: 14px 15px;
+
+    margin: 7px 0;
+
+    border:
+        1px solid #d6dce5;
+
+    border-radius: 12px;
+
     font-size: 16px;
+
+    outline: none;
+
+    transition:
+        border 0.2s,
+        box-shadow 0.2s;
 }
 
-.dark .login-box input {
-    background: #2b2b2b;
-    color: white;
-    border-color: #555;
+.login-box input:focus {
+
+    border-color: #229ED9;
+
+    box-shadow:
+        0 0 0 4px rgba(34,158,217,0.12);
 }
 
 .password-box {
@@ -109,57 +207,156 @@ input {
 }
 
 .password-box input {
-    padding-right: 48px !important;
+    padding-right: 50px !important;
 }
 
 .eye-button {
+
     position: absolute;
+
     right: 8px;
     top: 50%;
-    transform: translateY(-50%);
-    width: 38px;
-    height: 38px;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: transparent !important;
-    color: #555;
-    cursor: pointer;
-    font-size: 20px;
-}
 
-.dark .eye-button {
-    color: #ddd;
+    transform: translateY(-50%);
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 19px;
 }
 
 .login-box button:not(.eye-button) {
+
     width: 100%;
-    padding: 13px;
-    margin-top: 10px;
+
+    padding: 14px;
+
+    margin-top: 12px;
+
     border: none;
-    border-radius: 10px;
-    background: #1976d2;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1976d2,
+            #229ED9
+        );
+
     color: white;
+
     font-size: 16px;
+
+    font-weight: bold;
+
     cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.login-box button:not(.eye-button):hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(25,118,210,0.3);
 }
 
 .remember {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
-    margin-top: 10px;
+
+    margin-top: 12px;
+
     font-size: 14px;
+
+    color: #666;
 }
 
 #loginError {
+
     color: #e53935;
+
     text-align: center;
-    margin-top: 10px;
+
+    margin-top: 12px;
+
+    font-size: 14px;
 }
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark {
+
+    background:
+        linear-gradient(
+            135deg,
+            #10151c,
+            #171d25
+        );
+
+    color: #eeeeee;
+}
+
+.dark #loginPage {
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #12334a,
+            transparent 40%
+        ),
+        #10151c;
+}
+
+.dark .login-box,
+.dark .info,
+.dark .table-wrapper,
+.dark .card,
+.dark .student-detail {
+
+    background:
+        rgba(30,35,42,0.96);
+
+    color: #eee;
+}
+
+.dark .login-box input,
+.dark .search-box input {
+
+    background: #252b33;
+
+    color: white;
+
+    border-color: #444;
+}
+
+.dark .remember,
+.dark .login-subtitle {
+
+    color: #aaa;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 #mainPage,
 #reportPage {
@@ -167,405 +364,776 @@ input {
 }
 
 header {
-    background: #1976d2;
-    color: white;
-    padding: 15px;
+
     position: sticky;
+
     top: 0;
+
     z-index: 20;
+
+    color: white;
+
+    padding: 13px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1976d2,
+            #229ED9
+        );
+
+    box-shadow:
+        0 4px 20px rgba(0,0,0,0.12);
 }
 
 .header-inner {
+
     max-width: 1400px;
+
     margin: auto;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    gap: 10px;
+
+    gap: 12px;
 }
 
 header h2 {
+
     margin: 0;
+
     font-size: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
 }
 
 .header-buttons {
+
     display: flex;
+
+    align-items: center;
+
     gap: 7px;
+
     flex-wrap: wrap;
 }
 
 .header-buttons button {
+
     border: none;
-    border-radius: 8px;
-    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    padding: 9px 13px;
+
     cursor: pointer;
+
     background: white;
+
     color: #1976d2;
+
     font-weight: bold;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
-/* TELEGRAM TUGMASI */
+.header-buttons button:hover {
 
-#telegramButton {
-    background: #0088cc;
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(0,0,0,0.15);
+}
+
+
+/* =====================================================
+   TELEGRAM TUGMASI
+===================================================== */
+
+.telegram-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
     color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2AABEE,
+            #0088cc
+        );
+
+    box-shadow:
+        0 5px 15px rgba(0,136,204,0.30);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        filter 0.2s;
 }
+
+.telegram-button:hover {
+
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 8px 20px rgba(0,136,204,0.40);
+}
+
+.telegram-button:active {
+
+    transform: scale(0.96);
+}
+
+.telegram-icon {
+
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .container,
 .report-container {
+
     max-width: 1400px;
+
     margin: auto;
-    padding: 15px;
+
+    padding: 18px;
 }
 
 
-/* ================= INFO ================= */
+/* =====================================================
+   INFO
+===================================================== */
 
 .info {
-    background: white;
-    padding: 14px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
 
-.dark .info {
-    background: #1e1e1e;
+    background: white;
+
+    padding: 16px 18px;
+
+    border-radius: 16px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.06);
 }
 
 .firebase-status {
-    margin-top: 8px;
+
+    margin-top: 10px;
+
     font-weight: bold;
+
+    color: #2e7d32;
 }
 
 
-/* ================= TABLE ================= */
+/* =====================================================
+   TABLE
+===================================================== */
 
 .table-wrapper {
-    overflow-x: auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
 
-.dark .table-wrapper {
-    background: #1e1e1e;
+    overflow-x: auto;
+
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.07);
 }
 
 table {
+
     border-collapse: collapse;
+
     width: 100%;
+
     min-width: 900px;
 }
 
 th,
 td {
-    border: 1px solid #ddd;
-    text-align: center;
-    padding: 7px;
-}
 
-.dark th,
-.dark td {
-    border-color: #444;
+    border: 1px solid #e0e0e0;
+
+    text-align: center;
+
+    padding: 8px;
 }
 
 th {
-    background: #1976d2;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1976d2,
+            #229ED9
+        );
+
     color: white;
+
+    font-weight: bold;
 }
 
 .name-column {
-    min-width: 210px;
+
+    min-width: 220px;
+
     text-align: left;
+
     position: sticky;
+
     left: 0;
+
     z-index: 3;
+
     background: white;
 }
 
 .dark .name-column {
-    background: #1e1e1e;
+
+    background: #1e232a;
 }
 
 th.name-column {
+
     background: #1976d2;
 }
 
 .date-column {
-    width: 55px;
-    min-width: 55px;
+
+    width: 60px;
+
+    min-width: 60px;
 }
 
 
-/* ================= BUGUNGI SANA ================= */
+/* =====================================================
+   BUGUNGI SANA
+===================================================== */
 
 .today-column {
+
     background: #fff3cd !important;
+
     color: #222 !important;
+
     font-weight: bold;
 }
 
 .dark .today-column {
+
     background: #ffffff !important;
+
     color: #111 !important;
 }
 
 
-/* ================= DAVOMAT ================= */
+/* =====================================================
+   DAVOMAT
+===================================================== */
 
 .attendance-cell {
+
     width: 55px;
+
     min-width: 55px;
-    height: 42px;
+
+    height: 43px;
+
     font-size: 18px;
+
     font-weight: bold;
+
+    transition:
+        background 0.15s;
+}
+
+.attendance-cell[contenteditable="true"] {
+
+    cursor: text;
+}
+
+.attendance-cell[contenteditable="true"]:hover {
+
+    background: #f2f8ff;
+}
+
+.dark .attendance-cell[contenteditable="true"]:hover {
+
+    background: #29333e;
 }
 
 .attendance-cell.plus {
+
     color: #1976d2;
 }
 
 .attendance-cell.minus {
+
     color: #e53935;
 }
 
 .today-attendance.plus {
+
     color: #1976d2 !important;
 }
 
 .today-attendance.minus {
+
     color: #e53935 !important;
 }
 
 
-/* ================= BLOKLANGAN ================= */
+/* =====================================================
+   BLOKLANGAN
+===================================================== */
 
 .locked {
+
     background: #eeeeee;
+
     color: #777;
+
     cursor: not-allowed;
 }
 
 .dark .locked {
+
     background: #333;
+
     color: #aaa;
 }
 
 .locked.minus {
+
     color: #e53935 !important;
 }
 
 .dark .locked.minus {
+
     color: #e53935 !important;
 }
 
 
-/* ================= REPORT ================= */
+/* =====================================================
+   REPORT
+===================================================== */
 
 .search-box {
-    margin-bottom: 15px;
+
+    margin-bottom: 16px;
 }
 
 .search-box input {
+
     width: 100%;
+
     max-width: 500px;
-    padding: 13px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+
+    padding: 14px;
+
+    border:
+        1px solid #ccc;
+
+    border-radius: 12px;
+
     font-size: 16px;
+
+    outline: none;
 }
 
-.dark .search-box input {
-    background: #2b2b2b;
-    color: white;
-    border-color: #555;
+.search-box input:focus {
+
+    border-color: #229ED9;
+
+    box-shadow:
+        0 0 0 4px rgba(34,158,217,0.10);
 }
 
 .report-tabs {
+
     display: flex;
+
     gap: 8px;
+
     flex-wrap: wrap;
-    margin-bottom: 15px;
+
+    margin-bottom: 16px;
 }
 
 .report-tabs button {
+
     padding: 10px 15px;
+
     border: none;
-    border-radius: 9px;
+
+    border-radius: 10px;
+
     cursor: pointer;
-    background: #ddd;
+
+    background: #e4e7eb;
+
     font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.report-tabs button:hover {
+
+    transform: translateY(-1px);
 }
 
 .dark .report-tabs button {
+
     background: #333;
+
     color: white;
 }
 
 .report-tabs button.active {
-    background: #1976d2;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1976d2,
+            #229ED9
+        );
+
     color: white;
 }
 
 .report-section {
+
     display: none;
 }
 
 .report-section.active {
+
     display: block;
 }
 
 
-/* ================= CARDS ================= */
+/* =====================================================
+   CARDS
+===================================================== */
 
 .summary {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-    margin-bottom: 15px;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(160px, 1fr)
+        );
+
+    gap: 13px;
+
+    margin-bottom: 16px;
 }
 
 .card {
+
     background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+
+    padding: 17px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.06);
+
+    transition:
+        transform 0.2s;
 }
 
-.dark .card {
-    background: #1e1e1e;
+.card:hover {
+
+    transform: translateY(-2px);
 }
 
 .card-title {
+
     font-size: 14px;
+
     color: #777;
 }
 
 .dark .card-title {
+
     color: #aaa;
 }
 
 .card-value {
-    font-size: 24px;
+
+    font-size: 26px;
+
     font-weight: bold;
-    margin-top: 5px;
+
+    margin-top: 6px;
 }
 
 .blue {
+
     color: #1976d2;
 }
 
 .red {
+
     color: #e53935;
 }
 
 .green {
+
     color: #2e7d32;
 }
 
 
-/* ================= STUDENT DETAIL ================= */
+/* =====================================================
+   STUDENT DETAIL
+===================================================== */
 
 .student-detail {
-    margin-top: 15px;
-    background: white;
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
 
-.dark .student-detail {
-    background: #1e1e1e;
+    margin-top: 16px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.07);
 }
 
 .student-detail h3 {
+
     margin-top: 0;
 }
 
 .detail-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(160px, 1fr)
+        );
+
     gap: 12px;
 }
 
 .detail-card {
-    padding: 15px;
-    border-radius: 10px;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
     background: #f2f4f7;
 }
 
 .dark .detail-card {
-    background: #2a2a2a;
+
+    background: #2a3038;
 }
 
 .detail-card .title {
+
     font-size: 13px;
+
     color: #777;
 }
 
 .dark .detail-card .title {
+
     color: #aaa;
 }
 
 .detail-card .value {
+
     font-size: 22px;
+
     font-weight: bold;
-    margin-top: 5px;
+
+    margin-top: 6px;
 }
 
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 700px) {
 
     .header-inner {
+
         flex-direction: column;
-        align-items: flex-start;
+
+        align-items: stretch;
     }
 
     header h2 {
+
         font-size: 17px;
+
+        justify-content: center;
     }
 
     .header-buttons {
+
         width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .header-buttons button {
-        flex: 1;
+    .header-buttons button,
+    .telegram-button {
+
+        width: 100%;
+
+        text-align: center;
     }
 
     .container,
     .report-container {
+
         padding: 10px;
     }
 
     .name-column {
+
         min-width: 180px;
     }
+
+    .login-box {
+
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #edf0f3;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #aeb8c2;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #7f8a95;
+}
+
+.dark ::-webkit-scrollbar-track {
+
+    background: #1b2026;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+
+    background: #555;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 
-<!-- ================= LOGIN ================= -->
+<!-- =====================================================
+     LOGIN
+===================================================== -->
 
 <div id="loginPage">
 
     <div class="login-box">
 
-        <h2>🔐 Davomat jurnali</h2>
+        <div class="login-logo">
+            📋
+        </div>
+
+        <h2>
+            Davomat jurnali
+        </h2>
+
+        <div class="login-subtitle">
+            11-A sinf elektron jurnali
+        </div>
+
 
         <input
             type="text"
             id="username"
             placeholder="Login"
         >
+
 
         <div class="password-box">
 
@@ -585,6 +1153,7 @@ th.name-column {
 
         </div>
 
+
         <label class="remember">
 
             <input
@@ -596,9 +1165,11 @@ th.name-column {
 
         </label>
 
+
         <button id="loginButton">
-            Kirish
+            🔐 Kirish
         </button>
+
 
         <div id="loginError"></div>
 
@@ -607,7 +1178,10 @@ th.name-column {
 </div>
 
 
-<!-- ================= MAIN ================= -->
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <div id="mainPage">
 
@@ -615,7 +1189,10 @@ th.name-column {
 
     <div class="header-inner">
 
-        <h2>📋 11-A sinf davomati</h2>
+        <h2>
+            📋 11-A sinf davomati
+        </h2>
+
 
         <div class="header-buttons">
 
@@ -623,15 +1200,29 @@ th.name-column {
                 📊 Hisobot
             </button>
 
-            <!-- TELEGRAM BOT -->
 
-            <button id="telegramButton">
-                🤖 Telegram
-            </button>
+            <!-- TELEGRAM -->
+
+            <a
+                href="https://t.me/davomat11a_bot"
+                target="_blank"
+                class="telegram-button"
+                title="Telegram botni ochish"
+            >
+
+                <span class="telegram-icon">
+                    ✈️
+                </span>
+
+                Telegram bot
+
+            </a>
+
 
             <button id="darkButton">
                 🌙 Dark
             </button>
+
 
             <button id="logoutButton">
                 🚪 Chiqish
@@ -644,14 +1235,18 @@ th.name-column {
 </header>
 
 
+
 <div class="container">
+
 
     <div class="info">
 
         <b>📅 O‘quv yili:</b>
+
         28.09.2026 — 25.05.2027
 
         <br><br>
+
 
         <b>Belgilar:</b>
 
@@ -667,6 +1262,7 @@ th.name-column {
 
         🔒 Bloklangan kun
 
+
         <div
             id="firebaseStatus"
             class="firebase-status"
@@ -675,6 +1271,7 @@ th.name-column {
         </div>
 
     </div>
+
 
 
     <div class="table-wrapper">
@@ -695,7 +1292,10 @@ th.name-column {
 
             </thead>
 
-            <tbody id="attendanceBody"></tbody>
+
+            <tbody
+                id="attendanceBody"
+            ></tbody>
 
         </table>
 
@@ -706,7 +1306,10 @@ th.name-column {
 </div>
 
 
-<!-- ================= REPORT ================= -->
+
+<!-- =====================================================
+     REPORT
+===================================================== -->
 
 <div id="reportPage">
 
@@ -714,7 +1317,10 @@ th.name-column {
 
     <div class="header-inner">
 
-        <h2>📊 Davomat hisoboti</h2>
+        <h2>
+            📊 Davomat hisoboti
+        </h2>
+
 
         <div class="header-buttons">
 
@@ -722,14 +1328,24 @@ th.name-column {
                 ← Ortga
             </button>
 
+
+            <a
+                href="https://t.me/davomat11a_bot"
+                target="_blank"
+                class="telegram-button"
+            >
+
+                <span class="telegram-icon">
+                    ✈️
+                </span>
+
+                Telegram bot
+
+            </a>
+
+
             <button id="reportDarkButton">
                 🌙 Dark
-            </button>
-
-            <!-- HISOBOT SAHIFASIDA HAM TELEGRAM -->
-
-            <button id="telegramReportButton">
-                🤖 Telegram
             </button>
 
         </div>
@@ -739,7 +1355,9 @@ th.name-column {
 </header>
 
 
+
 <div class="report-container">
+
 
     <div class="search-box">
 
@@ -752,6 +1370,7 @@ th.name-column {
     </div>
 
 
+
     <div class="report-tabs">
 
         <button
@@ -761,13 +1380,16 @@ th.name-column {
             👨‍🎓 O‘quvchilar
         </button>
 
+
         <button id="tabDaily">
             📅 Kunlik
         </button>
 
+
         <button id="tabWeekly">
             📆 Haftalik
         </button>
+
 
         <button id="tabMonthly">
             🗓️ Oylik
@@ -776,12 +1398,16 @@ th.name-column {
     </div>
 
 
+
+    <!-- O‘QUVCHILAR -->
+
     <div
         id="studentsSection"
         class="report-section active"
     >
 
         <div class="summary">
+
 
             <div class="card">
 
@@ -849,6 +1475,7 @@ th.name-column {
         </div>
 
 
+
         <div class="table-wrapper">
 
             <table>
@@ -858,20 +1485,36 @@ th.name-column {
                     <tr>
 
                         <th>№</th>
-                        <th>Ism va Familya</th>
-                        <th>🔵 Keldi</th>
-                        <th>🔴 Qoldirdi</th>
-                        <th>📅 Jami</th>
+
+                        <th>
+                            Ism va Familya
+                        </th>
+
+                        <th>
+                            🔵 Keldi
+                        </th>
+
+                        <th>
+                            🔴 Qoldirdi
+                        </th>
+
+                        <th>
+                            📅 Jami
+                        </th>
 
                     </tr>
 
                 </thead>
 
-                <tbody id="reportBody"></tbody>
+
+                <tbody
+                    id="reportBody"
+                ></tbody>
 
             </table>
 
         </div>
+
 
 
         <div
@@ -882,46 +1525,135 @@ th.name-column {
 
             <h3 id="selectedStudentName"></h3>
 
+
             <div class="detail-grid">
 
-                <div class="detail-card">
-                    <div class="title">📆 Shu hafta jami dars</div>
-                    <div class="value" id="selectedWeekTotal">0</div>
-                </div>
 
                 <div class="detail-card">
-                    <div class="title">🔵 Shu hafta kelgan</div>
-                    <div class="value blue" id="selectedWeekPlus">0</div>
+
+                    <div class="title">
+                        📆 Shu hafta jami dars
+                    </div>
+
+                    <div
+                        class="value"
+                        id="selectedWeekTotal"
+                    >
+                        0
+                    </div>
+
                 </div>
 
-                <div class="detail-card">
-                    <div class="title">🔴 Shu hafta qoldirgan</div>
-                    <div class="value red" id="selectedWeekMinus">0</div>
-                </div>
 
                 <div class="detail-card">
-                    <div class="title">📊 Haftalik davomat</div>
-                    <div class="value green" id="selectedWeekPercent">0%</div>
+
+                    <div class="title">
+                        🔵 Shu hafta kelgan
+                    </div>
+
+                    <div
+                        class="value blue"
+                        id="selectedWeekPlus"
+                    >
+                        0
+                    </div>
+
                 </div>
 
-                <div class="detail-card">
-                    <div class="title">🗓️ Shu oy jami dars</div>
-                    <div class="value" id="selectedMonthTotal">0</div>
-                </div>
 
                 <div class="detail-card">
-                    <div class="title">🔵 Shu oy kelgan</div>
-                    <div class="value blue" id="selectedMonthPlus">0</div>
+
+                    <div class="title">
+                        🔴 Shu hafta qoldirgan
+                    </div>
+
+                    <div
+                        class="value red"
+                        id="selectedWeekMinus"
+                    >
+                        0
+                    </div>
+
                 </div>
 
-                <div class="detail-card">
-                    <div class="title">🔴 Shu oy qoldirgan</div>
-                    <div class="value red" id="selectedMonthMinus">0</div>
-                </div>
 
                 <div class="detail-card">
-                    <div class="title">📊 Oylik davomat</div>
-                    <div class="value green" id="selectedMonthPercent">0%</div>
+
+                    <div class="title">
+                        📊 Haftalik davomat
+                    </div>
+
+                    <div
+                        class="value green"
+                        id="selectedWeekPercent"
+                    >
+                        0%
+                    </div>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        🗓️ Shu oy jami dars
+                    </div>
+
+                    <div
+                        class="value"
+                        id="selectedMonthTotal"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        🔵 Shu oy kelgan
+                    </div>
+
+                    <div
+                        class="value blue"
+                        id="selectedMonthPlus"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        🔴 Shu oy qoldirgan
+                    </div>
+
+                    <div
+                        class="value red"
+                        id="selectedMonthMinus"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="title">
+                        📊 Oylik davomat
+                    </div>
+
+                    <div
+                        class="value green"
+                        id="selectedMonthPercent"
+                    >
+                        0%
+                    </div>
+
                 </div>
 
             </div>
@@ -931,9 +1663,13 @@ th.name-column {
     </div>
 
 
+
     <!-- KUNLIK -->
 
-    <div id="dailySection" class="report-section">
+    <div
+        id="dailySection"
+        class="report-section"
+    >
 
         <div class="table-wrapper">
 
@@ -942,10 +1678,15 @@ th.name-column {
                 <thead>
 
                     <tr>
+
                         <th>Sana</th>
+
                         <th>🔵 Kelgan</th>
+
                         <th>🔴 Qolgan</th>
+
                         <th>📊 Jami</th>
+
                     </tr>
 
                 </thead>
@@ -959,9 +1700,13 @@ th.name-column {
     </div>
 
 
+
     <!-- HAFTALIK -->
 
-    <div id="weeklySection" class="report-section">
+    <div
+        id="weeklySection"
+        class="report-section"
+    >
 
         <div class="table-wrapper">
 
@@ -970,10 +1715,15 @@ th.name-column {
                 <thead>
 
                     <tr>
+
                         <th>Hafta</th>
+
                         <th>🔵 Kelgan</th>
+
                         <th>🔴 Qolgan</th>
+
                         <th>📊 Jami</th>
+
                     </tr>
 
                 </thead>
@@ -987,9 +1737,13 @@ th.name-column {
     </div>
 
 
+
     <!-- OYLIK -->
 
-    <div id="monthlySection" class="report-section">
+    <div
+        id="monthlySection"
+        class="report-section"
+    >
 
         <div class="table-wrapper">
 
@@ -998,10 +1752,15 @@ th.name-column {
                 <thead>
 
                     <tr>
+
                         <th>Oy</th>
+
                         <th>🔵 Kelgan</th>
+
                         <th>🔴 Qolgan</th>
+
                         <th>📊 Jami</th>
+
                     </tr>
 
                 </thead>
@@ -1019,14 +1778,20 @@ th.name-column {
 </div>
 
 
+
 <script type="module">
 
-/* ================= FIREBASE ================= */
+
+/* =====================================================
+   FIREBASE
+===================================================== */
 
 import {
     initializeApp
 }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 
 import {
     getDatabase,
@@ -1034,7 +1799,8 @@ import {
     onValue,
     set
 }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 
 const firebaseConfig = {
@@ -1076,7 +1842,9 @@ const attendanceRef =
     ref(db, "davomat_jurnali");
 
 
-/* ================= O‘QUVCHILAR ================= */
+/* =====================================================
+   O‘QUVCHILAR
+===================================================== */
 
 const students = [
 
@@ -1109,7 +1877,9 @@ const students = [
 ];
 
 
-/* ================= SANALAR ================= */
+/* =====================================================
+   SANALAR
+===================================================== */
 
 const startDate =
     new Date("2026-09-28T00:00:00");
@@ -1118,7 +1888,9 @@ const endDate =
     new Date("2027-05-25T00:00:00");
 
 
-/* ================= DARSLAR ================= */
+/* =====================================================
+   DARSLAR
+===================================================== */
 
 const lessonsPerDay = {
 
@@ -1133,7 +1905,9 @@ const lessonsPerDay = {
 };
 
 
-/* ================= BAYRAMLAR ================= */
+/* =====================================================
+   BAYRAMLAR
+===================================================== */
 
 const holidays = {
 
@@ -1158,7 +1932,9 @@ const holidays = {
 };
 
 
-/* ================= TA’TILLAR ================= */
+/* =====================================================
+   TA’TILLAR
+===================================================== */
 
 const vacations = [
 
@@ -1186,7 +1962,9 @@ const vacations = [
 let attendanceData = {};
 
 
-/* ================= LOGIN ================= */
+/* =====================================================
+   LOGIN
+===================================================== */
 
 const LOGIN =
     "abdulloh04072009";
@@ -1258,6 +2036,7 @@ function logout() {
         "davomat_remember"
     );
 
+
     document.getElementById(
         "mainPage"
     ).style.display = "none";
@@ -1290,7 +2069,9 @@ function showMain() {
 }
 
 
-/* ================= PAROL ================= */
+/* =====================================================
+   PAROL KO‘RISH
+===================================================== */
 
 document.getElementById(
     "eyeButton"
@@ -1301,16 +2082,19 @@ document.getElementById(
         const input =
             document.getElementById("password");
 
+
         if (
             input.type === "password"
         ) {
 
             input.type = "text";
+
             this.textContent = "🙈";
 
         } else {
 
             input.type = "password";
+
             this.textContent = "👁️";
 
         }
@@ -1319,7 +2103,9 @@ document.getElementById(
 );
 
 
-/* ================= DARK MODE ================= */
+/* =====================================================
+   DARK MODE
+===================================================== */
 
 function toggleDark() {
 
@@ -1342,7 +2128,9 @@ if (
 }
 
 
-/* ================= SANA ================= */
+/* =====================================================
+   SANA
+===================================================== */
 
 function dateKey(date) {
 
@@ -1350,10 +2138,15 @@ function dateKey(date) {
         date.getFullYear();
 
     const month =
-        String(date.getMonth() + 1).padStart(2, "0");
+        String(
+            date.getMonth() + 1
+        ).padStart(2, "0");
 
     const day =
-        String(date.getDate()).padStart(2, "0");
+        String(
+            date.getDate()
+        ).padStart(2, "0");
+
 
     return `${year}-${month}-${day}`;
 
@@ -1362,7 +2155,8 @@ function dateKey(date) {
 
 function formatDate(value) {
 
-    const p = value.split("-");
+    const p =
+        value.split("-");
 
     return `${p[2]}.${p[1]}.${p[0]}`;
 
@@ -1371,17 +2165,24 @@ function formatDate(value) {
 
 function getTodayKey() {
 
-    return dateKey(new Date());
+    return dateKey(
+        new Date()
+    );
 
 }
 
 
-/* ================= BLOKLANISH ================= */
+/* =====================================================
+   BLOKLANISH
+===================================================== */
 
 function getLockReason(dateString) {
 
     const date =
-        new Date(dateString + "T00:00:00");
+        new Date(
+            dateString + "T00:00:00"
+        );
+
 
     const today =
         new Date();
@@ -1393,11 +2194,13 @@ function getLockReason(dateString) {
         0
     );
 
+
     if (date < today) {
 
         return "🔒 Kun yakunlangan";
 
     }
+
 
     if (date.getDay() === 0) {
 
@@ -1405,13 +2208,17 @@ function getLockReason(dateString) {
 
     }
 
+
     if (holidays[dateString]) {
 
         return holidays[dateString];
 
     }
 
-    for (const vacation of vacations) {
+
+    for (
+        const vacation of vacations
+    ) {
 
         if (
             dateString >= vacation.start &&
@@ -1424,12 +2231,15 @@ function getLockReason(dateString) {
 
     }
 
+
     return null;
 
 }
 
 
-/* ================= SANALAR ================= */
+/* =====================================================
+   SANALAR YARATISH
+===================================================== */
 
 function generateDates() {
 
@@ -1438,15 +2248,21 @@ function generateDates() {
     const current =
         new Date(startDate);
 
-    while (current <= endDate) {
 
-        result.push(dateKey(current));
+    while (
+        current <= endDate
+    ) {
+
+        result.push(
+            dateKey(current)
+        );
 
         current.setDate(
             current.getDate() + 1
         );
 
     }
+
 
     return result;
 
@@ -1457,27 +2273,35 @@ const dates =
     generateDates();
 
 
-/* ================= DAVOMAT ================= */
+/* =====================================================
+   DAVOMAT
+===================================================== */
 
 function getAttendance(
     dateString,
     studentIndex
 ) {
 
-    if (!attendanceData[dateString]) {
+    if (
+        !attendanceData[dateString]
+    ) {
 
         return "";
 
     }
 
+
     return (
-        attendanceData[dateString][studentIndex] || ""
+        attendanceData[dateString][studentIndex]
+        || ""
     );
 
 }
 
 
-/* ================= RANG ================= */
+/* =====================================================
+   RANG
+===================================================== */
 
 function updateCellColor(
     cell,
@@ -1489,11 +2313,13 @@ function updateCellColor(
         "minus"
     );
 
+
     if (value === "+") {
 
         cell.classList.add("plus");
 
     }
+
 
     if (value === "-") {
 
@@ -1504,18 +2330,26 @@ function updateCellColor(
 }
 
 
-/* ================= JADVAL ================= */
+/* =====================================================
+   JADVAL
+===================================================== */
 
 function renderTable() {
 
     const header =
-        document.getElementById("dateHeader");
+        document.getElementById(
+            "dateHeader"
+        );
 
     const body =
-        document.getElementById("attendanceBody");
+        document.getElementById(
+            "attendanceBody"
+        );
+
 
     const todayKey =
         getTodayKey();
+
 
     header.innerHTML = `
 
@@ -1537,14 +2371,18 @@ function renderTable() {
             th.className =
                 "date-column";
 
-            if (dateString === todayKey) {
+
+            if (
+                dateString === todayKey
+            ) {
 
                 th.classList.add(
                     "today-column"
                 );
 
                 th.textContent =
-                    "📅 " + formatDate(dateString);
+                    "📅 " +
+                    formatDate(dateString);
 
                 th.title =
                     "Bugungi sana";
@@ -1555,6 +2393,7 @@ function renderTable() {
                     formatDate(dateString);
 
             }
+
 
             header.appendChild(th);
 
@@ -1574,6 +2413,7 @@ function renderTable() {
             const tr =
                 document.createElement("tr");
 
+
             const number =
                 document.createElement("td");
 
@@ -1592,6 +2432,7 @@ function renderTable() {
 
 
             tr.appendChild(number);
+
             tr.appendChild(name);
 
 
@@ -1604,12 +2445,15 @@ function renderTable() {
                     td.className =
                         "attendance-cell";
 
+
                     const isToday =
                         dateString === todayKey;
 
 
                     const lock =
-                        getLockReason(dateString);
+                        getLockReason(
+                            dateString
+                        );
 
 
                     if (isToday) {
@@ -1630,7 +2474,9 @@ function renderTable() {
 
                     if (lock) {
 
-                        td.classList.add("locked");
+                        td.classList.add(
+                            "locked"
+                        );
 
                         td.contentEditable =
                             "false";
@@ -1645,7 +2491,6 @@ function renderTable() {
                             td,
                             saved
                         );
-
 
                     } else {
 
@@ -1738,7 +2583,9 @@ function renderTable() {
 }
 
 
-/* ================= FIREBASE SAQLASH ================= */
+/* =====================================================
+   FIREBASE SAQLASH
+===================================================== */
 
 function saveData() {
 
@@ -1758,10 +2605,13 @@ function saveData() {
 }
 
 
-/* ================= FIREBASE ================= */
+/* =====================================================
+   FIREBASE
+===================================================== */
 
 onValue(
     attendanceRef,
+
     snapshot => {
 
         const data =
@@ -1817,7 +2667,9 @@ onValue(
 );
 
 
-/* ================= HISOBOT ================= */
+/* =====================================================
+   HISOBOTNI OCHISH
+===================================================== */
 
 function openReport() {
 
@@ -1858,7 +2710,9 @@ function closeReport() {
 }
 
 
-/* ================= REPORT TAB ================= */
+/* =====================================================
+   REPORT TAB
+===================================================== */
 
 function showReportTab(tab) {
 
@@ -1905,11 +2759,14 @@ function showReportTab(tab) {
 }
 
 
-/* ================= O‘QUVCHI UMUMIY ================= */
+/* =====================================================
+   O‘QUVCHI STATISTIKASI
+===================================================== */
 
 function getStudentStats(index) {
 
     let plus = 0;
+
     let minus = 0;
 
 
@@ -1943,15 +2800,20 @@ function getStudentStats(index) {
     return {
 
         plus,
+
         minus,
-        total: plus + minus
+
+        total:
+            plus + minus
 
     };
 
 }
 
 
-/* ================= HAFTA ================= */
+/* =====================================================
+   HAFTA
+===================================================== */
 
 function getMonday(date) {
 
@@ -1986,7 +2848,9 @@ function getMonday(date) {
 }
 
 
-/* ================= HAFTALIK ================= */
+/* =====================================================
+   HAFTALIK
+===================================================== */
 
 function getStudentWeekStats(index) {
 
@@ -2008,7 +2872,9 @@ function getStudentWeekStats(index) {
 
 
     let plus = 0;
+
     let minus = 0;
+
     let total = 0;
 
 
@@ -2017,7 +2883,8 @@ function getStudentWeekStats(index) {
 
             const date =
                 new Date(
-                    dateString + "T00:00:00"
+                    dateString +
+                    "T00:00:00"
                 );
 
 
@@ -2081,15 +2948,21 @@ function getStudentWeekStats(index) {
 
 
     return {
+
         plus,
+
         minus,
+
         total
+
     };
 
 }
 
 
-/* ================= OYLIK ================= */
+/* =====================================================
+   OYLIK
+===================================================== */
 
 function getStudentMonthStats(index) {
 
@@ -2105,7 +2978,9 @@ function getStudentMonthStats(index) {
 
 
     let plus = 0;
+
     let minus = 0;
+
     let total = 0;
 
 
@@ -2114,7 +2989,8 @@ function getStudentMonthStats(index) {
 
             const date =
                 new Date(
-                    dateString + "T00:00:00"
+                    dateString +
+                    "T00:00:00"
                 );
 
 
@@ -2178,15 +3054,21 @@ function getStudentMonthStats(index) {
 
 
     return {
+
         plus,
+
         minus,
+
         total
+
     };
 
 }
 
 
-/* ================= O‘QUVCHI DETAIL ================= */
+/* =====================================================
+   O‘QUVCHI DETAIL
+===================================================== */
 
 function showStudentDetail(index) {
 
@@ -2278,7 +3160,9 @@ function showStudentDetail(index) {
 }
 
 
-/* ================= ASOSIY HISOBOT ================= */
+/* =====================================================
+   ASOSIY HISOBOT
+===================================================== */
 
 function renderReport() {
 
@@ -2300,6 +3184,7 @@ function renderReport() {
 
 
     let totalPlus = 0;
+
     let totalMinus = 0;
 
 
@@ -2406,13 +3291,17 @@ function renderReport() {
 
 
     renderDailyReport();
+
     renderWeeklyReport();
+
     renderMonthlyReport();
 
 }
 
 
-/* ================= KUNLIK ================= */
+/* =====================================================
+   KUNLIK
+===================================================== */
 
 function renderDailyReport() {
 
@@ -2429,6 +3318,7 @@ function renderDailyReport() {
         dateString => {
 
             let plus = 0;
+
             let minus = 0;
 
 
@@ -2506,7 +3396,9 @@ function renderDailyReport() {
 }
 
 
-/* ================= HAFTALIK HISOBOT ================= */
+/* =====================================================
+   HAFTALIK HISOBOT
+===================================================== */
 
 function renderWeeklyReport() {
 
@@ -2527,7 +3419,8 @@ function renderWeeklyReport() {
 
             const date =
                 new Date(
-                    dateString + "T00:00:00"
+                    dateString +
+                    "T00:00:00"
                 );
 
 
@@ -2544,7 +3437,9 @@ function renderWeeklyReport() {
                 weeks[key] = {
 
                     plus: 0,
+
                     minus: 0,
+
                     total: 0
 
                 };
@@ -2613,7 +3508,9 @@ function renderWeeklyReport() {
                     weeks[key];
 
 
-                if (data.total === 0) {
+                if (
+                    data.total === 0
+                ) {
 
                     return;
 
@@ -2622,7 +3519,8 @@ function renderWeeklyReport() {
 
                 const monday =
                     new Date(
-                        key + "T00:00:00"
+                        key +
+                        "T00:00:00"
                     );
 
 
@@ -2672,7 +3570,9 @@ function renderWeeklyReport() {
 }
 
 
-/* ================= OYLAR ================= */
+/* =====================================================
+   OYLAR
+===================================================== */
 
 const monthNames = [
 
@@ -2692,7 +3592,9 @@ const monthNames = [
 ];
 
 
-/* ================= OYLIK HISOBOT ================= */
+/* =====================================================
+   OYLIK HISOBOT
+===================================================== */
 
 function renderMonthlyReport() {
 
@@ -2713,7 +3615,8 @@ function renderMonthlyReport() {
 
             const date =
                 new Date(
-                    dateString + "T00:00:00"
+                    dateString +
+                    "T00:00:00"
                 );
 
 
@@ -2735,9 +3638,13 @@ function renderMonthlyReport() {
                 months[key] = {
 
                     year,
+
                     month,
+
                     plus: 0,
+
                     minus: 0,
+
                     total: 0
 
                 };
@@ -2806,7 +3713,9 @@ function renderMonthlyReport() {
                     months[key];
 
 
-                if (data.total === 0) {
+                if (
+                    data.total === 0
+                ) {
 
                     return;
 
@@ -2849,11 +3758,18 @@ function renderMonthlyReport() {
 }
 
 
-/* ================= LOGIN TEKSHIRISH ================= */
+/* =====================================================
+   LOGIN TEKSHIRISH
+===================================================== */
 
 if (
-    sessionStorage.getItem("davomat_login") === "true" ||
-    localStorage.getItem("davomat_remember") === "true"
+    sessionStorage.getItem(
+        "davomat_login"
+    ) === "true"
+    ||
+    localStorage.getItem(
+        "davomat_remember"
+    ) === "true"
 ) {
 
     showMain();
@@ -2867,7 +3783,9 @@ if (
 }
 
 
-/* ================= TUGMALAR ================= */
+/* =====================================================
+   TUGMALAR
+===================================================== */
 
 document.getElementById(
     "loginButton"
@@ -2882,38 +3800,6 @@ document.getElementById(
 ).addEventListener(
     "click",
     openReport
-);
-
-
-/* ================= TELEGRAM ================= */
-
-document.getElementById(
-    "telegramButton"
-).addEventListener(
-    "click",
-    function() {
-
-        window.open(
-            "https://t.me/davomat11a_bot",
-            "_blank"
-        );
-
-    }
-);
-
-
-document.getElementById(
-    "telegramReportButton"
-).addEventListener(
-    "click",
-    function() {
-
-        window.open(
-            "https://t.me/davomat11a_bot",
-            "_blank"
-        );
-
-    }
 );
 
 
@@ -2989,7 +3875,9 @@ document.getElementById(
 );
 
 
-/* ================= ENTER ================= */
+/* =====================================================
+   ENTER
+===================================================== */
 
 document.getElementById(
     "password"
@@ -2997,7 +3885,9 @@ document.getElementById(
     "keydown",
     function(event) {
 
-        if (event.key === "Enter") {
+        if (
+            event.key === "Enter"
+        ) {
 
             login();
 
@@ -3007,7 +3897,9 @@ document.getElementById(
 );
 
 
-/* ================= MIDNIGHT ================= */
+/* =====================================================
+   MIDNIGHT
+===================================================== */
 
 function scheduleMidnightRefresh() {
 
@@ -3041,6 +3933,7 @@ function scheduleMidnightRefresh() {
         function() {
 
             renderTable();
+
             renderReport();
 
             scheduleMidnightRefresh();
@@ -3052,7 +3945,9 @@ function scheduleMidnightRefresh() {
 }
 
 
-/* ================= BOSHLASH ================= */
+/* =====================================================
+   BOSHLASH
+===================================================== */
 
 renderTable();
 
