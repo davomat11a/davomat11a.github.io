@@ -21,10 +21,6 @@
 
 <style>
 
-/* =========================
-   MAIN
-========================= */
-
 *{
  box-sizing:border-box;
 }
@@ -44,6 +40,7 @@ body{
 button,input{
  font-family:inherit;
 }
+
 
 /* =========================
    LOGIN
@@ -181,8 +178,9 @@ button,input{
  font-size:14px;
 }
 
+
 /* =========================
-   GUEST BUTTON
+   GUEST
 ========================= */
 
 .guest-button{
@@ -203,6 +201,7 @@ button,input{
  text-align:center;
  line-height:1.5;
 }
+
 
 /* =========================
    DARK
@@ -244,6 +243,7 @@ body.dark{
  background:#252b33;
  color:#b0bec5;
 }
+
 
 /* =========================
    HEADER
@@ -304,6 +304,7 @@ header h2{
  box-shadow:0 5px 14px rgba(0,0,0,.15);
 }
 
+
 /* =========================
    VIEW MODE
 ========================= */
@@ -323,6 +324,7 @@ header h2{
 .editor-badge{
  background:rgba(255,255,255,.18);
 }
+
 
 /* =========================
    TELEGRAM
@@ -363,6 +365,7 @@ header h2{
  font-size:18px;
 }
 
+
 /* =========================
    CONTAINER
 ========================= */
@@ -373,6 +376,7 @@ header h2{
  margin:auto;
  padding:18px;
 }
+
 
 /* =========================
    INFO
@@ -406,6 +410,7 @@ header h2{
  background:#3b3422;
  color:#ffe082;
 }
+
 
 /* =========================
    TABLE
@@ -458,6 +463,7 @@ th.name-column{
  min-width:60px;
 }
 
+
 /* =========================
    TODAY
 ========================= */
@@ -472,6 +478,7 @@ th.name-column{
  background:#fff!important;
  color:#111!important;
 }
+
 
 /* =========================
    ATTENDANCE
@@ -514,6 +521,7 @@ th.name-column{
  color:#e53935!important;
 }
 
+
 /* =========================
    LOCKED
 ========================= */
@@ -547,6 +555,7 @@ th.name-column{
  background:#2f343a!important;
  color:#999!important;
 }
+
 
 /* =========================
    REPORT
@@ -610,6 +619,7 @@ th.name-column{
  display:block;
 }
 
+
 /* =========================
    CARDS
 ========================= */
@@ -660,6 +670,7 @@ th.name-column{
  color:#2e7d32;
 }
 
+
 /* =========================
    STUDENT DETAIL
 ========================= */
@@ -707,6 +718,7 @@ th.name-column{
  margin-top:6px;
 }
 
+
 /* =========================
    MOBILE
 ========================= */
@@ -751,7 +763,9 @@ th.name-column{
  .viewer-badge{
   justify-content:center;
  }
+
 }
+
 
 /* =========================
    SCROLLBAR
@@ -786,7 +800,9 @@ th.name-column{
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      LOGIN PAGE
@@ -796,13 +812,18 @@ th.name-column{
 
  <div class="login-box">
 
-  <div class="login-logo">📋</div>
+  <div class="login-logo">
+   📋
+  </div>
 
-  <h2>Davomat jurnali</h2>
+  <h2>
+   Davomat jurnali
+  </h2>
 
   <div class="login-subtitle">
    11-A sinf elektron jurnali
   </div>
+
 
   <input
    type="text"
@@ -810,6 +831,7 @@ th.name-column{
    placeholder="Login"
    autocomplete="username"
   >
+
 
   <div class="password-box">
 
@@ -830,24 +852,40 @@ th.name-column{
 
   </div>
 
+
   <label class="remember">
-   <input type="checkbox" id="rememberLogin">
+
+   <input
+    type="checkbox"
+    id="rememberLogin"
+   >
+
    Loginni eslab qolish
+
   </label>
+
 
   <button id="loginButton">
    🔐 Kirish
   </button>
 
-  <button id="guestButton" class="guest-button">
+
+  <button
+   id="guestButton"
+   class="guest-button"
+  >
    👀 Parolsiz kirish
   </button>
 
+
   <div class="guest-info">
+
    Parolsiz kirish orqali saytni ko‘rish,
    hisobotlardan foydalanish mumkin.
    Davomat kiritish imkoniyati mavjud emas.
+
   </div>
+
 
   <div id="loginError"></div>
 
@@ -870,15 +908,21 @@ th.name-column{
    📋 11-A sinf davomati
   </h2>
 
+
   <div class="header-buttons">
 
-   <span id="userModeBadge" class="viewer-badge">
+   <span
+    id="userModeBadge"
+    class="viewer-badge"
+   >
     👤
    </span>
+
 
    <button id="reportButton">
     📊 Hisobot
    </button>
+
 
    <a
     href="https://t.me/davomat11a_bot"
@@ -886,13 +930,20 @@ th.name-column{
     class="telegram-button"
     title="Telegram botni ochish"
    >
-    <span class="telegram-icon">✈️</span>
+
+    <span class="telegram-icon">
+     ✈️
+    </span>
+
     Telegram bot
+
    </a>
+
 
    <button id="darkButton">
     🌙 Dark
    </button>
+
 
    <button id="logoutButton">
     🚪 Chiqish
@@ -928,17 +979,24 @@ th.name-column{
 
   🔒 Bloklangan kun
 
-  <div id="firebaseStatus" class="firebase-status">
+
+  <div
+   id="firebaseStatus"
+   class="firebase-status"
+  >
    🔄 Firebase ulanmoqda...
   </div>
+
 
   <div
    id="viewerWarning"
    class="viewer-warning"
    style="display:none;"
   >
+
    👀 Siz kuzatuvchi rejimidasiz.
    Davomat kiritish va o‘zgartirish imkoniyati yopilgan.
+
   </div>
 
  </div>
@@ -952,7 +1010,9 @@ th.name-column{
 
     <tr id="dateHeader">
 
-     <th>№</th>
+     <th>
+      №
+     </th>
 
      <th class="name-column">
       Ism va Familya
@@ -961,6 +1021,7 @@ th.name-column{
     </tr>
 
    </thead>
+
 
    <tbody id="attendanceBody"></tbody>
 
@@ -987,20 +1048,28 @@ th.name-column{
    📊 Davomat hisoboti
   </h2>
 
+
   <div class="header-buttons">
 
    <button id="backButton">
     ← Ortga
    </button>
 
+
    <a
     href="https://t.me/davomat11a_bot"
     target="_blank"
     class="telegram-button"
    >
-    <span class="telegram-icon">✈️</span>
+
+    <span class="telegram-icon">
+     ✈️
+    </span>
+
     Telegram bot
+
    </a>
+
 
    <button id="reportDarkButton">
     🌙 Dark
@@ -1014,6 +1083,7 @@ th.name-column{
 
 
 <div class="report-container">
+
 
  <div class="search-box">
 
@@ -1035,13 +1105,16 @@ th.name-column{
    👨‍🎓 O‘quvchilar
   </button>
 
+
   <button id="tabDaily">
    📅 Kunlik
   </button>
 
+
   <button id="tabWeekly">
    📆 Haftalik
   </button>
+
 
   <button id="tabMonthly">
    🗓️ Oylik
@@ -1058,6 +1131,7 @@ th.name-column{
  >
 
   <div class="summary">
+
 
    <div class="card">
 
@@ -1122,6 +1196,7 @@ th.name-column{
 
    </div>
 
+
   </div>
 
 
@@ -1133,19 +1208,30 @@ th.name-column{
 
      <tr>
 
-      <th>№</th>
+      <th>
+       №
+      </th>
 
-      <th>Ism va Familya</th>
+      <th>
+       Ism va Familya
+      </th>
 
-      <th>🔵 Keldi</th>
+      <th>
+       🔵 Keldi
+      </th>
 
-      <th>🔴 Qoldirdi</th>
+      <th>
+       🔴 Qoldirdi
+      </th>
 
-      <th>📅 Jami</th>
+      <th>
+       📅 Jami
+      </th>
 
      </tr>
 
     </thead>
+
 
     <tbody id="reportBody"></tbody>
 
@@ -1162,7 +1248,9 @@ th.name-column{
 
    <h3 id="selectedStudentName"></h3>
 
+
    <div class="detail-grid">
+
 
     <div class="detail-card">
 
@@ -1396,6 +1484,7 @@ th.name-column{
 
  </div>
 
+
 </div>
 
 </div>
@@ -1407,10 +1496,16 @@ th.name-column{
 
 <script type="module">
 
+
+/* =========================
+   FIREBASE IMPORT
+========================= */
+
 import {
  initializeApp
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 
 import {
  getDatabase,
@@ -1421,8 +1516,18 @@ import {
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 
+import {
+ getAuth,
+ signInWithEmailAndPassword,
+ signInAnonymously,
+ signOut,
+ onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
 /* =========================
-   FIREBASE
+   FIREBASE CONFIG
 ========================= */
 
 const firebaseConfig = {
@@ -1454,12 +1559,53 @@ const firebaseConfig = {
 };
 
 
-const app=initializeApp(firebaseConfig);
+const app =
+ initializeApp(
+  firebaseConfig
+);
 
-const db=getDatabase(app);
 
-const attendanceRef=
- ref(db,"davomat_jurnali");
+const db =
+ getDatabase(app);
+
+
+const auth =
+ getAuth(app);
+
+
+const attendanceRef =
+ ref(
+  db,
+  "davomat_jurnali"
+);
+
+
+/* =========================
+   LOGIN ACCOUNTS
+========================= */
+
+const loginAccounts={
+
+ "abdulloh04072009":
+  "abdullohhabibullayev2009@gmail.com",
+
+ "muhammadali2010":
+  "muhammadaliabdumutallipov0@gmail.com"
+
+};
+
+
+/* =========================
+   EDITOR UIDS
+========================= */
+
+const editorUIDs=[
+
+ "svVfk6AVDgYkZaplAifpMmJ4oMq1",
+
+ "vIHkF72SOLee4vma4xBeVl7Hhll2"
+
+];
 
 
 /* =========================
@@ -1501,14 +1647,20 @@ const students=[
    DATES
 ========================= */
 
-const startDate=
- new Date("2026-09-28T00:00:00");
+const startDate =
+ new Date(
+  "2026-09-28T00:00:00"
+);
 
-const endDate=
- new Date("2027-05-25T00:00:00");
+
+const endDate =
+ new Date(
+  "2027-05-25T00:00:00"
+);
 
 
 const lessonsPerDay={
+
  0:0,
  1:5,
  2:6,
@@ -1516,6 +1668,7 @@ const lessonsPerDay={
  4:5,
  5:6,
  6:4
+
 };
 
 
@@ -1566,330 +1719,16 @@ const vacations=[
 
 
 /* =========================
-   LOGIN USERS
+   VARIABLES
 ========================= */
-
-const users={
-
- "abdulloh04072009":{
-  password:"abdulloh2009.",
-  name:"Abdulloh",
-  canEdit:true
- },
-
- "muhammadali2010":{
-  password:"muhammadali2010.",
-  name:"Muhammadali",
-  canEdit:true
- }
-
-};
-
-
-/*
-  Hozirgi foydalanuvchi:
-
-  editor = davomat kiritishi mumkin
-  viewer = faqat ko‘rishi mumkin
-*/
 
 let currentUser=null;
-
-
-/* =========================
-   ATTENDANCE
-========================= */
 
 let attendanceData={};
 
 
 /* =========================
-   LOGIN
-========================= */
-
-function login(){
-
- const username=
-  document.getElementById("username").value.trim();
-
- const password=
-  document.getElementById("password").value;
-
- const remember=
-  document.getElementById("rememberLogin").checked;
-
-
- const user=users[username];
-
-
- if(user && user.password===password){
-
-  currentUser={
-   username:username,
-   name:user.name,
-   canEdit:user.canEdit,
-   mode:"editor"
-  };
-
-
-  sessionStorage.setItem(
-   "davomat_user",
-   JSON.stringify(currentUser)
-  );
-
-
-  if(remember){
-
-   localStorage.setItem(
-    "davomat_user",
-    JSON.stringify(currentUser)
-   );
-
-  }else{
-
-   localStorage.removeItem(
-    "davomat_user"
-   );
-
-  }
-
-
-  document.getElementById(
-   "loginError"
-  ).textContent="";
-
-
-  showMain();
-
- }else{
-
-  document.getElementById(
-   "loginError"
-  ).textContent=
-   "Login yoki parol noto‘g‘ri!";
-
- }
-
-}
-
-
-/* =========================
-   GUEST LOGIN
-========================= */
-
-function guestLogin(){
-
- currentUser={
-
-  username:"guest",
-
-  name:"Kuzatuvchi",
-
-  canEdit:false,
-
-  mode:"viewer"
-
- };
-
-
- sessionStorage.setItem(
-  "davomat_user",
-  JSON.stringify(currentUser)
- );
-
-
- localStorage.removeItem(
-  "davomat_user"
- );
-
-
- document.getElementById(
-  "loginError"
- ).textContent="";
-
-
- showMain();
-
-}
-
-
-/* =========================
-   LOGOUT
-========================= */
-
-function logout(){
-
- sessionStorage.removeItem(
-  "davomat_user"
- );
-
- localStorage.removeItem(
-  "davomat_user"
- );
-
- currentUser=null;
-
-
- document.getElementById(
-  "mainPage"
- ).style.display="none";
-
- document.getElementById(
-  "reportPage"
- ).style.display="none";
-
- document.getElementById(
-  "loginPage"
- ).style.display="flex";
-
- document.getElementById(
-  "username"
- ).value="";
-
- document.getElementById(
-  "password"
- ).value="";
-
-}
-
-
-/* =========================
-   SHOW MAIN
-========================= */
-
-function showMain(){
-
- document.getElementById(
-  "loginPage"
- ).style.display="none";
-
- document.getElementById(
-  "reportPage"
- ).style.display="none";
-
- document.getElementById(
-  "mainPage"
- ).style.display="block";
-
-
- updateUserInterface();
-
- renderTable();
-
-}
-
-
-/* =========================
-   USER INTERFACE
-========================= */
-
-function updateUserInterface(){
-
- const badge=
-  document.getElementById(
-   "userModeBadge"
-  );
-
- const warning=
-  document.getElementById(
-   "viewerWarning"
-  );
-
-
- if(!currentUser)return;
-
-
- if(currentUser.mode==="viewer"){
-
-  badge.textContent=
-   "👀 Kuzatuvchi";
-
-  badge.classList.remove(
-   "editor-badge"
-  );
-
-  warning.style.display="block";
-
- }else{
-
-  badge.textContent=
-   "✏️ "+currentUser.name;
-
-  badge.classList.add(
-   "editor-badge"
-  );
-
-  warning.style.display="none";
-
- }
-
-}
-
-
-/* =========================
-   PASSWORD EYE
-========================= */
-
-document
- .getElementById("eyeButton")
- .addEventListener(
-  "click",
-  function(){
-
-   const input=
-    document.getElementById("password");
-
-   if(input.type==="password"){
-
-    input.type="text";
-
-    this.textContent="🙈";
-
-   }else{
-
-    input.type="password";
-
-    this.textContent="👁️";
-
-   }
-
-  }
- );
-
-
-/* =========================
-   DARK MODE
-========================= */
-
-function toggleDark(){
-
- document.body.classList.toggle(
-  "dark"
- );
-
- localStorage.setItem(
-  "davomat_dark",
-  document.body.classList.contains("dark")
- );
-
-}
-
-
-if(
- localStorage.getItem(
-  "davomat_dark"
- )==="true"
-){
-
- document.body.classList.add(
-  "dark"
- );
-
-}
-
-
-/* =========================
-   DATE FUNCTIONS
+   DATE KEY
 ========================= */
 
 function dateKey(date){
@@ -1897,29 +1736,48 @@ function dateKey(date){
  const year=
   date.getFullYear();
 
+
  const month=
   String(
    date.getMonth()+1
-  ).padStart(2,"0");
+  ).padStart(
+   2,
+   "0"
+  );
+
 
  const day=
   String(
    date.getDate()
-  ).padStart(2,"0");
+  ).padStart(
+   2,
+   "0"
+  );
+
 
  return `${year}-${month}-${day}`;
 
 }
 
 
+/* =========================
+   FORMAT DATE
+========================= */
+
 function formatDate(value){
 
- const p=value.split("-");
+ const p=
+  value.split("-");
+
 
  return `${p[2]}.${p[1]}.${p[0]}`;
 
 }
 
+
+/* =========================
+   TODAY
+========================= */
 
 function getTodayKey(){
 
@@ -1931,13 +1789,57 @@ function getTodayKey(){
 
 
 /* =========================
+   GENERATE DATES
+========================= */
+
+function generateDates(){
+
+ const result=[];
+
+ const current=
+  new Date(
+   startDate
+  );
+
+
+ while(
+  current<=endDate
+ ){
+
+  result.push(
+   dateKey(
+    current
+   )
+  );
+
+
+  current.setDate(
+   current.getDate()+1
+  );
+
+ }
+
+
+ return result;
+
+}
+
+
+const dates=
+ generateDates();
+
+
+/* =========================
    LOCK REASON
 ========================= */
 
-function getLockReason(dateString){
+function getLockReason(
+ dateString
+){
 
  /*
-   VIEWER uchun barcha sanalar blok.
+  Viewer uchun barcha kunlar
+  bloklangan.
  */
 
  if(
@@ -1946,51 +1848,69 @@ function getLockReason(dateString){
  ){
 
   return "👀 Kuzatuvchi rejimi";
+
  }
 
 
  const date=
   new Date(
-   dateString+"T00:00:00"
+   dateString+
+   "T00:00:00"
   );
 
 
  const today=
   new Date();
 
+
  today.setHours(
-  0,0,0,0
+  0,
+  0,
+  0,
+  0
  );
 
 
- if(date<today){
+ if(
+  date<today
+ ){
 
   return "🔒 Kun yakunlangan";
 
  }
 
 
- if(date.getDay()===0){
+ if(
+  date.getDay()===0
+ ){
 
   return "Yakshanba";
 
  }
 
 
- if(holidays[dateString]){
+ if(
+  holidays[dateString]
+ ){
 
-  return holidays[dateString];
+  return holidays[
+   dateString
+  ];
 
  }
 
 
  for(
-  const vacation of vacations
+  const vacation
+  of vacations
  ){
 
   if(
-   dateString>=vacation.start &&
-   dateString<=vacation.end
+   dateString>=
+    vacation.start
+   &&
+   dateString<=
+    vacation.end
   ){
 
    return vacation.name;
@@ -2006,39 +1926,6 @@ function getLockReason(dateString){
 
 
 /* =========================
-   GENERATE DATES
-========================= */
-
-function generateDates(){
-
- const result=[];
-
- const current=
-  new Date(startDate);
-
-
- while(current<=endDate){
-
-  result.push(
-   dateKey(current)
-  );
-
-  current.setDate(
-   current.getDate()+1
-  );
-
- }
-
- return result;
-
-}
-
-
-const dates=
- generateDates();
-
-
-/* =========================
    GET ATTENDANCE
 ========================= */
 
@@ -2048,7 +1935,9 @@ function getAttendance(
 ){
 
  if(
-  !attendanceData[dateString]
+  !attendanceData[
+   dateString
+  ]
  ){
 
   return "";
@@ -2056,9 +1945,10 @@ function getAttendance(
  }
 
 
- return (
-  attendanceData[dateString]
-  [studentIndex] || ""
+ return(
+  attendanceData[
+   dateString
+  ][studentIndex] || ""
  );
 
 }
@@ -2079,18 +1969,501 @@ function updateCellColor(
  );
 
 
- if(value==="+"){
+ if(
+  value==="+"
+ ){
 
-  cell.classList.add("plus");
+  cell.classList.add(
+   "plus"
+  );
+
+ }
+
+
+ if(
+  value==="-"
+ ){
+
+  cell.classList.add(
+   "minus"
+  );
+
+ }
+
+}
+
+
+/* =========================
+   SHOW MAIN
+========================= */
+
+function showMain(){
+
+ document.getElementById(
+  "loginPage"
+ ).style.display=
+  "none";
+
+
+ document.getElementById(
+  "reportPage"
+ ).style.display=
+  "none";
+
+
+ document.getElementById(
+  "mainPage"
+ ).style.display=
+  "block";
+
+
+ updateUserInterface();
+
+ renderTable();
+
+}
+
+
+/* =========================
+   USER INTERFACE
+========================= */
+
+function updateUserInterface(){
+
+ const badge=
+  document.getElementById(
+   "userModeBadge"
+  );
+
+
+ const warning=
+  document.getElementById(
+   "viewerWarning"
+  );
+
+
+ if(
+  !currentUser
+ ){
+
+  return;
 
  }
 
 
- if(value==="-"){
+ if(
+  currentUser.mode===
+  "viewer"
+ ){
 
-  cell.classList.add("minus");
+  badge.textContent=
+   "👀 Kuzatuvchi";
+
+
+  badge.classList.remove(
+   "editor-badge"
+  );
+
+
+  warning.style.display=
+   "block";
+
+
+ }else{
+
+  badge.textContent=
+   "✏️ "+
+   currentUser.name;
+
+
+  badge.classList.add(
+   "editor-badge"
+  );
+
+
+  warning.style.display=
+   "none";
 
  }
+
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+async function login(){
+
+ const username=
+  document
+   .getElementById(
+    "username"
+   )
+   .value
+   .trim();
+
+
+ const password=
+  document
+   .getElementById(
+    "password"
+   )
+   .value;
+
+
+ const remember=
+  document
+   .getElementById(
+    "rememberLogin"
+   )
+   .checked;
+
+
+ const email=
+  loginAccounts[
+   username
+  ];
+
+
+ if(
+  !email
+ ){
+
+  document.getElementById(
+   "loginError"
+  ).textContent=
+   "Login yoki parol noto‘g‘ri!";
+
+
+  return;
+
+ }
+
+
+ try{
+
+  const result=
+   await signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+   );
+
+
+  const user=
+   result.user;
+
+
+  /*
+   Faqat 2 ta UID editor.
+  */
+
+  if(
+   !editorUIDs.includes(
+    user.uid
+   )
+  ){
+
+   await signOut(
+    auth
+   );
+
+
+   throw new Error(
+    "Ruxsat berilmagan akkaunt."
+   );
+
+  }
+
+
+  currentUser={
+
+   username:
+    username,
+
+   name:
+    username===
+    "abdulloh04072009"
+     ? "Abdulloh"
+     : "Muhammadali",
+
+   canEdit:
+    true,
+
+   mode:
+    "editor",
+
+   uid:
+    user.uid
+
+  };
+
+
+  if(
+   remember
+  ){
+
+   localStorage.setItem(
+    "davomat_login",
+    username
+   );
+
+  }else{
+
+   localStorage.removeItem(
+    "davomat_login"
+   );
+
+  }
+
+
+  sessionStorage.setItem(
+   "davomat_user",
+   JSON.stringify(
+    currentUser
+   )
+  );
+
+
+  document.getElementById(
+   "loginError"
+  ).textContent=
+   "";
+
+
+  showMain();
+
+
+ }catch(error){
+
+  console.error(
+   error
+  );
+
+
+  document.getElementById(
+   "loginError"
+  ).textContent=
+   "Login yoki parol noto‘g‘ri!";
+
+ }
+
+}
+
+
+/* =========================
+   GUEST LOGIN
+========================= */
+
+async function guestLogin(){
+
+ try{
+
+  const result=
+   await signInAnonymously(
+    auth
+   );
+
+
+  currentUser={
+
+   username:
+    "guest",
+
+   name:
+    "Kuzatuvchi",
+
+   canEdit:
+    false,
+
+   mode:
+    "viewer",
+
+   uid:
+    result.user.uid
+
+  };
+
+
+  sessionStorage.setItem(
+   "davomat_user",
+   JSON.stringify(
+    currentUser
+   )
+  );
+
+
+  localStorage.removeItem(
+   "davomat_user"
+  );
+
+
+  document.getElementById(
+   "loginError"
+  ).textContent=
+   "";
+
+
+  showMain();
+
+
+ }catch(error){
+
+  console.error(
+   error
+  );
+
+
+  document.getElementById(
+   "loginError"
+  ).textContent=
+   "Parolsiz kirishda xatolik yuz berdi.";
+
+ }
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+async function logout(){
+
+ try{
+
+  await signOut(
+   auth
+  );
+
+ }catch(error){
+
+  console.error(
+   error
+  );
+
+ }
+
+
+ currentUser=
+  null;
+
+
+ sessionStorage.removeItem(
+  "davomat_user"
+ );
+
+
+ document.getElementById(
+  "mainPage"
+ ).style.display=
+  "none";
+
+
+ document.getElementById(
+  "reportPage"
+ ).style.display=
+  "none";
+
+
+ document.getElementById(
+  "loginPage"
+ ).style.display=
+  "flex";
+
+
+ document.getElementById(
+  "username"
+ ).value=
+  "";
+
+
+ document.getElementById(
+  "password"
+ ).value=
+  "";
+
+}
+
+
+/* =========================
+   PASSWORD EYE
+========================= */
+
+document
+ .getElementById(
+  "eyeButton"
+ )
+ .addEventListener(
+  "click",
+  function(){
+
+   const input=
+    document.getElementById(
+     "password"
+    );
+
+
+   if(
+    input.type===
+    "password"
+   ){
+
+    input.type=
+     "text";
+
+
+    this.textContent=
+     "🙈";
+
+   }else{
+
+    input.type=
+     "password";
+
+
+    this.textContent=
+     "👁️";
+
+   }
+
+  }
+);
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+function toggleDark(){
+
+ document.body.classList.toggle(
+  "dark"
+ );
+
+
+ localStorage.setItem(
+  "davomat_dark",
+
+  document.body.classList.contains(
+   "dark"
+  )
+ );
+
+}
+
+
+if(
+ localStorage.getItem(
+  "davomat_dark"
+ )===
+ "true"
+){
+
+ document.body.classList.add(
+  "dark"
+ );
 
 }
 
@@ -2106,6 +2479,7 @@ function renderTable(){
    "dateHeader"
   );
 
+
  const body=
   document.getElementById(
    "attendanceBody"
@@ -2116,35 +2490,46 @@ function renderTable(){
   getTodayKey();
 
 
- header.innerHTML=
-  `<th>№</th>
-   <th class="name-column">
-    Ism va Familya
-   </th>`;
+ header.innerHTML=`
+
+  <th>№</th>
+
+  <th class="name-column">
+   Ism va Familya
+  </th>
+
+ `;
 
 
  dates.forEach(
   dateString=>{
 
    const th=
-    document.createElement("th");
+    document.createElement(
+     "th"
+    );
+
 
    th.className=
     "date-column";
 
 
    if(
-    dateString===todayKey
+    dateString===
+    todayKey
    ){
 
     th.classList.add(
      "today-column"
     );
 
+
     th.textContent=
-     "📅 "+formatDate(
+     "📅 "+
+     formatDate(
       dateString
      );
+
 
     th.title=
      "Bugungi sana";
@@ -2159,59 +2544,85 @@ function renderTable(){
    }
 
 
-   header.appendChild(th);
+   header.appendChild(
+    th
+   );
 
   }
  );
 
 
- body.innerHTML="";
+ body.innerHTML=
+  "";
 
 
  students.forEach(
-  (student,studentIndex)=>{
+  (
+   student,
+   studentIndex
+  )=>{
 
    const tr=
-    document.createElement("tr");
+    document.createElement(
+     "tr"
+    );
 
 
    const number=
-    document.createElement("td");
+    document.createElement(
+     "td"
+    );
+
 
    number.textContent=
     studentIndex+1;
 
 
    const name=
-    document.createElement("td");
+    document.createElement(
+     "td"
+    );
+
 
    name.className=
     "name-column";
+
 
    name.textContent=
     student;
 
 
-   tr.appendChild(number);
+   tr.appendChild(
+    number
+   );
 
-   tr.appendChild(name);
+
+   tr.appendChild(
+    name
+   );
 
 
    dates.forEach(
     dateString=>{
 
      const td=
-      document.createElement("td");
+      document.createElement(
+       "td"
+      );
+
 
      td.className=
       "attendance-cell";
 
 
      const isToday=
-      dateString===todayKey;
+      dateString===
+      todayKey;
 
 
-     if(isToday){
+     if(
+      isToday
+     ){
 
       td.classList.add(
        "today-attendance"
@@ -2227,20 +2638,19 @@ function renderTable(){
       );
 
 
-     /*
-       MUHIM:
-
-       Viewer bo‘lsa,
-       barcha sanalar bloklanadi.
-     */
-
      const lock=
       getLockReason(
        dateString
       );
 
 
-     if(lock){
+     /* =====================
+        LOCKED
+     ===================== */
+
+     if(
+      lock
+     ){
 
       td.classList.add(
        "locked"
@@ -2249,15 +2659,19 @@ function renderTable(){
 
       if(
        currentUser &&
-       currentUser.mode==="viewer"
+       currentUser.mode===
+       "viewer"
       ){
 
        td.classList.add(
         "viewer-locked"
        );
 
+
        td.textContent=
-        saved || "🔒";
+        saved ||
+        "🔒";
+
 
        td.title=
         "Davomat kiritish uchun maxsus login kerak";
@@ -2265,7 +2679,9 @@ function renderTable(){
       }else{
 
        td.textContent=
-        saved || "🔒";
+        saved ||
+        "🔒";
+
 
        td.title=
         lock;
@@ -2285,40 +2701,55 @@ function renderTable(){
 
      }else{
 
-      /*
-        Faqat EDITOR yozishi mumkin.
-      */
+      /* =====================
+         VIEWER
+      ===================== */
 
       if(
        !currentUser ||
-       currentUser.mode!=="editor"
+       currentUser.mode!==
+       "editor"
       ){
 
        td.classList.add(
         "viewer-locked"
        );
 
+
        td.contentEditable=
         "false";
 
+
        td.textContent=
-        saved || "🔒";
+        saved ||
+        "🔒";
+
 
        td.title=
         "Davomat kiritish uchun maxsus login kerak";
 
+
       }else{
+
+       /* =====================
+          EDITOR
+       ===================== */
 
        td.contentEditable=
         "true";
 
-       td.spellcheck=false;
+
+       td.spellcheck=
+        false;
 
 
-       if(saved){
+       if(
+        saved
+       ){
 
         td.textContent=
          saved;
+
 
         updateCellColor(
          td,
@@ -2337,30 +2768,41 @@ function renderTable(){
 
 
          if(
-          value!=="+" &&
-          value!=="-"
+          value!==
+          "+" &&
+          value!==
+          "-"
          ){
 
-          value="";
+          value=
+           "";
 
-          td.textContent="";
+
+          td.textContent=
+           "";
 
          }
 
 
          if(
-          !attendanceData[dateString]
+          !attendanceData[
+           dateString
+          ]
          ){
 
-          attendanceData[dateString]={};
+          attendanceData[
+           dateString
+          ]={};
 
          }
 
 
-         attendanceData
-          [dateString]
-          [studentIndex]=
-           value;
+         attendanceData[
+          dateString
+         ][
+          studentIndex
+         ]=
+          value;
 
 
          updateCellColor(
@@ -2379,13 +2821,17 @@ function renderTable(){
      }
 
 
-     tr.appendChild(td);
+     tr.appendChild(
+      td
+     );
 
     }
    );
 
 
-   body.appendChild(tr);
+   body.appendChild(
+    tr
+   );
 
   }
  );
@@ -2397,15 +2843,12 @@ function renderTable(){
    SAVE DATA
 ========================= */
 
-function saveData(){
-
- /*
-   Faqat editor yozishi mumkin.
- */
+async function saveData(){
 
  if(
   !currentUser ||
-  currentUser.mode!=="editor"
+  currentUser.mode!==
+  "editor"
  ){
 
   return;
@@ -2413,45 +2856,51 @@ function saveData(){
  }
 
 
- set(
-  attendanceRef,
-  {
-   attendance:attendanceData,
-   updatedAt:Date.now()
-  }
- );
+ /*
+   Anonymous user hech qachon
+   yozolmaydi.
+ */
 
-}
+ if(
+  !auth.currentUser ||
+  auth.currentUser.isAnonymous
+ ){
 
+  return;
 
-/* =========================
-   FIREBASE
-========================= */
-
-onValue(
- attendanceRef,
- snapshot=>{
-
-  const data=
-   snapshot.val();
+ }
 
 
-  if(
-   data &&
-   data.attendance
-  ){
+ /*
+   Client tekshiruv.
+   Asosiy himoya Rules'da.
+ */
 
-   attendanceData=
-    data.attendance;
+ if(
+  !editorUIDs.includes(
+   auth.currentUser.uid
+  )
+ ){
 
-  }else{
+  return;
 
-   attendanceData={};
-
-  }
+ }
 
 
-  renderTable();
+ try{
+
+  await set(
+   attendanceRef,
+   {
+
+    attendance:
+     attendanceData,
+
+    updatedAt:
+     Date.now()
+
+   }
+  );
 
 
   document.getElementById(
@@ -2460,28 +2909,95 @@ onValue(
    "🟢 Firebase bilan sinxronlangan.";
 
 
-  if(
-   document.getElementById(
-    "reportPage"
-   ).style.display==="block"
-  ){
+ }catch(error){
 
-   renderReport();
+  console.error(
+   "Saqlash xatosi:",
+   error
+  );
 
-  }
-
- },
- error=>{
-
-  console.error(error);
 
   document.getElementById(
    "firebaseStatus"
   ).textContent=
-   "🔴 Firebase ulanishida xatolik.";
+   "🔴 Saqlashda xatolik.";
 
  }
-);
+
+}
+
+
+/* =========================
+   FIREBASE LISTENER
+========================= */
+
+function startFirebaseListener(){
+
+ onValue(
+  attendanceRef,
+
+  snapshot=>{
+
+   const data=
+    snapshot.val();
+
+
+   if(
+    data &&
+    data.attendance
+   ){
+
+    attendanceData=
+     data.attendance;
+
+   }else{
+
+    attendanceData=
+     {};
+
+   }
+
+
+   renderTable();
+
+
+   document.getElementById(
+    "firebaseStatus"
+   ).textContent=
+    "🟢 Firebase bilan sinxronlangan.";
+
+
+   if(
+    document.getElementById(
+     "reportPage"
+    ).style.display===
+    "block"
+   ){
+
+    renderReport();
+
+   }
+
+  },
+
+
+  error=>{
+
+   console.error(
+    error
+   );
+
+
+   document.getElementById(
+    "firebaseStatus"
+   ).textContent=
+    "🔴 Firebase ulanishida xatolik.";
+
+  }
+
+ );
+
+}
 
 
 /* =========================
@@ -2492,21 +3008,26 @@ function openReport(){
 
  document.getElementById(
   "mainPage"
- ).style.display="none";
+ ).style.display=
+  "none";
+
 
  document.getElementById(
   "reportPage"
- ).style.display="block";
+ ).style.display=
+  "block";
 
 
  document.getElementById(
   "studentSearch"
- ).value="";
+ ).value=
+  "";
 
 
  document.getElementById(
   "studentDetail"
- ).style.display="none";
+ ).style.display=
+  "none";
 
 
  showReportTab(
@@ -2524,11 +3045,14 @@ function closeReport(){
 
  document.getElementById(
   "reportPage"
- ).style.display="none";
+ ).style.display=
+  "none";
+
 
  document.getElementById(
   "mainPage"
- ).style.display="block";
+ ).style.display=
+  "block";
 
 }
 
@@ -2537,13 +3061,17 @@ function closeReport(){
    REPORT TAB
 ========================= */
 
-function showReportTab(tab){
+function showReportTab(
+ tab
+){
 
  const sections=[
+
   "students",
   "daily",
   "weekly",
   "monthly"
+
  ];
 
 
@@ -2552,7 +3080,8 @@ function showReportTab(tab){
 
    document
     .getElementById(
-     name+"Section"
+     name+
+     "Section"
     )
     .classList.remove(
      "active"
@@ -2575,7 +3104,8 @@ function showReportTab(tab){
 
  document
   .getElementById(
-   tab+"Section"
+   tab+
+   "Section"
   )
   .classList.add(
    "active"
@@ -2602,9 +3132,12 @@ function showReportTab(tab){
    STUDENT STATS
 ========================= */
 
-function getStudentStats(index){
+function getStudentStats(
+ index
+){
 
  let plus=0;
+
  let minus=0;
 
 
@@ -2618,12 +3151,24 @@ function getStudentStats(index){
     );
 
 
-   if(value==="+")
+   if(
+    value===
+    "+"
+   ){
+
     plus++;
 
+   }
 
-   if(value==="-")
+
+   if(
+    value===
+    "-"
+   ){
+
     minus++;
+
+   }
 
   }
  );
@@ -2632,9 +3177,12 @@ function getStudentStats(index){
  return{
 
   plus,
+
   minus,
+
   total:
-   plus+minus
+   plus+
+   minus
 
  };
 
@@ -2642,16 +3190,22 @@ function getStudentStats(index){
 
 
 /* =========================
-   MONDAY
+   GET MONDAY
 ========================= */
 
-function getMonday(date){
+function getMonday(
+ date
+){
 
  const result=
-  new Date(date);
+  new Date(
+   date
+  );
+
 
  const day=
   result.getDay();
+
 
  const difference=
   day===0
@@ -2666,7 +3220,10 @@ function getMonday(date){
 
 
  result.setHours(
-  0,0,0,0
+  0,
+  0,
+  0,
+  0
  );
 
 
@@ -2679,18 +3236,24 @@ function getMonday(date){
    WEEK STATS
 ========================= */
 
-function getStudentWeekStats(index){
+function getStudentWeekStats(
+ index
+){
 
  const today=
   new Date();
 
 
  const monday=
-  getMonday(today);
+  getMonday(
+   today
+  );
 
 
  const saturday=
-  new Date(monday);
+  new Date(
+   monday
+  );
 
 
  saturday.setDate(
@@ -2699,7 +3262,9 @@ function getStudentWeekStats(index){
 
 
  let plus=0;
+
  let minus=0;
+
  let total=0;
 
 
@@ -2708,7 +3273,8 @@ function getStudentWeekStats(index){
 
    const date=
     new Date(
-     dateString+"T00:00:00"
+     dateString+
+     "T00:00:00"
     );
 
 
@@ -2722,8 +3288,18 @@ function getStudentWeekStats(index){
    }
 
 
+   const dateLock=
+    date.getDay()===0 ||
+    holidays[dateString] ||
+    vacations.some(
+     v=>
+      dateString>=v.start &&
+      dateString<=v.end
+    );
+
+
    if(
-    getLockReason(dateString)
+    dateLock
    ){
 
     return;
@@ -2734,7 +3310,8 @@ function getStudentWeekStats(index){
    const lessons=
     lessonsPerDay[
      date.getDay()
-    ] || 0;
+    ] ||
+    0;
 
 
    const value=
@@ -2744,20 +3321,37 @@ function getStudentWeekStats(index){
     );
 
 
-   if(value==="+")
-    plus+=lessons;
+   if(
+    value===
+    "+"
+   ){
 
+    plus+=
+     lessons;
 
-   if(value==="-")
-    minus+=lessons;
+   }
 
 
    if(
-    value==="+" ||
-    value==="-"
+    value===
+    "-"
    ){
 
-    total+=lessons;
+    minus+=
+     lessons;
+
+   }
+
+
+   if(
+    value===
+    "+" ||
+    value===
+    "-"
+   ){
+
+    total+=
+     lessons;
 
    }
 
@@ -2766,9 +3360,13 @@ function getStudentWeekStats(index){
 
 
  return{
+
   plus,
+
   minus,
+
   total
+
  };
 
 }
@@ -2778,7 +3376,9 @@ function getStudentWeekStats(index){
    MONTH STATS
 ========================= */
 
-function getStudentMonthStats(index){
+function getStudentMonthStats(
+ index
+){
 
  const today=
   new Date();
@@ -2793,7 +3393,9 @@ function getStudentMonthStats(index){
 
 
  let plus=0;
+
  let minus=0;
+
  let total=0;
 
 
@@ -2802,13 +3404,16 @@ function getStudentMonthStats(index){
 
    const date=
     new Date(
-     dateString+"T00:00:00"
+     dateString+
+     "T00:00:00"
     );
 
 
    if(
-    date.getFullYear()!==year ||
-    date.getMonth()!==month
+    date.getFullYear()!==
+     year ||
+    date.getMonth()!==
+     month
    ){
 
     return;
@@ -2816,8 +3421,18 @@ function getStudentMonthStats(index){
    }
 
 
+   const dateLock=
+    date.getDay()===0 ||
+    holidays[dateString] ||
+    vacations.some(
+     v=>
+      dateString>=v.start &&
+      dateString<=v.end
+    );
+
+
    if(
-    getLockReason(dateString)
+    dateLock
    ){
 
     return;
@@ -2828,7 +3443,8 @@ function getStudentMonthStats(index){
    const lessons=
     lessonsPerDay[
      date.getDay()
-    ] || 0;
+    ] ||
+    0;
 
 
    const value=
@@ -2838,20 +3454,37 @@ function getStudentMonthStats(index){
     );
 
 
-   if(value==="+")
-    plus+=lessons;
+   if(
+    value===
+    "+"
+   ){
 
+    plus+=
+     lessons;
 
-   if(value==="-")
-    minus+=lessons;
+   }
 
 
    if(
-    value==="+" ||
-    value==="-"
+    value===
+    "-"
    ){
 
-    total+=lessons;
+    minus+=
+     lessons;
+
+   }
+
+
+   if(
+    value===
+    "+" ||
+    value===
+    "-"
+   ){
+
+    total+=
+     lessons;
 
    }
 
@@ -2860,9 +3493,13 @@ function getStudentMonthStats(index){
 
 
  return{
+
   plus,
+
   minus,
+
   total
+
  };
 
 }
@@ -2872,7 +3509,9 @@ function getStudentMonthStats(index){
    STUDENT DETAIL
 ========================= */
 
-function showStudentDetail(index){
+function showStudentDetail(
+ index
+){
 
  const week=
   getStudentWeekStats(
@@ -2888,31 +3527,36 @@ function showStudentDetail(index){
 
  document.getElementById(
   "studentDetail"
- ).style.display="block";
+ ).style.display=
+  "block";
 
 
  document.getElementById(
   "selectedStudentName"
  ).textContent=
-  "👨‍🎓 "+students[index];
+  "👨‍🎓 "+
+  students[index];
 
 
  document.getElementById(
   "selectedWeekTotal"
  ).textContent=
-  week.total+" dars";
+  week.total+
+  " dars";
 
 
  document.getElementById(
   "selectedWeekPlus"
  ).textContent=
-  week.plus+" dars";
+  week.plus+
+  " dars";
 
 
  document.getElementById(
   "selectedWeekMinus"
  ).textContent=
-  week.minus+" dars";
+  week.minus+
+  " dars";
 
 
  const weekPercent=
@@ -2928,25 +3572,29 @@ function showStudentDetail(index){
  document.getElementById(
   "selectedWeekPercent"
  ).textContent=
-  weekPercent+"%";
+  weekPercent+
+  "%";
 
 
  document.getElementById(
   "selectedMonthTotal"
  ).textContent=
-  month.total+" dars";
+  month.total+
+  " dars";
 
 
  document.getElementById(
   "selectedMonthPlus"
  ).textContent=
-  month.plus+" dars";
+  month.plus+
+  " dars";
 
 
  document.getElementById(
   "selectedMonthMinus"
  ).textContent=
-  month.minus+" dars";
+  month.minus+
+  " dars";
 
 
  const monthPercent=
@@ -2962,7 +3610,8 @@ function showStudentDetail(index){
  document.getElementById(
   "selectedMonthPercent"
  ).textContent=
-  monthPercent+"%";
+  monthPercent+
+  "%";
 
 }
 
@@ -2989,15 +3638,20 @@ function renderReport(){
   );
 
 
- body.innerHTML="";
+ body.innerHTML=
+  "";
 
 
  let totalPlus=0;
+
  let totalMinus=0;
 
 
  students.forEach(
-  (student,index)=>{
+  (
+   student,
+   index
+  )=>{
 
    const stats=
     getStudentStats(
@@ -3017,7 +3671,9 @@ function renderReport(){
     search &&
     !student
      .toLowerCase()
-     .includes(search)
+     .includes(
+      search
+     )
    ){
 
     return;
@@ -3026,7 +3682,9 @@ function renderReport(){
 
 
    const tr=
-    document.createElement("tr");
+    document.createElement(
+     "tr"
+    );
 
 
    tr.style.cursor=
@@ -3047,7 +3705,9 @@ function renderReport(){
 
    tr.innerHTML=`
 
-    <td>${index+1}</td>
+    <td>
+     ${index+1}
+    </td>
 
     <td style="text-align:left">
      ${student}
@@ -3068,7 +3728,9 @@ function renderReport(){
    `;
 
 
-   body.appendChild(tr);
+   body.appendChild(
+    tr
+   );
 
   }
  );
@@ -3095,7 +3757,8 @@ function renderReport(){
  document.getElementById(
   "totalMarked"
  ).textContent=
-  totalPlus+totalMinus;
+  totalPlus+
+  totalMinus;
 
 
  renderDailyReport();
@@ -3119,13 +3782,15 @@ function renderDailyReport(){
   );
 
 
- body.innerHTML="";
+ body.innerHTML=
+  "";
 
 
  dates.forEach(
   dateString=>{
 
    let plus=0;
+
    let minus=0;
 
 
@@ -3139,33 +3804,55 @@ function renderDailyReport(){
       );
 
 
-     if(value==="+")
+     if(
+      value===
+      "+"
+     ){
+
       plus++;
 
+     }
 
-     if(value==="-")
+
+     if(
+      value===
+      "-"
+     ){
+
       minus++;
+
+     }
 
     }
    );
 
 
    const total=
-    plus+minus;
+    plus+
+    minus;
 
 
-   if(total===0)
+   if(
+    total===0
+   ){
+
     return;
+
+   }
 
 
    const tr=
-    document.createElement("tr");
+    document.createElement(
+     "tr"
+    );
 
 
    tr.innerHTML=`
 
     <td>
-     ${formatDate(dateString)}
+     ${formatDate(
+      dateString
+     )}
     </td>
 
     <td class="blue">
@@ -3183,7 +3870,9 @@ function renderDailyReport(){
    `;
 
 
-   body.appendChild(tr);
+   body.appendChild(
+    tr
+   );
 
   }
  );
@@ -3203,7 +3892,8 @@ function renderWeeklyReport(){
   );
 
 
- body.innerHTML="";
+ body.innerHTML=
+  "";
 
 
  const weeks={};
@@ -3214,25 +3904,55 @@ function renderWeeklyReport(){
 
    const date=
     new Date(
-     dateString+"T00:00:00"
+     dateString+
+     "T00:00:00"
     );
 
 
    const monday=
-    getMonday(date);
+    getMonday(
+     date
+    );
 
 
    const key=
-    dateKey(monday);
+    dateKey(
+     monday
+    );
 
 
-   if(!weeks[key]){
+   if(
+    !weeks[key]
+   ){
 
     weeks[key]={
+
      plus:0,
+
      minus:0,
+
      total:0
+
     };
+
+   }
+
+
+   const dateLock=
+    date.getDay()===0 ||
+    holidays[dateString] ||
+    vacations.some(
+     v=>
+      dateString>=v.start &&
+      dateString<=v.end
+    );
+
+
+   if(
+    dateLock
+   ){
+
+    return;
 
    }
 
@@ -3240,7 +3960,8 @@ function renderWeeklyReport(){
    const lessons=
     lessonsPerDay[
      date.getDay()
-    ] || 0;
+    ] ||
+    0;
 
 
    students.forEach(
@@ -3253,19 +3974,33 @@ function renderWeeklyReport(){
       );
 
 
-     if(value==="+")
+     if(
+      value===
+      "+"
+     ){
+
       weeks[key].plus+=
        lessons;
 
-
-     if(value==="-")
-      weeks[key].minus+=
-       lessons;
+     }
 
 
      if(
-      value==="+" ||
-      value==="-"
+      value===
+      "-"
+     ){
+
+      weeks[key].minus+=
+       lessons;
+
+     }
+
+
+     if(
+      value===
+      "+" ||
+      value===
+      "-"
      ){
 
       weeks[key].total+=
@@ -3280,71 +4015,85 @@ function renderWeeklyReport(){
  );
 
 
- Object.keys(weeks)
-  .sort()
-  .forEach(
-   key=>{
+ Object.keys(
+  weeks
+ )
+ .sort()
+ .forEach(
+  key=>{
 
-    const data=
-     weeks[key];
-
-
-    if(
-     data.total===0
-    )
-     return;
+   const data=
+    weeks[key];
 
 
-    const monday=
-     new Date(
-      key+"T00:00:00"
-     );
+   if(
+    data.total===0
+   ){
+
+    return;
+
+   }
 
 
-    const saturday=
-     new Date(monday);
-
-
-    saturday.setDate(
-     saturday.getDate()+5
+   const monday=
+    new Date(
+     key+
+     "T00:00:00"
     );
 
 
-    const tr=
-     document.createElement(
-      "tr"
-     );
+   const saturday=
+    new Date(
+     monday
+    );
 
 
-    tr.innerHTML=`
-
-     <td>
-      ${formatDate(key)}
-      —
-      ${formatDate(
-       dateKey(saturday)
-      )}
-     </td>
-
-     <td class="blue">
-      ${data.plus}
-     </td>
-
-     <td class="red">
-      ${data.minus}
-     </td>
-
-     <td>
-      ${data.total}
-     </td>
-
-    `;
+   saturday.setDate(
+    saturday.getDate()+5
+   );
 
 
-    body.appendChild(tr);
+   const tr=
+    document.createElement(
+     "tr"
+    );
 
-   }
-  );
+
+   tr.innerHTML=`
+
+    <td>
+     ${formatDate(
+      key
+     )}
+     —
+     ${formatDate(
+      dateKey(
+       saturday
+      )
+     )}
+    </td>
+
+    <td class="blue">
+     ${data.plus}
+    </td>
+
+    <td class="red">
+     ${data.minus}
+    </td>
+
+    <td>
+     ${data.total}
+    </td>
+
+   `;
+
+
+   body.appendChild(
+    tr
+   );
+
+  }
+ );
 
 }
 
@@ -3379,7 +4128,8 @@ function renderMonthlyReport(){
   );
 
 
- body.innerHTML="";
+ body.innerHTML=
+  "";
 
 
  const months={};
@@ -3390,7 +4140,8 @@ function renderMonthlyReport(){
 
    const date=
     new Date(
-     dateString+"T00:00:00"
+     dateString+
+     "T00:00:00"
     );
 
 
@@ -3405,18 +4156,48 @@ function renderMonthlyReport(){
    const key=
     `${year}-${String(
      month+1
-    ).padStart(2,"0")}`;
+    ).padStart(
+     2,
+     "0"
+    )}`;
 
 
-   if(!months[key]){
+   if(
+    !months[key]
+   ){
 
     months[key]={
+
      year,
+
      month,
+
      plus:0,
+
      minus:0,
+
      total:0
+
     };
+
+   }
+
+
+   const dateLock=
+    date.getDay()===0 ||
+    holidays[dateString] ||
+    vacations.some(
+     v=>
+      dateString>=v.start &&
+      dateString<=v.end
+    );
+
+
+   if(
+    dateLock
+   ){
+
+    return;
 
    }
 
@@ -3424,7 +4205,8 @@ function renderMonthlyReport(){
    const lessons=
     lessonsPerDay[
      date.getDay()
-    ] || 0;
+    ] ||
+    0;
 
 
    students.forEach(
@@ -3437,19 +4219,33 @@ function renderMonthlyReport(){
       );
 
 
-     if(value==="+")
+     if(
+      value===
+      "+"
+     ){
+
       months[key].plus+=
        lessons;
 
-
-     if(value==="-")
-      months[key].minus+=
-       lessons;
+     }
 
 
      if(
-      value==="+" ||
-      value==="-"
+      value===
+      "-"
+     ){
+
+      months[key].minus+=
+       lessons;
+
+     }
+
+
+     if(
+      value===
+      "+" ||
+      value===
+      "-"
      ){
 
       months[key].total+=
@@ -3464,125 +4260,232 @@ function renderMonthlyReport(){
  );
 
 
- Object.keys(months)
-  .sort()
-  .forEach(
-   key=>{
+ Object.keys(
+  months
+ )
+ .sort()
+ .forEach(
+  key=>{
 
-    const data=
-     months[key];
-
-
-    if(
-     data.total===0
-    )
-     return;
+   const data=
+    months[key];
 
 
-    const tr=
-     document.createElement(
-      "tr"
-     );
+   if(
+    data.total===0
+   ){
 
-
-    tr.innerHTML=`
-
-     <td>
-      ${monthNames[data.month]}
-      ${data.year}
-     </td>
-
-     <td class="blue">
-      ${data.plus}
-     </td>
-
-     <td class="red">
-      ${data.minus}
-     </td>
-
-     <td>
-      ${data.total}
-     </td>
-
-    `;
-
-
-    body.appendChild(tr);
+    return;
 
    }
-  );
+
+
+   const tr=
+    document.createElement(
+     "tr"
+    );
+
+
+   tr.innerHTML=`
+
+    <td>
+     ${monthNames[
+      data.month
+     ]}
+     ${data.year}
+    </td>
+
+    <td class="blue">
+     ${data.plus}
+    </td>
+
+    <td class="red">
+     ${data.minus}
+    </td>
+
+    <td>
+     ${data.total}
+    </td>
+
+   `;
+
+
+   body.appendChild(
+    tr
+   );
+
+  }
+ );
 
 }
 
 
 /* =========================
-   RESTORE LOGIN
+   AUTH STATE
 ========================= */
 
-const savedSession=
- sessionStorage.getItem(
-  "davomat_user"
- );
+onAuthStateChanged(
+ auth,
+ user=>{
+
+  /*
+   Login yo‘q.
+  */
+
+  if(
+   !user
+  ){
+
+   currentUser=
+    null;
 
 
-const savedLocal=
- localStorage.getItem(
-  "davomat_user"
- );
+   document.getElementById(
+    "loginPage"
+   ).style.display=
+    "flex";
 
 
-if(savedSession){
+   document.getElementById(
+    "mainPage"
+   ).style.display=
+    "none";
 
- try{
 
-  currentUser=
-   JSON.parse(
-    savedSession
+   document.getElementById(
+    "reportPage"
+   ).style.display=
+    "none";
+
+
+   return;
+
+  }
+
+
+  /*
+   ANONYMOUS
+  */
+
+  if(
+   user.isAnonymous
+  ){
+
+   currentUser={
+
+    username:
+     "guest",
+
+    name:
+     "Kuzatuvchi",
+
+    canEdit:
+     false,
+
+    mode:
+     "viewer",
+
+    uid:
+     user.uid
+
+   };
+
+
+   sessionStorage.setItem(
+    "davomat_user",
+    JSON.stringify(
+     currentUser
+    )
    );
 
-  showMain();
 
- }catch{
+   showMain();
 
-  sessionStorage.removeItem(
-   "davomat_user"
-  );
+   startFirebaseListener();
 
- }
+   return;
 
-}else if(savedLocal){
+  }
 
- try{
 
-  currentUser=
-   JSON.parse(
-    savedLocal
-   );
+  /*
+   EDITOR
+  */
 
-  sessionStorage.setItem(
-   "davomat_user",
-   JSON.stringify(
-    currentUser
+  if(
+   editorUIDs.includes(
+    user.uid
    )
-  );
+  ){
 
-  showMain();
+   let username=
+    "editor";
 
- }catch{
 
-  localStorage.removeItem(
-   "davomat_user"
-  );
+   if(
+    user.email===
+    "abdullohhabibullayev2009@gmail.com"
+   ){
 
- }
+    username=
+     "abdulloh04072009";
 
-}else{
+   }
 
- document.getElementById(
-  "loginPage"
- ).style.display="flex";
 
-}
+   if(
+    user.email===
+    "muhammadaliabdumutallipov0@gmail.com"
+   ){
+
+    username=
+     "muhammadali2010";
+
+   }
+
+
+   currentUser={
+
+    username:
+
+     username,
+
+    name:
+
+     user.email===
+     "abdullohhabibullayev2009@gmail.com"
+
+      ? "Abdulloh"
+
+      : "Muhammadali",
+
+    canEdit:
+     true,
+
+    mode:
+     "editor",
+
+    uid:
+     user.uid
+
+   };
+
+
+   sessionStorage.setItem(
+    "davomat_user",
+    JSON.stringify(
+     currentUser
+    )
+   );
+
+
+   showMain();
+
+   startFirebaseListener();
+
+  }
+
+ });
 
 
 /* =========================
@@ -3666,9 +4569,11 @@ document
  .addEventListener(
   "click",
   ()=>{
+
    showReportTab(
     "students"
    );
+
   }
  );
 
@@ -3680,9 +4585,11 @@ document
  .addEventListener(
   "click",
   ()=>{
+
    showReportTab(
     "daily"
    );
+
   }
  );
 
@@ -3694,9 +4601,11 @@ document
  .addEventListener(
   "click",
   ()=>{
+
    showReportTab(
     "weekly"
    );
+
   }
  );
 
@@ -3708,9 +4617,11 @@ document
  .addEventListener(
   "click",
   ()=>{
+
    showReportTab(
     "monthly"
    );
+
   }
  );
 
@@ -3734,7 +4645,8 @@ document
   function(event){
 
    if(
-    event.key==="Enter"
+    event.key===
+    "Enter"
    ){
 
     login();
@@ -3756,7 +4668,9 @@ function scheduleMidnightRefresh(){
 
 
  const tomorrow=
-  new Date(now);
+  new Date(
+   now
+  );
 
 
  tomorrow.setDate(
@@ -3765,7 +4679,10 @@ function scheduleMidnightRefresh(){
 
 
  tomorrow.setHours(
-  0,0,1,0
+  0,
+  0,
+  1,
+  0
  );
 
 
@@ -3790,7 +4707,9 @@ function scheduleMidnightRefresh(){
 }
 
 
-renderTable();
+/* =========================
+   START
+========================= */
 
 scheduleMidnightRefresh();
 
