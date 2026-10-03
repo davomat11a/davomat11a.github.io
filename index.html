@@ -2,722 +2,516 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Davomat Jurnali — 11-A sinf</title>
-
-<meta name="description" content="Davomat Jurnali — 11-A sinf o‘quvchilari davomati uchun elektron jurnal.">
+<meta name="description" content="11-A sinf davomat jurnali">
 <meta name="author" content="Abdulloh Habibullayev">
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://davomat11a.github.io/">
-
-<meta property="og:title" content="Davomat Jurnali — 11-A sinf">
-<meta property="og:description" content="11-A sinf o‘quvchilari davomati uchun qulay elektron jurnal.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://davomat11a.github.io/">
-
-<meta name="theme-color" content="#229ED9">
 
 <style>
-
 *{
- box-sizing:border-box;
-}
-
-html{
- scroll-behavior:smooth;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
- margin:0;
- font-family:Arial,Helvetica,sans-serif;
- background:linear-gradient(135deg,#eef5ff,#f7faff);
- color:#202124;
- transition:background .3s ease,color .3s ease;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#222;
+  transition:.25s;
 }
 
 button,input{
- font-family:inherit;
+  font:inherit;
 }
 
+button{
+  cursor:pointer;
+}
+
+.hidden{
+  display:none!important;
+}
 
 /* =========================
    LOGIN
 ========================= */
 
 #loginPage{
- min-height:100vh;
- display:flex;
- justify-content:center;
- align-items:center;
- padding:20px;
- background:
- radial-gradient(circle at top left,#d8efff,transparent 40%),
- radial-gradient(circle at bottom right,#dfe9ff,transparent 40%);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:linear-gradient(135deg,#1976d2,#42a5f5);
 }
 
-.login-box{
- width:100%;
- max-width:400px;
- padding:32px;
- border-radius:24px;
- background:rgba(255,255,255,.94);
- box-shadow:0 20px 60px rgba(0,0,0,.12);
- backdrop-filter:blur(12px);
- animation:loginAppear .5s ease;
+.loginBox{
+  width:100%;
+  max-width:400px;
+  background:white;
+  border-radius:20px;
+  padding:30px 25px;
+  box-shadow:0 15px 45px rgba(0,0,0,.2);
 }
 
-@keyframes loginAppear{
- from{
-  opacity:0;
-  transform:translateY(20px) scale(.97);
- }
- to{
-  opacity:1;
-  transform:translateY(0) scale(1);
- }
+.loginBox h1{
+  text-align:center;
+  color:#1976d2;
+  margin-bottom:8px;
 }
 
-.login-logo{
- width:75px;
- height:75px;
- margin:0 auto 15px;
- display:flex;
- align-items:center;
- justify-content:center;
- border-radius:22px;
- background:linear-gradient(135deg,#229ED9,#0077b6);
- color:white;
- font-size:38px;
- box-shadow:0 10px 25px rgba(34,158,217,.35);
+.loginBox .subtitle{
+  text-align:center;
+  color:#777;
+  margin-bottom:25px;
 }
 
-.login-box h2{
- text-align:center;
- margin:0 0 8px;
+.inputGroup{
+  margin-bottom:16px;
 }
 
-.login-subtitle{
- text-align:center;
- color:#777;
- margin-bottom:25px;
- font-size:14px;
+.inputGroup label{
+  display:block;
+  margin-bottom:7px;
+  font-weight:bold;
 }
 
-.login-box input[type=text],
-.login-box input[type=password]{
- width:100%;
- padding:14px 15px;
- margin:7px 0;
- border:1px solid #d6dce5;
- border-radius:12px;
- font-size:16px;
- outline:none;
- transition:border .2s,box-shadow .2s;
+.inputWrap{
+  position:relative;
 }
 
-.login-box input:focus{
- border-color:#229ED9;
- box-shadow:0 0 0 4px rgba(34,158,217,.12);
+.inputWrap input{
+  width:100%;
+  padding:13px 45px 13px 14px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  outline:none;
 }
 
-.password-box{
- position:relative;
+.inputWrap input:focus{
+  border-color:#1976d2;
+  box-shadow:0 0 0 2px rgba(25,118,210,.12);
 }
 
-.password-box input{
- padding-right:50px!important;
-}
-
-.eye-button{
- position:absolute;
- right:8px;
- top:50%;
- transform:translateY(-50%);
- width:40px;
- height:40px;
- border:none;
- background:transparent;
- cursor:pointer;
- font-size:19px;
-}
-
-.login-box button:not(.eye-button){
- width:100%;
- padding:14px;
- margin-top:12px;
- border:none;
- border-radius:12px;
- background:linear-gradient(135deg,#1976d2,#229ED9);
- color:white;
- font-size:16px;
- font-weight:bold;
- cursor:pointer;
- transition:transform .2s,box-shadow .2s;
-}
-
-.login-box button:not(.eye-button):hover{
- transform:translateY(-2px);
- box-shadow:0 8px 20px rgba(25,118,210,.3);
+.eyeBtn{
+  position:absolute;
+  right:8px;
+  top:50%;
+  transform:translateY(-50%);
+  border:none;
+  background:none;
+  font-size:20px;
 }
 
 .remember{
- display:flex;
- align-items:center;
- gap:8px;
- margin-top:12px;
- font-size:14px;
- color:#666;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:12px 0 18px;
+  font-size:14px;
+}
+
+.remember input{
+  width:17px;
+  height:17px;
+}
+
+.loginBtn,
+.guestBtn{
+  width:100%;
+  border:none;
+  border-radius:10px;
+  padding:13px;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+.loginBtn{
+  background:#1976d2;
+  color:white;
+}
+
+.loginBtn:hover{
+  background:#125ca8;
+}
+
+.guestBtn{
+  background:#eef3f8;
+  color:#333;
+}
+
+.guestBtn:hover{
+  background:#dfe8f0;
 }
 
 #loginError{
- color:#e53935;
- text-align:center;
- margin-top:12px;
- font-size:14px;
+  color:#d32f2f;
+  text-align:center;
+  font-size:14px;
+  margin-top:14px;
+  min-height:20px;
 }
-
 
 /* =========================
-   GUEST
+   MAIN
 ========================= */
 
-.guest-button{
- background:linear-gradient(135deg,#455a64,#607d8b)!important;
+#mainPage{
+  display:none;
 }
 
-.guest-button:hover{
- box-shadow:0 8px 20px rgba(69,90,100,.3)!important;
+.header{
+  background:#1976d2;
+  color:white;
+  padding:15px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
-.guest-info{
- margin-top:12px;
- padding:10px;
- border-radius:10px;
- background:#eef6fa;
- color:#546e7a;
- font-size:12px;
- text-align:center;
- line-height:1.5;
+.headerTop{
+  max-width:1500px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
-
-/* =========================
-   DARK
-========================= */
-
-body.dark{
- background:linear-gradient(135deg,#10151c,#171d25);
- color:#eee;
+.headerTitle{
+  font-size:22px;
+  font-weight:bold;
 }
 
-.dark #loginPage{
- background:
- radial-gradient(circle at top left,#12334a,transparent 40%),
- #10151c;
+.headerUser{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
 }
 
-.dark .login-box,
-.dark .info,
-.dark .table-wrapper,
-.dark .card,
-.dark .student-detail{
- background:rgba(30,35,42,.96);
- color:#eee;
+.badge{
+  background:white;
+  color:#1976d2;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
 }
 
-.dark .login-box input,
-.dark .search-box input{
- background:#252b33;
- color:white;
- border-color:#444;
+.headerButtons{
+  max-width:1500px;
+  margin:12px auto 0;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
 }
 
-.dark .remember,
-.dark .login-subtitle{
- color:#aaa;
+.headerButtons button,
+.headerButtons a{
+  text-decoration:none;
+  border:none;
+  padding:9px 13px;
+  border-radius:8px;
+  background:white;
+  color:#1976d2;
+  font-weight:bold;
 }
 
-.dark .guest-info{
- background:#252b33;
- color:#b0bec5;
+.headerButtons button:hover,
+.headerButtons a:hover{
+  opacity:.9;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
-#mainPage,
-#reportPage{
- display:none;
+.container{
+  max-width:1500px;
+  margin:auto;
+  padding:15px;
 }
-
-header{
- position:sticky;
- top:0;
- z-index:20;
- color:white;
- padding:13px 15px;
- background:linear-gradient(135deg,#1976d2,#229ED9);
- box-shadow:0 4px 20px rgba(0,0,0,.12);
-}
-
-.header-inner{
- max-width:1400px;
- margin:auto;
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:12px;
-}
-
-header h2{
- margin:0;
- font-size:20px;
- display:flex;
- align-items:center;
- gap:8px;
-}
-
-.header-buttons{
- display:flex;
- align-items:center;
- gap:7px;
- flex-wrap:wrap;
-}
-
-.header-buttons button{
- border:none;
- border-radius:10px;
- padding:9px 13px;
- cursor:pointer;
- background:white;
- color:#1976d2;
- font-weight:bold;
- transition:transform .2s,box-shadow .2s;
-}
-
-.header-buttons button:hover{
- transform:translateY(-2px);
- box-shadow:0 5px 14px rgba(0,0,0,.15);
-}
-
-
-/* =========================
-   VIEW MODE
-========================= */
-
-.viewer-badge{
- display:inline-flex;
- align-items:center;
- gap:6px;
- padding:8px 12px;
- border-radius:10px;
- background:rgba(255,255,255,.18);
- color:white;
- font-size:13px;
- font-weight:bold;
-}
-
-.editor-badge{
- background:rgba(255,255,255,.18);
-}
-
-
-/* =========================
-   TELEGRAM
-========================= */
-
-.telegram-button{
- display:inline-flex;
- align-items:center;
- justify-content:center;
- gap:8px;
- padding:9px 14px;
- border-radius:10px;
- text-decoration:none;
- color:white;
- font-size:14px;
- font-weight:bold;
- background:linear-gradient(135deg,#2AABEE,#0088cc);
- box-shadow:0 5px 15px rgba(0,136,204,.30);
- transition:transform .2s,box-shadow .2s,filter .2s;
-}
-
-.telegram-button:hover{
- transform:translateY(-2px);
- filter:brightness(1.08);
- box-shadow:0 8px 20px rgba(0,136,204,.40);
-}
-
-.telegram-button:active{
- transform:scale(.96);
-}
-
-.telegram-icon{
- width:21px;
- height:21px;
- display:flex;
- align-items:center;
- justify-content:center;
- font-size:18px;
-}
-
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container,
-.report-container{
- max-width:1400px;
- margin:auto;
- padding:18px;
-}
-
-
-/* =========================
-   INFO
-========================= */
-
-.info{
- background:white;
- padding:16px 18px;
- border-radius:16px;
- margin-bottom:16px;
- box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.firebase-status{
- margin-top:10px;
- font-weight:bold;
- color:#2e7d32;
-}
-
-.viewer-warning{
- margin-top:12px;
- padding:11px 13px;
- border-radius:10px;
- background:#fff3cd;
- color:#795548;
- font-weight:bold;
- font-size:14px;
-}
-
-.dark .viewer-warning{
- background:#3b3422;
- color:#ffe082;
-}
-
 
 /* =========================
    TABLE
 ========================= */
 
-.table-wrapper{
- overflow-x:auto;
- background:white;
- border-radius:16px;
- box-shadow:0 5px 20px rgba(0,0,0,.07);
+.tableWrapper{
+  width:100%;
+  overflow:auto;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
 table{
- border-collapse:collapse;
- width:100%;
- min-width:900px;
+  border-collapse:collapse;
+  width:max-content;
+  min-width:100%;
 }
 
-th,td{
- border:1px solid #e0e0e0;
- text-align:center;
- padding:8px;
+th,
+td{
+  border:1px solid #d8dee6;
+  padding:7px;
+  text-align:center;
+  white-space:nowrap;
 }
 
 th{
- background:linear-gradient(135deg,#1976d2,#229ED9);
- color:white;
- font-weight:bold;
+  background:#1976d2;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:5;
 }
 
-.name-column{
- min-width:220px;
- text-align:left;
- position:sticky;
- left:0;
- z-index:3;
- background:white;
+.studentName{
+  position:sticky;
+  left:0;
+  background:white;
+  z-index:4;
+  text-align:left;
+  min-width:210px;
+  font-weight:bold;
 }
 
-.dark .name-column{
- background:#1e232a;
+th.studentHeader{
+  position:sticky;
+  left:0;
+  z-index:7;
 }
 
-th.name-column{
- background:#1976d2;
+.dateHeader{
+  min-width:58px;
+  font-size:12px;
 }
 
-.date-column{
- width:60px;
- min-width:60px;
+.todayColumn{
+  background:#fff3cd!important;
 }
 
-
-/* =========================
-   TODAY
-========================= */
-
-.today-column{
- background:#fff3cd!important;
- color:#222!important;
- font-weight:bold;
+.attendanceBtn{
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:7px;
+  font-size:20px;
+  font-weight:bold;
 }
 
-.dark .today-column{
- background:#fff!important;
- color:#111!important;
+.presentBtn{
+  background:#2196f3;
+  color:white;
 }
 
-
-/* =========================
-   ATTENDANCE
-========================= */
-
-.attendance-cell{
- width:55px;
- min-width:55px;
- height:43px;
- font-size:18px;
- font-weight:bold;
- transition:background .15s;
+.absentBtn{
+  background:#f44336;
+  color:white;
 }
 
-.attendance-cell[contenteditable=true]{
- cursor:text;
+.emptyBtn{
+  background:#eee;
+  color:#777;
 }
 
-.attendance-cell[contenteditable=true]:hover{
- background:#f2f8ff;
+.lockedCell{
+  background:#f2f2f2!important;
 }
 
-.dark .attendance-cell[contenteditable=true]:hover{
- background:#29333e;
+.lockedBtn{
+  background:#d32f2f!important;
+  color:white!important;
 }
 
-.attendance-cell.plus{
- color:#1976d2;
+.lockReason{
+  font-size:9px;
+  display:block;
+  color:#666;
 }
-
-.attendance-cell.minus{
- color:#e53935;
-}
-
-.today-attendance.plus{
- color:#1976d2!important;
-}
-
-.today-attendance.minus{
- color:#e53935!important;
-}
-
-
-/* =========================
-   LOCKED
-========================= */
-
-.locked{
- background:#eee;
- color:#777;
- cursor:not-allowed;
-}
-
-.dark .locked{
- background:#333;
- color:#aaa;
-}
-
-.locked.minus{
- color:#e53935!important;
-}
-
-.dark .locked.minus{
- color:#e53935!important;
-}
-
-.viewer-locked{
- background:#e7eaee!important;
- color:#888!important;
- cursor:not-allowed!important;
-}
-
-.dark .viewer-locked{
- background:#2f343a!important;
- color:#999!important;
-}
-
 
 /* =========================
    REPORT
 ========================= */
 
-.search-box{
- margin-bottom:16px;
+#reportPage{
+  display:none;
 }
 
-.search-box input{
- width:100%;
- max-width:500px;
- padding:14px;
- border:1px solid #ccc;
- border-radius:12px;
- font-size:16px;
- outline:none;
+.reportHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:15px;
 }
 
-.search-box input:focus{
- border-color:#229ED9;
- box-shadow:0 0 0 4px rgba(34,158,217,.10);
+.reportHeader h2{
+  color:#1976d2;
 }
 
-.report-tabs{
- display:flex;
- gap:8px;
- flex-wrap:wrap;
- margin-bottom:16px;
+.reportBack{
+  border:none;
+  background:#1976d2;
+  color:white;
+  padding:10px 15px;
+  border-radius:8px;
 }
 
-.report-tabs button{
- padding:10px 15px;
- border:none;
- border-radius:10px;
- cursor:pointer;
- background:#e4e7eb;
- font-weight:bold;
- transition:.2s;
+.reportTabs{
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  margin-bottom:15px;
 }
 
-.report-tabs button:hover{
- transform:translateY(-1px);
+.reportTab{
+  border:none;
+  padding:10px 15px;
+  border-radius:8px;
+  background:#e5ebf2;
+  white-space:nowrap;
 }
 
-.dark .report-tabs button{
- background:#333;
- color:white;
+.reportTab.active{
+  background:#1976d2;
+  color:white;
 }
 
-.report-tabs button.active{
- background:linear-gradient(135deg,#1976d2,#229ED9);
- color:white;
+.reportContent{
+  background:white;
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-.report-section{
- display:none;
+.searchBox{
+  width:100%;
+  max-width:400px;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:9px;
+  margin-bottom:15px;
 }
 
-.report-section.active{
- display:block;
+.reportTable{
+  width:100%;
+  border-collapse:collapse;
 }
 
+.reportTable th,
+.reportTable td{
+  border:1px solid #ddd;
+  padding:10px;
+}
+
+.reportTable th{
+  background:#1976d2;
+  color:white;
+}
+
+.statCards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.statCard{
+  background:#f4f7fb;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.statCard strong{
+  display:block;
+  font-size:25px;
+  color:#1976d2;
+  margin-top:5px;
+}
+
+.studentReport{
+  background:#f7f9fc;
+  border-radius:12px;
+  padding:15px;
+  margin-top:15px;
+}
+
+.studentReport h3{
+  margin-bottom:12px;
+  color:#1976d2;
+}
 
 /* =========================
-   CARDS
+   DARK MODE
 ========================= */
 
-.summary{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
- gap:13px;
- margin-bottom:16px;
+body.dark{
+  background:#121212;
+  color:#eee;
 }
 
-.card{
- background:white;
- padding:17px;
- border-radius:16px;
- box-shadow:0 5px 18px rgba(0,0,0,.06);
- transition:transform .2s;
+body.dark .loginBox,
+body.dark .tableWrapper,
+body.dark .reportContent{
+  background:#1e1e1e;
+  color:#eee;
 }
 
-.card:hover{
- transform:translateY(-2px);
+body.dark .studentName{
+  background:#1e1e1e;
+  color:#eee;
 }
 
-.card-title{
- font-size:14px;
- color:#777;
+body.dark th{
+  background:#1565c0;
 }
 
-.dark .card-title{
- color:#aaa;
+body.dark td{
+  border-color:#444;
 }
 
-.card-value{
- font-size:26px;
- font-weight:bold;
- margin-top:6px;
+body.dark .lockedCell{
+  background:#292929!important;
 }
 
-.blue{
- color:#1976d2;
+body.dark .emptyBtn{
+  background:#444;
+  color:#ddd;
 }
 
-.red{
- color:#e53935;
+body.dark .reportTab{
+  background:#333;
+  color:#eee;
 }
 
-.green{
- color:#2e7d32;
+body.dark .reportTab.active{
+  background:#1976d2;
 }
 
-
-/* =========================
-   STUDENT DETAIL
-========================= */
-
-.student-detail{
- margin-top:16px;
- background:white;
- border-radius:16px;
- padding:20px;
- box-shadow:0 5px 20px rgba(0,0,0,.07);
+body.dark .statCard,
+body.dark .studentReport{
+  background:#292929;
 }
 
-.student-detail h3{
- margin-top:0;
+body.dark .guestBtn{
+  background:#333;
+  color:#eee;
 }
 
-.detail-grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
- gap:12px;
+body.dark .inputWrap input,
+body.dark .searchBox{
+  background:#292929;
+  color:#fff;
+  border-color:#555;
 }
 
-.detail-card{
- padding:16px;
- border-radius:12px;
- background:#f2f4f7;
+body.dark .remember{
+  color:#eee;
 }
-
-.dark .detail-card{
- background:#2a3038;
-}
-
-.detail-card .title{
- font-size:13px;
- color:#777;
-}
-
-.dark .detail-card .title{
- color:#aaa;
-}
-
-.detail-card .value{
- font-size:22px;
- font-weight:bold;
- margin-top:6px;
-}
-
 
 /* =========================
    MOBILE
@@ -725,84 +519,35 @@ th.name-column{
 
 @media(max-width:700px){
 
- .header-inner{
-  flex-direction:column;
-  align-items:stretch;
- }
+  .headerTitle{
+    font-size:18px;
+  }
 
- header h2{
-  font-size:17px;
-  justify-content:center;
- }
+  .headerTop{
+    align-items:flex-start;
+  }
 
- .header-buttons{
-  width:100%;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
- }
+  .container{
+    padding:8px;
+  }
 
- .header-buttons button,
- .telegram-button{
-  width:100%;
-  text-align:center;
- }
+  .loginBox{
+    padding:25px 18px;
+  }
 
- .container,
- .report-container{
-  padding:10px;
- }
+  th,
+  td{
+    padding:5px;
+  }
 
- .name-column{
-  min-width:180px;
- }
-
- .login-box{
-  padding:25px 20px;
- }
-
- .viewer-badge{
-  justify-content:center;
- }
-
+  .studentName{
+    min-width:180px;
+  }
 }
-
-
-/* =========================
-   SCROLLBAR
-========================= */
-
-::-webkit-scrollbar{
- width:9px;
- height:9px;
-}
-
-::-webkit-scrollbar-track{
- background:#edf0f3;
-}
-
-::-webkit-scrollbar-thumb{
- background:#aeb8c2;
- border-radius:10px;
-}
-
-::-webkit-scrollbar-thumb:hover{
- background:#7f8a95;
-}
-
-.dark ::-webkit-scrollbar-track{
- background:#1b2026;
-}
-
-.dark ::-webkit-scrollbar-thumb{
- background:#555;
-}
-
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================
      LOGIN PAGE
@@ -810,86 +555,73 @@ th.name-column{
 
 <div id="loginPage">
 
- <div class="login-box">
+  <div class="loginBox">
 
-  <div class="login-logo">
-   📋
-  </div>
+    <h1>📚 Davomat Jurnali</h1>
 
-  <h2>
-   Davomat jurnali
-  </h2>
+    <div class="subtitle">
+      11-A sinf
+    </div>
 
-  <div class="login-subtitle">
-   11-A sinf elektron jurnali
-  </div>
+    <div class="inputGroup">
+      <label for="username">Login</label>
 
+      <div class="inputWrap">
+        <input
+          type="text"
+          id="username"
+          placeholder="Loginni kiriting"
+          autocomplete="username"
+        >
+      </div>
+    </div>
 
-  <input
-   type="text"
-   id="username"
-   placeholder="Login"
-   autocomplete="username"
-  >
+    <div class="inputGroup">
+      <label for="password">Parol</label>
 
+      <div class="inputWrap">
 
-  <div class="password-box">
+        <input
+          type="password"
+          id="password"
+          placeholder="Parolni kiriting"
+          autocomplete="current-password"
+        >
 
-   <input
-    type="password"
-    id="password"
-    placeholder="Parol"
-    autocomplete="current-password"
-   >
+        <button
+          type="button"
+          class="eyeBtn"
+          onclick="togglePassword()"
+          id="eyeButton"
+        >👁️</button>
 
-   <button
-    type="button"
-    class="eye-button"
-    id="eyeButton"
-   >
-    👁️
-   </button>
+      </div>
+    </div>
 
-  </div>
+    <label class="remember">
+      <input type="checkbox" id="rememberLogin">
+      Loginni eslab qolish
+    </label>
 
+    <button
+      class="loginBtn"
+      onclick="login()"
+      id="loginButton"
+    >
+      🔐 Kirish
+    </button>
 
-  <label class="remember">
+    <button
+      class="guestBtn"
+      onclick="guestLogin()"
+      id="guestButton"
+    >
+      👀 Kuzatuvchi sifatida kirish
+    </button>
 
-   <input
-    type="checkbox"
-    id="rememberLogin"
-   >
-
-   Loginni eslab qolish
-
-  </label>
-
-
-  <button id="loginButton">
-   🔐 Kirish
-  </button>
-
-
-  <button
-   id="guestButton"
-   class="guest-button"
-  >
-   👀 Parolsiz kirish
-  </button>
-
-
-  <div class="guest-info">
-
-   Parolsiz kirish orqali saytni ko‘rish,
-   hisobotlardan foydalanish mumkin.
-   Davomat kiritish imkoniyati mavjud emas.
+    <div id="loginError"></div>
 
   </div>
-
-
-  <div id="loginError"></div>
-
- </div>
 
 </div>
 
@@ -900,136 +632,70 @@ th.name-column{
 
 <div id="mainPage">
 
-<header>
+  <header class="header">
 
- <div class="header-inner">
+    <div class="headerTop">
 
-  <h2>
-   📋 11-A sinf davomati
-  </h2>
+      <div class="headerTitle">
+        📚 Davomat Jurnali — 11-A sinf
+      </div>
 
+      <div class="headerUser">
 
-  <div class="header-buttons">
+        <span id="userBadge" class="badge">
+          Kuzatuvchi
+        </span>
 
-   <span
-    id="userModeBadge"
-    class="viewer-badge"
-   >
-    👤
-   </span>
+      </div>
 
+    </div>
 
-   <button id="reportButton">
-    📊 Hisobot
-   </button>
+    <div class="headerButtons">
 
+      <button onclick="showReport()">
+        📊 Hisobot
+      </button>
 
-   <a
-    href="https://t.me/davomat11a_bot"
-    target="_blank"
-    class="telegram-button"
-    title="Telegram botni ochish"
-   >
+      <a
+        href="https://t.me/davomat11a_bot"
+        target="_blank"
+      >
+        🤖 Telegram bot
+      </a>
 
-    <span class="telegram-icon">
-     ✈️
-    </span>
+      <button onclick="toggleDarkMode()">
+        🌙 Dark mode
+      </button>
 
-    Telegram bot
+      <button onclick="logout()">
+        🚪 Chiqish
+      </button>
 
-   </a>
+    </div>
 
-
-   <button id="darkButton">
-    🌙 Dark
-   </button>
-
-
-   <button id="logoutButton">
-    🚪 Chiqish
-   </button>
-
-  </div>
-
- </div>
-
-</header>
+  </header>
 
 
-<div class="container">
+  <main class="container">
 
- <div class="info">
+    <div
+      id="attendanceInfo"
+      style="margin-bottom:12px;font-weight:bold;"
+    ></div>
 
-  <b>📅 O‘quv yili:</b>
-  28.09.2026 — 25.05.2027
+    <div class="tableWrapper">
 
-  <br><br>
+      <table id="attendanceTable">
 
-  <b>Belgilar:</b>
+        <thead id="attendanceHead"></thead>
 
-  <span class="blue">+</span>
-  Keldi
+        <tbody id="attendanceBody"></tbody>
 
-  &nbsp;&nbsp;
+      </table>
 
-  <span class="red">-</span>
-  Qoldirdi
+    </div>
 
-  &nbsp;&nbsp;
-
-  🔒 Bloklangan kun
-
-
-  <div
-   id="firebaseStatus"
-   class="firebase-status"
-  >
-   🔄 Firebase ulanmoqda...
-  </div>
-
-
-  <div
-   id="viewerWarning"
-   class="viewer-warning"
-   style="display:none;"
-  >
-
-   👀 Siz kuzatuvchi rejimidasiz.
-   Davomat kiritish va o‘zgartirish imkoniyati yopilgan.
-
-  </div>
-
- </div>
-
-
- <div class="table-wrapper">
-
-  <table>
-
-   <thead>
-
-    <tr id="dateHeader">
-
-     <th>
-      №
-     </th>
-
-     <th class="name-column">
-      Ism va Familya
-     </th>
-
-    </tr>
-
-   </thead>
-
-
-   <tbody id="attendanceBody"></tbody>
-
-  </table>
-
- </div>
-
-</div>
+  </main>
 
 </div>
 
@@ -1040,488 +706,99 @@ th.name-column{
 
 <div id="reportPage">
 
-<header>
+  <header class="header">
 
- <div class="header-inner">
+    <div class="headerTop">
 
-  <h2>
-   📊 Davomat hisoboti
-  </h2>
-
-
-  <div class="header-buttons">
-
-   <button id="backButton">
-    ← Ortga
-   </button>
-
-
-   <a
-    href="https://t.me/davomat11a_bot"
-    target="_blank"
-    class="telegram-button"
-   >
-
-    <span class="telegram-icon">
-     ✈️
-    </span>
-
-    Telegram bot
-
-   </a>
-
-
-   <button id="reportDarkButton">
-    🌙 Dark
-   </button>
-
-  </div>
-
- </div>
-
-</header>
-
-
-<div class="report-container">
-
-
- <div class="search-box">
-
-  <input
-   type="text"
-   id="studentSearch"
-   placeholder="🔎 O‘quvchini qidiring..."
-  >
-
- </div>
-
-
- <div class="report-tabs">
-
-  <button
-   id="tabStudents"
-   class="active"
-  >
-   👨‍🎓 O‘quvchilar
-  </button>
-
-
-  <button id="tabDaily">
-   📅 Kunlik
-  </button>
-
-
-  <button id="tabWeekly">
-   📆 Haftalik
-  </button>
-
-
-  <button id="tabMonthly">
-   🗓️ Oylik
-  </button>
-
- </div>
-
-
- <!-- STUDENTS -->
-
- <div
-  id="studentsSection"
-  class="report-section active"
- >
-
-  <div class="summary">
-
-
-   <div class="card">
-
-    <div class="card-title">
-     👨‍🎓 O‘quvchilar
-    </div>
-
-    <div
-     class="card-value"
-     id="studentCount"
-    >
-     0
-    </div>
-
-   </div>
-
-
-   <div class="card">
-
-    <div class="card-title">
-     🔵 Jami kelgan
-    </div>
-
-    <div
-     class="card-value blue"
-     id="totalPlus"
-    >
-     0
-    </div>
-
-   </div>
-
-
-   <div class="card">
-
-    <div class="card-title">
-     🔴 Jami qoldirilgan
-    </div>
-
-    <div
-     class="card-value red"
-     id="totalMinus"
-    >
-     0
-    </div>
-
-   </div>
-
-
-   <div class="card">
-
-    <div class="card-title">
-     📅 Jami belgilangan
-    </div>
-
-    <div
-     class="card-value"
-     id="totalMarked"
-    >
-     0
-    </div>
-
-   </div>
-
-
-  </div>
-
-
-  <div class="table-wrapper">
-
-   <table>
-
-    <thead>
-
-     <tr>
-
-      <th>
-       №
-      </th>
-
-      <th>
-       Ism va Familya
-      </th>
-
-      <th>
-       🔵 Keldi
-      </th>
-
-      <th>
-       🔴 Qoldirdi
-      </th>
-
-      <th>
-       📅 Jami
-      </th>
-
-     </tr>
-
-    </thead>
-
-
-    <tbody id="reportBody"></tbody>
-
-   </table>
-
-  </div>
-
-
-  <div
-   id="studentDetail"
-   class="student-detail"
-   style="display:none;"
-  >
-
-   <h3 id="selectedStudentName"></h3>
-
-
-   <div class="detail-grid">
-
-
-    <div class="detail-card">
-
-     <div class="title">
-      📆 Shu hafta jami dars
-     </div>
-
-     <div
-      class="value"
-      id="selectedWeekTotal"
-     >
-      0
-     </div>
+      <div class="headerTitle">
+        📊 Davomat hisobotlari
+      </div>
 
     </div>
 
+  </header>
 
-    <div class="detail-card">
+  <main class="container">
 
-     <div class="title">
-      🔵 Shu hafta kelgan
-     </div>
+    <div class="reportHeader">
 
-     <div
-      class="value blue"
-      id="selectedWeekPlus"
-     >
-      0
-     </div>
+      <h2>Hisobot</h2>
 
-    </div>
-
-
-    <div class="detail-card">
-
-     <div class="title">
-      🔴 Shu hafta qoldirgan
-     </div>
-
-     <div
-      class="value red"
-      id="selectedWeekMinus"
-     >
-      0
-     </div>
+      <button
+        class="reportBack"
+        onclick="showMain()"
+      >
+        ← Davomatga qaytish
+      </button>
 
     </div>
 
+    <div class="reportTabs">
 
-    <div class="detail-card">
+      <button
+        class="reportTab active"
+        onclick="switchReport('students',this)"
+      >
+        👥 O‘quvchilar
+      </button>
 
-     <div class="title">
-      📊 Haftalik davomat
-     </div>
+      <button
+        class="reportTab"
+        onclick="switchReport('daily',this)"
+      >
+        📅 Kunlik
+      </button>
 
-     <div
-      class="value green"
-      id="selectedWeekPercent"
-     >
-      0%
-     </div>
+      <button
+        class="reportTab"
+        onclick="switchReport('weekly',this)"
+      >
+        📆 Haftalik
+      </button>
 
-    </div>
-
-
-    <div class="detail-card">
-
-     <div class="title">
-      🗓️ Shu oy jami dars
-     </div>
-
-     <div
-      class="value"
-      id="selectedMonthTotal"
-     >
-      0
-     </div>
-
-    </div>
-
-
-    <div class="detail-card">
-
-     <div class="title">
-      🔵 Shu oy kelgan
-     </div>
-
-     <div
-      class="value blue"
-      id="selectedMonthPlus"
-     >
-      0
-     </div>
+      <button
+        class="reportTab"
+        onclick="switchReport('monthly',this)"
+      >
+        🗓 Oylik
+      </button>
 
     </div>
 
+    <div class="reportContent">
 
-    <div class="detail-card">
-
-     <div class="title">
-      🔴 Shu oy qoldirgan
-     </div>
-
-     <div
-      class="value red"
-      id="selectedMonthMinus"
-     >
-      0
-     </div>
+      <div id="reportContent"></div>
 
     </div>
 
-
-    <div class="detail-card">
-
-     <div class="title">
-      📊 Oylik davomat
-     </div>
-
-     <div
-      class="value green"
-      id="selectedMonthPercent"
-     >
-      0%
-     </div>
-
-    </div>
-
-   </div>
-
-  </div>
-
- </div>
-
-
- <!-- DAILY -->
-
- <div
-  id="dailySection"
-  class="report-section"
- >
-
-  <div class="table-wrapper">
-
-   <table>
-
-    <thead>
-
-     <tr>
-
-      <th>Sana</th>
-      <th>🔵 Kelgan</th>
-      <th>🔴 Qolgan</th>
-      <th>📊 Jami</th>
-
-     </tr>
-
-    </thead>
-
-    <tbody id="dailyBody"></tbody>
-
-   </table>
-
-  </div>
-
- </div>
-
-
- <!-- WEEKLY -->
-
- <div
-  id="weeklySection"
-  class="report-section"
- >
-
-  <div class="table-wrapper">
-
-   <table>
-
-    <thead>
-
-     <tr>
-
-      <th>Hafta</th>
-      <th>🔵 Kelgan</th>
-      <th>🔴 Qolgan</th>
-      <th>📊 Jami</th>
-
-     </tr>
-
-    </thead>
-
-    <tbody id="weeklyBody"></tbody>
-
-   </table>
-
-  </div>
-
- </div>
-
-
- <!-- MONTHLY -->
-
- <div
-  id="monthlySection"
-  class="report-section"
- >
-
-  <div class="table-wrapper">
-
-   <table>
-
-    <thead>
-
-     <tr>
-
-      <th>Oy</th>
-      <th>🔵 Kelgan</th>
-      <th>🔴 Qolgan</th>
-      <th>📊 Jami</th>
-
-     </tr>
-
-    </thead>
-
-    <tbody id="monthlyBody"></tbody>
-
-   </table>
-
-  </div>
-
- </div>
-
+  </main>
 
 </div>
 
-</div>
-
-
-<!-- =========================
-     FIREBASE + JAVASCRIPT
-========================= -->
 
 <script type="module">
 
-
 /* =========================
-   FIREBASE IMPORT
+   FIREBASE IMPORTS
 ========================= */
 
-import {
- initializeApp
-}
+import { initializeApp }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-
 import {
- getDatabase,
- ref,
- onValue,
- set
+  getDatabase,
+  ref,
+  onValue,
+  set
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-
 import {
- getAuth,
- signInWithEmailAndPassword,
- signInAnonymously,
- signOut,
- onAuthStateChanged
+  getAuth,
+  signInWithEmailAndPassword,
+  signInAnonymously,
+  signOut,
+  onAuthStateChanged
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
@@ -1530,54 +807,38 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
    FIREBASE CONFIG
 ========================= */
 
-const firebaseConfig = {
+const firebaseConfig={
 
- apiKey:
- "AIzaSyAo-tioaUvivf965VRhRjJao-WXyU0AVTY",
+  apiKey:"AIzaSyAo-tioaUvivf965VRhRjJao-WXyU0AVTY",
 
- authDomain:
- "davomat-jurnali.firebaseapp.com",
+  authDomain:
+    "davomat-jurnali.firebaseapp.com",
 
- databaseURL:
- "https://davomat-jurnali-default-rtdb.firebaseio.com",
+  databaseURL:
+    "https://davomat-jurnali-default-rtdb.firebaseio.com",
 
- projectId:
- "davomat-jurnali",
+  projectId:
+    "davomat-jurnali",
 
- storageBucket:
- "davomat-jurnali.firebasestorage.app",
+  storageBucket:
+    "davomat-jurnali.firebasestorage.app",
 
- messagingSenderId:
- "859496944977",
+  messagingSenderId:
+    "859496944977",
 
- appId:
- "1:859496944977:web:ce853ba3191f6a086cef70",
+  appId:
+    "1:859496944977:web:ce853ba3191f6a086cef70",
 
- measurementId:
- "G-8CMSQF83T6"
-
+  measurementId:
+    "G-8CMSQF83T6"
 };
 
 
-const app =
- initializeApp(
-  firebaseConfig
-);
+const app=initializeApp(firebaseConfig);
 
+const db=getDatabase(app);
 
-const db =
- getDatabase(app);
-
-
-const auth =
- getAuth(app);
-
-
-const attendanceRef =
- ref(
-  db,
-  "davomat_jurnali"
-);
+const auth=getAuth(app);
 
 
 /* =========================
@@ -1586,26 +847,47 @@ const attendanceRef =
 
 const loginAccounts={
 
- "abdulloh04072009":
-  "abdullohhabibullayev2009@gmail.com",
+  "abdulloh04072009":
+    "abdullohhabibullayev2009@gmail.com",
 
- "muhammadali2010":
-  "muhammadaliabdumutallipov0@gmail.com"
+  "muhammadali2010":
+    "muhammadaliabdumutallipov0@gmail.com"
 
 };
 
 
 /* =========================
-   EDITOR UIDS
+   EDITOR ACCOUNTS
 ========================= */
 
-const editorUIDs=[
+/*
+   Asosiy tekshiruv endi UID bilan emas,
+   Firebase email orqali amalga oshiriladi.
 
- "svVfk6AVDgYkZaplAifpMmJ4oMq1",
+   Shuning uchun UID o'zgargan taqdirda ham
+   to'g'ri email bilan kirish bloklanmaydi.
+*/
 
- "vIHkF72SOLee4vma4xBeVl7Hhll2"
+const editorEmails=[
+
+  "abdullohhabibullayev2009@gmail.com",
+
+  "muhammadaliabdumutallipov0@gmail.com"
 
 ];
+
+
+/* =========================
+   GLOBAL VARIABLES
+========================= */
+
+let currentUser=null;
+
+let attendanceData={};
+
+let firebaseStarted=false;
+
+let currentReport="students";
 
 
 /* =========================
@@ -1614,1227 +896,528 @@ const editorUIDs=[
 
 const students=[
 
- "Abdumannobova Ruqiyaxon",
- "Abdumutallibov Muhammadali",
- "Abdug‘offorova Muslimaxon",
- "Anvarova Muharram",
- "Arabbekova Ruqiyaxon",
- "Baxromova Xabibaxon",
- "Baxodirjonova Kimyoxon",
- "Habibullayev Abdulloh",
- "Ibroximova Mo'minaxon",
- "Jo'rayev Hikmatillo",
- "Komilova Oydinoy",
- "Komilova Rayyona",
- "Muhammadsidiqova Shaxodatxon",
- "Muqimjonova Muzayyanaxon",
- "Muhammadkomilov Abduraxmon",
- "Nishonboyeva Mo'mina",
- "O'ktamov Rahmatillo",
- "Oribjonova Robiyaxon",
- "Qosimova Rayyona",
- "Soyibjonov Abduqodir",
- "Soyibjonova Mohlaroy",
- "Ubaydullayeva Bibisora",
- "Yaqubov Abdulboriy",
- "Yo'ldashboyeva Rayyona",
- "Yuldasheva Muhlisaxon"
+  "Abdullayev Muhammadali",
+
+  "Abduqodirov Abdulloh",
+
+  "Abdurahmonov Muhammadaziz",
+
+  "Akbarov Muhammadali",
+
+  "Aliyev Abdulaziz",
+
+  "Boboyorov Azizbek",
+
+  "Ergashev Muhammadjon",
+
+  "G‘ulomov Muhammadali",
+
+  "Habibullayev Abdulloh",
+
+  "Hasanov Abdug‘affor",
+
+  "Ibragimov Muhammadamin",
+
+  "Karimov Abdulloh",
+
+  "Mamatqulov Muhammadali",
+
+  "Mirzaev Muhammadsaid",
+
+  "Muhammadkomilov Abduraxmon",
+
+  "Nazarov Muhammadali",
+
+  "Olimov Abdulaziz",
+
+  "Qodirov Muhammadaziz",
+
+  "Raximov Abdulloh",
+
+  "Rustamov Muhammadali",
+
+  "Saidov Muhammadamin",
+
+  "Tursunov Abdulaziz",
+
+  "Yuldashev Muhammadali",
+
+  "Yuldasheva Muhlisaxon",
+
+  "Yuldasheva Muhlisaxon"
 
 ];
 
 
 /* =========================
-   DATES
+   DATE SETTINGS
 ========================= */
 
-const startDate =
- new Date(
-  "2026-09-28T00:00:00"
-);
+const startDate="2026-09-28";
+
+const endDate="2027-05-25";
 
 
-const endDate =
- new Date(
-  "2027-05-25T00:00:00"
-);
-
+/* =========================
+   LESSONS PER DAY
+========================= */
 
 const lessonsPerDay={
 
- 0:0,
- 1:5,
- 2:6,
- 3:6,
- 4:5,
- 5:6,
- 6:4
+  0:0,
+
+  1:5,
+
+  2:6,
+
+  3:6,
+
+  4:5,
+
+  5:6,
+
+  6:4
 
 };
 
+
+/* =========================
+   HOLIDAYS
+========================= */
 
 const holidays={
 
- "2026-10-01":
- "O‘qituvchi va murabbiylar kuni",
+  "2026-10-01":"Ustoz va murabbiylar kuni",
 
- "2026-12-08":
- "Konstitutsiya kuni",
+  "2026-12-08":"Konstitutsiya kuni",
 
- "2027-01-01":
- "Yangi yil",
+  "2027-01-01":"Yangi yil",
 
- "2027-03-08":
- "Xotin-qizlar kuni",
+  "2027-03-08":"Xotin-qizlar kuni",
 
- "2027-03-21":
- "Navro‘z",
+  "2027-03-21":"Navro‘z",
 
- "2027-05-09":
- "Xotira va qadrlash kuni"
+  "2027-05-09":"Xotira va qadrlash kuni"
 
 };
 
 
+/* =========================
+   VACATIONS
+========================= */
+
 const vacations=[
 
- {
-  start:"2026-11-04",
-  end:"2026-11-09",
-  name:"Kuzgi ta’til"
- },
+  {
+    start:"2026-11-04",
+    end:"2026-11-09",
+    name:"Kuzgi ta’til"
+  },
 
- {
-  start:"2026-12-28",
-  end:"2027-01-10",
-  name:"Qishki ta’til"
- },
+  {
+    start:"2026-12-28",
+    end:"2027-01-10",
+    name:"Qishki ta’til"
+  },
 
- {
-  start:"2027-03-21",
-  end:"2027-03-27",
-  name:"Bahorgi ta’til"
- }
+  {
+    start:"2027-03-21",
+    end:"2027-03-27",
+    name:"Bahorgi ta’til"
+  }
 
 ];
 
 
 /* =========================
-   VARIABLES
+   DATE FUNCTIONS
 ========================= */
 
-let currentUser=null;
+function formatDate(date){
 
-let attendanceData={};
+  const y=date.getFullYear();
+
+  const m=String(date.getMonth()+1).padStart(2,"0");
+
+  const d=String(date.getDate()).padStart(2,"0");
+
+  return `${y}-${m}-${d}`;
+
+}
+
+
+function parseDate(str){
+
+  const parts=str.split("-");
+
+  return new Date(
+    Number(parts[0]),
+    Number(parts[1])-1,
+    Number(parts[2])
+  );
+
+}
+
+
+function getDates(){
+
+  const dates=[];
+
+  let current=parseDate(startDate);
+
+  const end=parseDate(endDate);
+
+  while(current<=end){
+
+    dates.push(formatDate(current));
+
+    current.setDate(current.getDate()+1);
+
+  }
+
+  return dates;
+
+}
+
+
+const dates=getDates();
 
 
 /* =========================
-   DATE KEY
+   DATE LABEL
 ========================= */
 
-function dateKey(date){
+function shortDate(date){
 
- const year=
-  date.getFullYear();
+  const d=parseDate(date);
 
-
- const month=
-  String(
-   date.getMonth()+1
-  ).padStart(
-   2,
-   "0"
-  );
-
-
- const day=
-  String(
-   date.getDate()
-  ).padStart(
-   2,
-   "0"
-  );
-
-
- return `${year}-${month}-${day}`;
+  return String(d.getDate()).padStart(2,"0")
+    +"."
+    +String(d.getMonth()+1).padStart(2,"0");
 
 }
 
 
 /* =========================
-   FORMAT DATE
+   DAY NAMES
 ========================= */
 
-function formatDate(value){
+const dayNames=[
 
- const p=
-  value.split("-");
+  "Yak",
 
+  "Dush",
 
- return `${p[2]}.${p[1]}.${p[0]}`;
+  "Sesh",
 
-}
+  "Chor",
 
+  "Pay",
 
-/* =========================
-   TODAY
-========================= */
+  "Jum",
 
-function getTodayKey(){
+  "Shan"
 
- return dateKey(
-  new Date()
- );
-
-}
-
-
-/* =========================
-   GENERATE DATES
-========================= */
-
-function generateDates(){
-
- const result=[];
-
- const current=
-  new Date(
-   startDate
-  );
-
-
- while(
-  current<=endDate
- ){
-
-  result.push(
-   dateKey(
-    current
-   )
-  );
-
-
-  current.setDate(
-   current.getDate()+1
-  );
-
- }
-
-
- return result;
-
-}
-
-
-const dates=
- generateDates();
+];
 
 
 /* =========================
    LOCK REASON
 ========================= */
 
-function getLockReason(
- dateString
-){
+function getLockReason(date){
 
- /*
-  Viewer uchun barcha kunlar
-  bloklangan.
- */
+  const d=parseDate(date);
 
- if(
-  currentUser &&
-  currentUser.mode==="viewer"
- ){
+  const today=new Date();
 
-  return "👀 Kuzatuvchi rejimi";
+  today.setHours(0,0,0,0);
 
- }
+  if(d<today){
 
-
- const date=
-  new Date(
-   dateString+
-   "T00:00:00"
-  );
-
-
- const today=
-  new Date();
-
-
- today.setHours(
-  0,
-  0,
-  0,
-  0
- );
-
-
- if(
-  date<today
- ){
-
-  return "🔒 Kun yakunlangan";
-
- }
-
-
- if(
-  date.getDay()===0
- ){
-
-  return "Yakshanba";
-
- }
-
-
- if(
-  holidays[dateString]
- ){
-
-  return holidays[
-   dateString
-  ];
-
- }
-
-
- for(
-  const vacation
-  of vacations
- ){
-
-  if(
-   dateString>=
-    vacation.start
-   &&
-   dateString<=
-    vacation.end
-  ){
-
-   return vacation.name;
+    return "O‘tgan kun";
 
   }
 
- }
+  if(d.getDay()===0){
 
+    return "Yakshanba";
 
- return null;
+  }
 
-}
+  if(holidays[date]){
 
+    return holidays[date];
 
-/* =========================
-   GET ATTENDANCE
-========================= */
+  }
 
-function getAttendance(
- dateString,
- studentIndex
-){
+  for(const vacation of vacations){
 
- if(
-  !attendanceData[
-   dateString
-  ]
- ){
+    if(
+      date>=vacation.start &&
+      date<=vacation.end
+    ){
+
+      return vacation.name;
+
+    }
+
+  }
 
   return "";
 
- }
+}
 
 
- return(
-  attendanceData[
-   dateString
-  ][studentIndex] || ""
- );
+/* =========================
+   IS LOCKED
+========================= */
+
+function isLocked(date){
+
+  return getLockReason(date)!=="";
 
 }
 
 
 /* =========================
-   CELL COLOR
+   CURRENT DATE
 ========================= */
 
-function updateCellColor(
- cell,
- value
-){
+function isToday(date){
 
- cell.classList.remove(
-  "plus",
-  "minus"
- );
-
-
- if(
-  value==="+"
- ){
-
-  cell.classList.add(
-   "plus"
-  );
-
- }
-
-
- if(
-  value==="-"
- ){
-
-  cell.classList.add(
-   "minus"
-  );
-
- }
+  return formatDate(new Date())===date;
 
 }
 
 
 /* =========================
-   SHOW MAIN
+   BUILD TABLE
 ========================= */
 
-function showMain(){
+function buildTable(){
 
- document.getElementById(
-  "loginPage"
- ).style.display=
-  "none";
+  const head=document.getElementById("attendanceHead");
 
+  const body=document.getElementById("attendanceBody");
 
- document.getElementById(
-  "reportPage"
- ).style.display=
-  "none";
+  head.innerHTML="";
 
+  body.innerHTML="";
 
- document.getElementById(
-  "mainPage"
- ).style.display=
-  "block";
 
+  const tr=document.createElement("tr");
 
- updateUserInterface();
+  const numberTh=document.createElement("th");
 
- renderTable();
+  numberTh.textContent="№";
 
-}
+  tr.appendChild(numberTh);
 
 
-/* =========================
-   USER INTERFACE
-========================= */
+  const studentTh=document.createElement("th");
 
-function updateUserInterface(){
+  studentTh.textContent="Ism va Familya";
 
- const badge=
-  document.getElementById(
-   "userModeBadge"
-  );
+  studentTh.className="studentHeader";
 
+  tr.appendChild(studentTh);
 
- const warning=
-  document.getElementById(
-   "viewerWarning"
-  );
 
+  dates.forEach(date=>{
 
- if(
-  !currentUser
- ){
+    const th=document.createElement("th");
 
-  return;
+    th.className="dateHeader";
 
- }
+    if(isToday(date)){
 
-
- if(
-  currentUser.mode===
-  "viewer"
- ){
-
-  badge.textContent=
-   "👀 Kuzatuvchi";
-
-
-  badge.classList.remove(
-   "editor-badge"
-  );
-
-
-  warning.style.display=
-   "block";
-
-
- }else{
-
-  badge.textContent=
-   "✏️ "+
-   currentUser.name;
-
-
-  badge.classList.add(
-   "editor-badge"
-  );
-
-
-  warning.style.display=
-   "none";
-
- }
-
-}
-
-
-/* =========================
-   LOGIN
-========================= */
-
-async function login(){
-
- const username=
-  document
-   .getElementById(
-    "username"
-   )
-   .value
-   .trim();
-
-
- const password=
-  document
-   .getElementById(
-    "password"
-   )
-   .value;
-
-
- const remember=
-  document
-   .getElementById(
-    "rememberLogin"
-   )
-   .checked;
-
-
- const email=
-  loginAccounts[
-   username
-  ];
-
-
- if(
-  !email
- ){
-
-  document.getElementById(
-   "loginError"
-  ).textContent=
-   "Login yoki parol noto‘g‘ri!";
-
-
-  return;
-
- }
-
-
- try{
-
-  const result=
-   await signInWithEmailAndPassword(
-    auth,
-    email,
-    password
-   );
-
-
-  const user=
-   result.user;
-
-
-  /*
-   Faqat 2 ta UID editor.
-  */
-
-  if(
-   !editorUIDs.includes(
-    user.uid
-   )
-  ){
-
-   await signOut(
-    auth
-   );
-
-
-   throw new Error(
-    "Ruxsat berilmagan akkaunt."
-   );
-
-  }
-
-
-  currentUser={
-
-   username:
-    username,
-
-   name:
-    username===
-    "abdulloh04072009"
-     ? "Abdulloh"
-     : "Muhammadali",
-
-   canEdit:
-    true,
-
-   mode:
-    "editor",
-
-   uid:
-    user.uid
-
-  };
-
-
-  if(
-   remember
-  ){
-
-   localStorage.setItem(
-    "davomat_login",
-    username
-   );
-
-  }else{
-
-   localStorage.removeItem(
-    "davomat_login"
-   );
-
-  }
-
-
-  sessionStorage.setItem(
-   "davomat_user",
-   JSON.stringify(
-    currentUser
-   )
-  );
-
-
-  document.getElementById(
-   "loginError"
-  ).textContent=
-   "";
-
-
-  showMain();
-
-
- }catch(error){
-
-  console.error(
-   error
-  );
-
-
-  document.getElementById(
-   "loginError"
-  ).textContent=
-   "Login yoki parol noto‘g‘ri!";
-
- }
-
-}
-
-
-/* =========================
-   GUEST LOGIN
-========================= */
-
-async function guestLogin(){
-
- try{
-
-  const result=
-   await signInAnonymously(
-    auth
-   );
-
-
-  currentUser={
-
-   username:
-    "guest",
-
-   name:
-    "Kuzatuvchi",
-
-   canEdit:
-    false,
-
-   mode:
-    "viewer",
-
-   uid:
-    result.user.uid
-
-  };
-
-
-  sessionStorage.setItem(
-   "davomat_user",
-   JSON.stringify(
-    currentUser
-   )
-  );
-
-
-  localStorage.removeItem(
-   "davomat_user"
-  );
-
-
-  document.getElementById(
-   "loginError"
-  ).textContent=
-   "";
-
-
-  showMain();
-
-
- }catch(error){
-
-  console.error(
-   error
-  );
-
-
-  document.getElementById(
-   "loginError"
-  ).textContent=
-   "Parolsiz kirishda xatolik yuz berdi.";
-
- }
-
-}
-
-
-/* =========================
-   LOGOUT
-========================= */
-
-async function logout(){
-
- try{
-
-  await signOut(
-   auth
-  );
-
- }catch(error){
-
-  console.error(
-   error
-  );
-
- }
-
-
- currentUser=
-  null;
-
-
- sessionStorage.removeItem(
-  "davomat_user"
- );
-
-
- document.getElementById(
-  "mainPage"
- ).style.display=
-  "none";
-
-
- document.getElementById(
-  "reportPage"
- ).style.display=
-  "none";
-
-
- document.getElementById(
-  "loginPage"
- ).style.display=
-  "flex";
-
-
- document.getElementById(
-  "username"
- ).value=
-  "";
-
-
- document.getElementById(
-  "password"
- ).value=
-  "";
-
-}
-
-
-/* =========================
-   PASSWORD EYE
-========================= */
-
-document
- .getElementById(
-  "eyeButton"
- )
- .addEventListener(
-  "click",
-  function(){
-
-   const input=
-    document.getElementById(
-     "password"
-    );
-
-
-   if(
-    input.type===
-    "password"
-   ){
-
-    input.type=
-     "text";
-
-
-    this.textContent=
-     "🙈";
-
-   }else{
-
-    input.type=
-     "password";
-
-
-    this.textContent=
-     "👁️";
-
-   }
-
-  }
-);
-
-
-/* =========================
-   DARK MODE
-========================= */
-
-function toggleDark(){
-
- document.body.classList.toggle(
-  "dark"
- );
-
-
- localStorage.setItem(
-  "davomat_dark",
-
-  document.body.classList.contains(
-   "dark"
-  )
- );
-
-}
-
-
-if(
- localStorage.getItem(
-  "davomat_dark"
- )===
- "true"
-){
-
- document.body.classList.add(
-  "dark"
- );
-
-}
-
-
-/* =========================
-   RENDER TABLE
-========================= */
-
-function renderTable(){
-
- const header=
-  document.getElementById(
-   "dateHeader"
-  );
-
-
- const body=
-  document.getElementById(
-   "attendanceBody"
-  );
-
-
- const todayKey=
-  getTodayKey();
-
-
- header.innerHTML=`
-
-  <th>№</th>
-
-  <th class="name-column">
-   Ism va Familya
-  </th>
-
- `;
-
-
- dates.forEach(
-  dateString=>{
-
-   const th=
-    document.createElement(
-     "th"
-    );
-
-
-   th.className=
-    "date-column";
-
-
-   if(
-    dateString===
-    todayKey
-   ){
-
-    th.classList.add(
-     "today-column"
-    );
-
-
-    th.textContent=
-     "📅 "+
-     formatDate(
-      dateString
-     );
-
-
-    th.title=
-     "Bugungi sana";
-
-   }else{
-
-    th.textContent=
-     formatDate(
-      dateString
-     );
-
-   }
-
-
-   header.appendChild(
-    th
-   );
-
-  }
- );
-
-
- body.innerHTML=
-  "";
-
-
- students.forEach(
-  (
-   student,
-   studentIndex
-  )=>{
-
-   const tr=
-    document.createElement(
-     "tr"
-    );
-
-
-   const number=
-    document.createElement(
-     "td"
-    );
-
-
-   number.textContent=
-    studentIndex+1;
-
-
-   const name=
-    document.createElement(
-     "td"
-    );
-
-
-   name.className=
-    "name-column";
-
-
-   name.textContent=
-    student;
-
-
-   tr.appendChild(
-    number
-   );
-
-
-   tr.appendChild(
-    name
-   );
-
-
-   dates.forEach(
-    dateString=>{
-
-     const td=
-      document.createElement(
-       "td"
-      );
-
-
-     td.className=
-      "attendance-cell";
-
-
-     const isToday=
-      dateString===
-      todayKey;
-
-
-     if(
-      isToday
-     ){
-
-      td.classList.add(
-       "today-attendance"
-      );
-
-     }
-
-
-     const saved=
-      getAttendance(
-       dateString,
-       studentIndex
-      );
-
-
-     const lock=
-      getLockReason(
-       dateString
-      );
-
-
-     /* =====================
-        LOCKED
-     ===================== */
-
-     if(
-      lock
-     ){
-
-      td.classList.add(
-       "locked"
-      );
-
-
-      if(
-       currentUser &&
-       currentUser.mode===
-       "viewer"
-      ){
-
-       td.classList.add(
-        "viewer-locked"
-       );
-
-
-       td.textContent=
-        saved ||
-        "🔒";
-
-
-       td.title=
-        "Davomat kiritish uchun maxsus login kerak";
-
-      }else{
-
-       td.textContent=
-        saved ||
-        "🔒";
-
-
-       td.title=
-        lock;
-
-      }
-
-
-      td.contentEditable=
-       "false";
-
-
-      updateCellColor(
-       td,
-       saved
-      );
-
-
-     }else{
-
-      /* =====================
-         VIEWER
-      ===================== */
-
-      if(
-       !currentUser ||
-       currentUser.mode!==
-       "editor"
-      ){
-
-       td.classList.add(
-        "viewer-locked"
-       );
-
-
-       td.contentEditable=
-        "false";
-
-
-       td.textContent=
-        saved ||
-        "🔒";
-
-
-       td.title=
-        "Davomat kiritish uchun maxsus login kerak";
-
-
-      }else{
-
-       /* =====================
-          EDITOR
-       ===================== */
-
-       td.contentEditable=
-        "true";
-
-
-       td.spellcheck=
-        false;
-
-
-       if(
-        saved
-       ){
-
-        td.textContent=
-         saved;
-
-
-        updateCellColor(
-         td,
-         saved
-        );
-
-       }
-
-
-       td.addEventListener(
-        "input",
-        function(){
-
-         let value=
-          td.textContent.trim();
-
-
-         if(
-          value!==
-          "+" &&
-          value!==
-          "-"
-         ){
-
-          value=
-           "";
-
-
-          td.textContent=
-           "";
-
-         }
-
-
-         if(
-          !attendanceData[
-           dateString
-          ]
-         ){
-
-          attendanceData[
-           dateString
-          ]={};
-
-         }
-
-
-         attendanceData[
-          dateString
-         ][
-          studentIndex
-         ]=
-          value;
-
-
-         updateCellColor(
-          td,
-          value
-         );
-
-
-         saveData();
-
-        }
-       );
-
-      }
-
-     }
-
-
-     tr.appendChild(
-      td
-     );
+      th.classList.add("todayColumn");
 
     }
-   );
+
+    const d=parseDate(date);
+
+    th.innerHTML=
+      `${shortDate(date)}<br>${dayNames[d.getDay()]}`;
+
+    tr.appendChild(th);
+
+  });
 
 
-   body.appendChild(
-    tr
-   );
+  head.appendChild(tr);
+
+
+  students.forEach((student,index)=>{
+
+    const tr=document.createElement("tr");
+
+
+    const numberTd=document.createElement("td");
+
+    numberTd.textContent=index+1;
+
+    tr.appendChild(numberTd);
+
+
+    const nameTd=document.createElement("td");
+
+    nameTd.textContent=student;
+
+    nameTd.className="studentName";
+
+    tr.appendChild(nameTd);
+
+
+    dates.forEach(date=>{
+
+      const td=document.createElement("td");
+
+      if(isToday(date)){
+
+        td.classList.add("todayColumn");
+
+      }
+
+
+      if(isLocked(date)){
+
+        td.classList.add("lockedCell");
+
+      }
+
+
+      const key=getAttendanceKey(student,date);
+
+      const value=attendanceData[key]||"";
+
+
+      const button=document.createElement("button");
+
+      button.className="attendanceBtn";
+
+
+      if(isLocked(date)){
+
+        button.classList.add("lockedBtn");
+
+        button.textContent="−";
+
+        button.title=getLockReason(date);
+
+      }
+
+      else if(value==="present"){
+
+        button.classList.add("presentBtn");
+
+        button.textContent="+";
+
+      }
+
+      else if(value==="absent"){
+
+        button.classList.add("absentBtn");
+
+        button.textContent="−";
+
+      }
+
+      else{
+
+        button.classList.add("emptyBtn");
+
+        button.textContent="";
+
+      }
+
+
+      if(
+        currentUser &&
+        currentUser.canEdit &&
+        !isLocked(date)
+      ){
+
+        button.onclick=()=>toggleAttendance(
+          student,
+          date
+        );
+
+      }
+
+
+      td.appendChild(button);
+
+      tr.appendChild(td);
+
+    });
+
+
+    body.appendChild(tr);
+
+  });
+
+}
+
+
+/* =========================
+   ATTENDANCE KEY
+========================= */
+
+function getAttendanceKey(student,date){
+
+  return `${date}__${student}`;
+
+}
+
+
+/* =========================
+   TOGGLE ATTENDANCE
+========================= */
+
+async function toggleAttendance(student,date){
+
+  if(!currentUser || !currentUser.canEdit){
+
+    return;
 
   }
- );
+
+  if(isLocked(date)){
+
+    return;
+
+  }
+
+
+  const key=getAttendanceKey(student,date);
+
+  const current=attendanceData[key]||"";
+
+
+  if(current===""){
+
+    attendanceData[key]="present";
+
+  }
+
+  else if(current==="present"){
+
+    attendanceData[key]="absent";
+
+  }
+
+  else{
+
+    attendanceData[key]="";
+
+  }
+
+
+  buildTable();
+
+  await saveData();
 
 }
 
@@ -2845,84 +1428,51 @@ function renderTable(){
 
 async function saveData(){
 
- if(
-  !currentUser ||
-  currentUser.mode!==
-  "editor"
- ){
+  if(!auth.currentUser){
 
-  return;
+    alert("Firebase foydalanuvchisi topilmadi.");
 
- }
+    return;
+
+  }
 
 
- /*
-   Anonymous user hech qachon
-   yozolmaydi.
- */
+  if(auth.currentUser.isAnonymous){
 
- if(
-  !auth.currentUser ||
-  auth.currentUser.isAnonymous
- ){
+    alert("Kuzatuvchi sifatida ma’lumot o‘zgartirib bo‘lmaydi.");
 
-  return;
+    return;
 
- }
+  }
 
 
- /*
-   Client tekshiruv.
-   Asosiy himoya Rules'da.
- */
+  if(!currentUser || !currentUser.canEdit){
 
- if(
-  !editorUIDs.includes(
-   auth.currentUser.uid
-  )
- ){
+    alert("Sizda tahrirlash huquqi yo‘q.");
 
-  return;
+    return;
 
- }
+  }
 
 
- try{
+  try{
 
-  await set(
-   attendanceRef,
-   {
+    await set(
+      ref(db,"davomat_jurnali"),
+      attendanceData
+    );
 
-    attendance:
-     attendanceData,
+  }
+  catch(error){
 
-    updatedAt:
-     Date.now()
+    console.error(error);
 
-   }
-  );
+    alert(
+      "Ma’lumotni saqlashda xatolik!\n\n"+
+      error.message
+    );
 
-
-  document.getElementById(
-   "firebaseStatus"
-  ).textContent=
-   "🟢 Firebase bilan sinxronlangan.";
-
-
- }catch(error){
-
-  console.error(
-   "Saqlash xatosi:",
-   error
-  );
-
-
-  document.getElementById(
-   "firebaseStatus"
-  ).textContent=
-   "🔴 Saqlashda xatolik.";
-
- }
+  }
 
 }
 
@@ -2933,839 +1483,995 @@ async function saveData(){
 
 function startFirebaseListener(){
 
- onValue(
-  attendanceRef,
+  if(firebaseStarted){
 
-  snapshot=>{
-
-   const data=
-    snapshot.val();
-
-
-   if(
-    data &&
-    data.attendance
-   ){
-
-    attendanceData=
-     data.attendance;
-
-   }else{
-
-    attendanceData=
-     {};
-
-   }
-
-
-   renderTable();
-
-
-   document.getElementById(
-    "firebaseStatus"
-   ).textContent=
-    "🟢 Firebase bilan sinxronlangan.";
-
-
-   if(
-    document.getElementById(
-     "reportPage"
-    ).style.display===
-    "block"
-   ){
-
-    renderReport();
-
-   }
-
-  },
-
-
-  error=>{
-
-   console.error(
-    error
-   );
-
-
-   document.getElementById(
-    "firebaseStatus"
-   ).textContent=
-    "🔴 Firebase ulanishida xatolik.";
+    return;
 
   }
 
- );
+  firebaseStarted=true;
+
+
+  const databaseRef=
+    ref(db,"davomat_jurnali");
+
+
+  onValue(
+    databaseRef,
+    snapshot=>{
+
+      attendanceData=
+        snapshot.val() || {};
+
+      buildTable();
+
+    },
+    error=>{
+
+      console.error(error);
+
+      alert(
+        "Firebase ma’lumotlarini olishda xatolik:\n"+
+        error.message
+      );
+
+    }
+  );
 
 }
 
 
 /* =========================
-   REPORT OPEN
+   PASSWORD EYE
 ========================= */
 
-function openReport(){
+window.togglePassword=function(){
 
- document.getElementById(
-  "mainPage"
- ).style.display=
-  "none";
+  const password=
+    document.getElementById("password");
 
-
- document.getElementById(
-  "reportPage"
- ).style.display=
-  "block";
+  const eye=
+    document.getElementById("eyeButton");
 
 
- document.getElementById(
-  "studentSearch"
- ).value=
-  "";
+  if(password.type==="password"){
+
+    password.type="text";
+
+    eye.textContent="🙈";
+
+  }
+  else{
+
+    password.type="password";
+
+    eye.textContent="👁️";
+
+  }
+
+};
 
 
- document.getElementById(
-  "studentDetail"
- ).style.display=
-  "none";
+/* =========================
+   SHOW LOGIN ERROR
+========================= */
 
+function showLoginError(message){
 
- showReportTab(
-  "students"
- );
+  document.getElementById(
+    "loginError"
+  ).textContent=message;
 
 }
 
 
 /* =========================
-   REPORT CLOSE
+   LOGIN
 ========================= */
 
-function closeReport(){
+window.login=async function(){
 
- document.getElementById(
-  "reportPage"
- ).style.display=
-  "none";
+  const username=
+    document.getElementById("username")
+      .value.trim()
+      .toLowerCase();
+
+  const password=
+    document.getElementById("password")
+      .value;
+
+  const remember=
+    document.getElementById("rememberLogin")
+      .checked;
 
 
- document.getElementById(
-  "mainPage"
- ).style.display=
-  "block";
+  showLoginError("");
+
+
+  if(!username){
+
+    showLoginError("Loginni kiriting!");
+
+    return;
+
+  }
+
+
+  if(!password){
+
+    showLoginError("Parolni kiriting!");
+
+    return;
+
+  }
+
+
+  const email=loginAccounts[username];
+
+
+  if(!email){
+
+    showLoginError(
+      "Login yoki parol noto‘g‘ri!"
+    );
+
+    return;
+
+  }
+
+
+  const loginButton=
+    document.getElementById("loginButton");
+
+  loginButton.disabled=true;
+
+  loginButton.textContent="⏳ Kirilmoqda...";
+
+
+  try{
+
+    /*
+      ENG MUHIM O'ZGARISH:
+
+      Firebase Authentication orqali
+      email + parol tekshiriladi.
+    */
+
+    const result=
+      await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+
+    const user=result.user;
+
+
+    /*
+      UID o'rniga email orqali
+      editor huquqini tekshiramiz.
+    */
+
+    if(
+      !user.email ||
+      !editorEmails.includes(
+        user.email.toLowerCase()
+      )
+    ){
+
+      await signOut(auth);
+
+      showLoginError(
+        "Bu Firebase akkauntiga editor ruxsati berilmagan!"
+      );
+
+      return;
+
+    }
+
+
+    currentUser={
+
+      username:username,
+
+      name:
+        username==="abdulloh04072009"
+          ? "Abdulloh"
+          : "Muhammadali",
+
+      canEdit:true,
+
+      mode:"editor",
+
+      uid:user.uid,
+
+      email:user.email
+
+    };
+
+
+    if(remember){
+
+      localStorage.setItem(
+        "davomat_login",
+        username
+      );
+
+    }
+    else{
+
+      localStorage.removeItem(
+        "davomat_login"
+      );
+
+    }
+
+
+    sessionStorage.setItem(
+      "davomat_user",
+      JSON.stringify(currentUser)
+    );
+
+
+    showLoginError("");
+
+    showMain();
+
+    startFirebaseListener();
+
+
+  }
+  catch(error){
+
+    console.error(
+      "Firebase login error:",
+      error
+    );
+
+
+    /*
+      Endi barcha Firebase xatolari
+      bir xil "Login noto‘g‘ri" bo‘lib
+      qolmaydi.
+    */
+
+    switch(error.code){
+
+      case "auth/invalid-credential":
+
+      case "auth/wrong-password":
+
+      case "auth/user-not-found":
+
+      case "auth/invalid-email":
+
+        showLoginError(
+          "Login yoki parol noto‘g‘ri!"
+        );
+
+        break;
+
+
+      case "auth/too-many-requests":
+
+        showLoginError(
+          "Juda ko‘p urinish bo‘ldi. Birozdan keyin qayta urinib ko‘ring."
+        );
+
+        break;
+
+
+      case "auth/user-disabled":
+
+        showLoginError(
+          "Bu Firebase akkaunti bloklangan."
+        );
+
+        break;
+
+
+      case "auth/network-request-failed":
+
+        showLoginError(
+          "Internet yoki Firebase ulanishida muammo."
+        );
+
+        break;
+
+
+      default:
+
+        showLoginError(
+          "Kirishda xatolik: "+
+          (error.message || error.code)
+        );
+
+    }
+
+  }
+  finally{
+
+    loginButton.disabled=false;
+
+    loginButton.textContent="🔐 Kirish";
+
+  }
+
+};
+
+
+/* =========================
+   GUEST LOGIN
+========================= */
+
+window.guestLogin=async function(){
+
+  const guestButton=
+    document.getElementById("guestButton");
+
+  const errorBox=
+    document.getElementById("loginError");
+
+
+  errorBox.textContent="";
+
+
+  guestButton.disabled=true;
+
+  guestButton.textContent=
+    "⏳ Kirilmoqda...";
+
+
+  try{
+
+    await signInAnonymously(auth);
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    if(
+      error.code==="auth/operation-not-allowed"
+    ){
+
+      errorBox.textContent=
+        "Kuzatuvchi kirishi uchun Firebase Authentication'da Anonymous yoqilishi kerak.";
+
+    }
+    else{
+
+      errorBox.textContent=
+        "Kuzatuvchi sifatida kirishda xatolik.";
+
+    }
+
+  }
+  finally{
+
+    guestButton.disabled=false;
+
+    guestButton.textContent=
+      "👀 Kuzatuvchi sifatida kirish";
+
+  }
+
+};
+
+
+/* =========================
+   AUTH STATE
+========================= */
+
+onAuthStateChanged(
+  auth,
+  user=>{
+
+    if(!user){
+
+      currentUser=null;
+
+      document.getElementById(
+        "loginPage"
+      ).style.display="flex";
+
+      document.getElementById(
+        "mainPage"
+      ).style.display="none";
+
+      document.getElementById(
+        "reportPage"
+      ).style.display="none";
+
+      return;
+
+    }
+
+
+    /*
+      ANONYMOUS / GUEST
+    */
+
+    if(user.isAnonymous){
+
+      currentUser={
+
+        username:"guest",
+
+        name:"Kuzatuvchi",
+
+        canEdit:false,
+
+        mode:"viewer",
+
+        uid:user.uid
+
+      };
+
+
+      sessionStorage.setItem(
+        "davomat_user",
+        JSON.stringify(currentUser)
+      );
+
+
+      showMain();
+
+      startFirebaseListener();
+
+      return;
+
+    }
+
+
+    /*
+      NORMAL EDITOR
+    */
+
+    const email=
+      (user.email || "").toLowerCase();
+
+
+    if(editorEmails.includes(email)){
+
+      let username="editor";
+
+      let name="Editor";
+
+
+      if(
+        email===
+        "abdullohhabibullayev2009@gmail.com"
+      ){
+
+        username=
+          "abdulloh04072009";
+
+        name="Abdulloh";
+
+      }
+
+
+      if(
+        email===
+        "muhammadaliabdumutallipov0@gmail.com"
+      ){
+
+        username=
+          "muhammadali2010";
+
+        name="Muhammadali";
+
+      }
+
+
+      currentUser={
+
+        username,
+
+        name,
+
+        canEdit:true,
+
+        mode:"editor",
+
+        uid:user.uid,
+
+        email:user.email
+
+      };
+
+
+      sessionStorage.setItem(
+        "davomat_user",
+        JSON.stringify(currentUser)
+      );
+
+
+      showMain();
+
+      startFirebaseListener();
+
+    }
+
+  }
+);
+
+
+/* =========================
+   SHOW MAIN
+========================= */
+
+window.showMain=function(){
+
+  document.getElementById(
+    "loginPage"
+  ).style.display="none";
+
+  document.getElementById(
+    "mainPage"
+  ).style.display="block";
+
+  document.getElementById(
+    "reportPage"
+  ).style.display="none";
+
+
+  updateUserBadge();
+
+  buildTable();
+
+};
+
+
+/* =========================
+   USER BADGE
+========================= */
+
+function updateUserBadge(){
+
+  const badge=
+    document.getElementById("userBadge");
+
+
+  if(!currentUser){
+
+    badge.textContent=
+      "Kuzatuvchi";
+
+    return;
+
+  }
+
+
+  if(currentUser.mode==="viewer"){
+
+    badge.textContent=
+      "👀 Kuzatuvchi";
+
+  }
+  else{
+
+    badge.textContent=
+      "👤 "+
+      currentUser.name+
+      " • Editor";
+
+  }
 
 }
 
 
 /* =========================
-   REPORT TAB
+   LOGOUT
 ========================= */
 
-function showReportTab(
- tab
+window.logout=async function(){
+
+  try{
+
+    await signOut(auth);
+
+  }
+  catch(error){
+
+    console.error(error);
+
+  }
+
+
+  currentUser=null;
+
+  sessionStorage.removeItem(
+    "davomat_user"
+  );
+
+
+  document.getElementById(
+    "loginPage"
+  ).style.display="flex";
+
+  document.getElementById(
+    "mainPage"
+  ).style.display="none";
+
+  document.getElementById(
+    "reportPage"
+  ).style.display="none";
+
+
+  document.getElementById(
+    "password"
+  ).value="";
+
+};
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+window.toggleDarkMode=function(){
+
+  document.body.classList.toggle("dark");
+
+  const dark=
+    document.body.classList.contains("dark");
+
+  localStorage.setItem(
+    "davomat_dark",
+    dark ? "1" : "0"
+  );
+
+};
+
+
+if(
+  localStorage.getItem("davomat_dark")==="1"
 ){
 
- const sections=[
-
-  "students",
-  "daily",
-  "weekly",
-  "monthly"
-
- ];
-
-
- sections.forEach(
-  name=>{
-
-   document
-    .getElementById(
-     name+
-     "Section"
-    )
-    .classList.remove(
-     "active"
-    );
-
-
-   document
-    .getElementById(
-     "tab"+
-     name.charAt(0).toUpperCase()+
-     name.slice(1)
-    )
-    .classList.remove(
-     "active"
-    );
-
-  }
- );
-
-
- document
-  .getElementById(
-   tab+
-   "Section"
-  )
-  .classList.add(
-   "active"
-  );
-
-
- document
-  .getElementById(
-   "tab"+
-   tab.charAt(0).toUpperCase()+
-   tab.slice(1)
-  )
-  .classList.add(
-   "active"
-  );
-
-
- renderReport();
+  document.body.classList.add("dark");
 
 }
+
+
+/* =========================
+   LOAD SAVED LOGIN
+========================= */
+
+function loadSavedLogin(){
+
+  const saved=
+    localStorage.getItem(
+      "davomat_login"
+    );
+
+
+  if(saved && loginAccounts[saved]){
+
+    document.getElementById(
+      "username"
+    ).value=saved;
+
+    document.getElementById(
+      "rememberLogin"
+    ).checked=true;
+
+  }
+
+}
+
+
+/* =========================
+   REPORT PAGE
+========================= */
+
+window.showReport=function(){
+
+  document.getElementById(
+    "mainPage"
+  ).style.display="none";
+
+  document.getElementById(
+    "reportPage"
+  ).style.display="block";
+
+
+  renderReport(currentReport);
+
+};
+
+
+/* =========================
+   REPORT TABS
+========================= */
+
+window.switchReport=function(type,button){
+
+  currentReport=type;
+
+
+  document.querySelectorAll(
+    ".reportTab"
+  ).forEach(tab=>{
+
+    tab.classList.remove("active");
+
+  });
+
+
+  button.classList.add("active");
+
+
+  renderReport(type);
+
+};
+
+
+/* =========================
+   REPORT RENDER
+========================= */
+
+function renderReport(type){
+
+  const content=
+    document.getElementById(
+      "reportContent"
+    );
+
+
+  if(type==="students"){
+
+    renderStudentsReport(content);
+
+  }
+  else if(type==="daily"){
+
+    renderDailyReport(content);
+
+  }
+  else if(type==="weekly"){
+
+    renderWeeklyReport(content);
+
+  }
+  else if(type==="monthly"){
+
+    renderMonthlyReport(content);
+
+  }
+
+}
+
+
+/* =========================
+   STUDENT REPORT
+========================= */
+
+function renderStudentsReport(content){
+
+  let html=`
+
+    <input
+      class="searchBox"
+      id="studentSearch"
+      placeholder="🔎 O‘quvchini qidirish..."
+      oninput="filterStudentsReport()"
+    >
+
+    <div id="studentReportTable"></div>
+
+  `;
+
+
+  content.innerHTML=html;
+
+  renderStudentReportTable();
+
+}
+
+
+function renderStudentReportTable(){
+
+  const box=
+    document.getElementById(
+      "studentReportTable"
+    );
+
+
+  if(!box) return;
+
+
+  const search=
+    (
+      document.getElementById(
+        "studentSearch"
+      )?.value || ""
+    )
+    .toLowerCase();
+
+
+  let html=`
+
+    <div class="tableWrapper">
+
+      <table class="reportTable">
+
+        <thead>
+
+          <tr>
+
+            <th>№</th>
+
+            <th>Ism va Familya</th>
+
+            <th>Belgilangan kun</th>
+
+            <th>✅ Keldi</th>
+
+            <th>❌ Qoldirdi</th>
+
+            <th>📊 Davomat</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+  `;
+
+
+  let number=0;
+
+
+  students.forEach((student,index)=>{
+
+    if(
+      search &&
+      !student.toLowerCase()
+        .includes(search)
+    ){
+
+      return;
+
+    }
+
+
+    number++;
+
+
+    const stats=
+      getStudentStats(student);
+
+
+    html+=`
+
+      <tr>
+
+        <td>${number}</td>
+
+        <td style="text-align:left">
+          ${student}
+        </td>
+
+        <td>${stats.total}</td>
+
+        <td>${stats.present}</td>
+
+        <td>${stats.absent}</td>
+
+        <td>${stats.percent}%</td>
+
+      </tr>
+
+    `;
+
+  });
+
+
+  html+=`
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  `;
+
+
+  box.innerHTML=html;
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+window.filterStudentsReport=function(){
+
+  renderStudentReportTable();
+
+};
 
 
 /* =========================
    STUDENT STATS
 ========================= */
 
-function getStudentStats(
- index
-){
+function getStudentStats(student){
 
- let plus=0;
+  let total=0;
 
- let minus=0;
+  let present=0;
 
+  let absent=0;
 
- dates.forEach(
-  dateString=>{
 
-   const value=
-    getAttendance(
-     dateString,
-     index
-    );
+  dates.forEach(date=>{
 
+    if(isLocked(date)){
 
-   if(
-    value===
-    "+"
-   ){
-
-    plus++;
-
-   }
-
-
-   if(
-    value===
-    "-"
-   ){
-
-    minus++;
-
-   }
-
-  }
- );
-
-
- return{
-
-  plus,
-
-  minus,
-
-  total:
-   plus+
-   minus
-
- };
-
-}
-
-
-/* =========================
-   GET MONDAY
-========================= */
-
-function getMonday(
- date
-){
-
- const result=
-  new Date(
-   date
-  );
-
-
- const day=
-  result.getDay();
-
-
- const difference=
-  day===0
-   ? -6
-   : 1-day;
-
-
- result.setDate(
-  result.getDate()+
-  difference
- );
-
-
- result.setHours(
-  0,
-  0,
-  0,
-  0
- );
-
-
- return result;
-
-}
-
-
-/* =========================
-   WEEK STATS
-========================= */
-
-function getStudentWeekStats(
- index
-){
-
- const today=
-  new Date();
-
-
- const monday=
-  getMonday(
-   today
-  );
-
-
- const saturday=
-  new Date(
-   monday
-  );
-
-
- saturday.setDate(
-  saturday.getDate()+5
- );
-
-
- let plus=0;
-
- let minus=0;
-
- let total=0;
-
-
- dates.forEach(
-  dateString=>{
-
-   const date=
-    new Date(
-     dateString+
-     "T00:00:00"
-    );
-
-
-   if(
-    date<monday ||
-    date>saturday
-   ){
-
-    return;
-
-   }
-
-
-   const dateLock=
-    date.getDay()===0 ||
-    holidays[dateString] ||
-    vacations.some(
-     v=>
-      dateString>=v.start &&
-      dateString<=v.end
-    );
-
-
-   if(
-    dateLock
-   ){
-
-    return;
-
-   }
-
-
-   const lessons=
-    lessonsPerDay[
-     date.getDay()
-    ] ||
-    0;
-
-
-   const value=
-    getAttendance(
-     dateString,
-     index
-    );
-
-
-   if(
-    value===
-    "+"
-   ){
-
-    plus+=
-     lessons;
-
-   }
-
-
-   if(
-    value===
-    "-"
-   ){
-
-    minus+=
-     lessons;
-
-   }
-
-
-   if(
-    value===
-    "+" ||
-    value===
-    "-"
-   ){
-
-    total+=
-     lessons;
-
-   }
-
-  }
- );
-
-
- return{
-
-  plus,
-
-  minus,
-
-  total
-
- };
-
-}
-
-
-/* =========================
-   MONTH STATS
-========================= */
-
-function getStudentMonthStats(
- index
-){
-
- const today=
-  new Date();
-
-
- const year=
-  today.getFullYear();
-
-
- const month=
-  today.getMonth();
-
-
- let plus=0;
-
- let minus=0;
-
- let total=0;
-
-
- dates.forEach(
-  dateString=>{
-
-   const date=
-    new Date(
-     dateString+
-     "T00:00:00"
-    );
-
-
-   if(
-    date.getFullYear()!==
-     year ||
-    date.getMonth()!==
-     month
-   ){
-
-    return;
-
-   }
-
-
-   const dateLock=
-    date.getDay()===0 ||
-    holidays[dateString] ||
-    vacations.some(
-     v=>
-      dateString>=v.start &&
-      dateString<=v.end
-    );
-
-
-   if(
-    dateLock
-   ){
-
-    return;
-
-   }
-
-
-   const lessons=
-    lessonsPerDay[
-     date.getDay()
-    ] ||
-    0;
-
-
-   const value=
-    getAttendance(
-     dateString,
-     index
-    );
-
-
-   if(
-    value===
-    "+"
-   ){
-
-    plus+=
-     lessons;
-
-   }
-
-
-   if(
-    value===
-    "-"
-   ){
-
-    minus+=
-     lessons;
-
-   }
-
-
-   if(
-    value===
-    "+" ||
-    value===
-    "-"
-   ){
-
-    total+=
-     lessons;
-
-   }
-
-  }
- );
-
-
- return{
-
-  plus,
-
-  minus,
-
-  total
-
- };
-
-}
-
-
-/* =========================
-   STUDENT DETAIL
-========================= */
-
-function showStudentDetail(
- index
-){
-
- const week=
-  getStudentWeekStats(
-   index
-  );
-
-
- const month=
-  getStudentMonthStats(
-   index
-  );
-
-
- document.getElementById(
-  "studentDetail"
- ).style.display=
-  "block";
-
-
- document.getElementById(
-  "selectedStudentName"
- ).textContent=
-  "👨‍🎓 "+
-  students[index];
-
-
- document.getElementById(
-  "selectedWeekTotal"
- ).textContent=
-  week.total+
-  " dars";
-
-
- document.getElementById(
-  "selectedWeekPlus"
- ).textContent=
-  week.plus+
-  " dars";
-
-
- document.getElementById(
-  "selectedWeekMinus"
- ).textContent=
-  week.minus+
-  " dars";
-
-
- const weekPercent=
-  week.total>0
-   ? (
-      week.plus/
-      week.total*
-      100
-     ).toFixed(1)
-   : "0.0";
-
-
- document.getElementById(
-  "selectedWeekPercent"
- ).textContent=
-  weekPercent+
-  "%";
-
-
- document.getElementById(
-  "selectedMonthTotal"
- ).textContent=
-  month.total+
-  " dars";
-
-
- document.getElementById(
-  "selectedMonthPlus"
- ).textContent=
-  month.plus+
-  " dars";
-
-
- document.getElementById(
-  "selectedMonthMinus"
- ).textContent=
-  month.minus+
-  " dars";
-
-
- const monthPercent=
-  month.total>0
-   ? (
-      month.plus/
-      month.total*
-      100
-     ).toFixed(1)
-   : "0.0";
-
-
- document.getElementById(
-  "selectedMonthPercent"
- ).textContent=
-  monthPercent+
-  "%";
-
-}
-
-
-/* =========================
-   RENDER REPORT
-========================= */
-
-function renderReport(){
-
- const search=
-  document
-   .getElementById(
-    "studentSearch"
-   )
-   .value
-   .toLowerCase()
-   .trim();
-
-
- const body=
-  document.getElementById(
-   "reportBody"
-  );
-
-
- body.innerHTML=
-  "";
-
-
- let totalPlus=0;
-
- let totalMinus=0;
-
-
- students.forEach(
-  (
-   student,
-   index
-  )=>{
-
-   const stats=
-    getStudentStats(
-     index
-    );
-
-
-   totalPlus+=
-    stats.plus;
-
-
-   totalMinus+=
-    stats.minus;
-
-
-   if(
-    search &&
-    !student
-     .toLowerCase()
-     .includes(
-      search
-     )
-   ){
-
-    return;
-
-   }
-
-
-   const tr=
-    document.createElement(
-     "tr"
-    );
-
-
-   tr.style.cursor=
-    "pointer";
-
-
-   tr.addEventListener(
-    "click",
-    function(){
-
-     showStudentDetail(
-      index
-     );
+      return;
 
     }
-   );
 
 
-   tr.innerHTML=`
+    if(lessonsPerDay[
+      parseDate(date).getDay()
+    ]===0){
 
-    <td>
-     ${index+1}
-    </td>
+      return;
 
-    <td style="text-align:left">
-     ${student}
-    </td>
-
-    <td class="blue">
-     ${stats.plus}
-    </td>
-
-    <td class="red">
-     ${stats.minus}
-    </td>
-
-    <td>
-     ${stats.total}
-    </td>
-
-   `;
+    }
 
 
-   body.appendChild(
-    tr
-   );
-
-  }
- );
-
-
- document.getElementById(
-  "studentCount"
- ).textContent=
-  students.length;
+    const key=
+      getAttendanceKey(
+        student,
+        date
+      );
 
 
- document.getElementById(
-  "totalPlus"
- ).textContent=
-  totalPlus;
+    const value=
+      attendanceData[key] || "";
 
 
- document.getElementById(
-  "totalMinus"
- ).textContent=
-  totalMinus;
+    if(value==="present"){
+
+      total++;
+
+      present++;
+
+    }
+    else if(value==="absent"){
+
+      total++;
+
+      absent++;
+
+    }
+
+  });
 
 
- document.getElementById(
-  "totalMarked"
- ).textContent=
-  totalPlus+
-  totalMinus;
+  const percent=
+    total===0
+      ? 0
+      : Math.round(
+          present/total*100
+        );
 
 
- renderDailyReport();
-
- renderWeeklyReport();
-
- renderMonthlyReport();
+  return{
+    total,
+    present,
+    absent,
+    percent
+  };
 
 }
 
@@ -3774,108 +2480,91 @@ function renderReport(){
    DAILY REPORT
 ========================= */
 
-function renderDailyReport(){
+function renderDailyReport(content){
 
- const body=
-  document.getElementById(
-   "dailyBody"
-  );
+  const today=
+    formatDate(new Date());
 
 
- body.innerHTML=
-  "";
+  const date=
+    dates.includes(today)
+      ? today
+      : dates[dates.length-1];
 
 
- dates.forEach(
-  dateString=>{
+  let present=0;
 
-   let plus=0;
-
-   let minus=0;
+  let absent=0;
 
 
-   students.forEach(
-    (_,index)=>{
+  students.forEach(student=>{
 
-     const value=
-      getAttendance(
-       dateString,
-       index
-      );
-
-
-     if(
-      value===
-      "+"
-     ){
-
-      plus++;
-
-     }
+    const value=
+      attendanceData[
+        getAttendanceKey(
+          student,
+          date
+        )
+      ] || "";
 
 
-     if(
-      value===
-      "-"
-     ){
+    if(value==="present"){
 
-      minus++;
-
-     }
+      present++;
 
     }
-   );
+    else if(value==="absent"){
+
+      absent++;
+
+    }
+
+  });
 
 
-   const total=
-    plus+
-    minus;
+  const total=present+absent;
 
-
-   if(
+  const percent=
     total===0
-   ){
-
-    return;
-
-   }
-
-
-   const tr=
-    document.createElement(
-     "tr"
-    );
+      ? 0
+      : Math.round(
+          present/total*100
+        );
 
 
-   tr.innerHTML=`
+  content.innerHTML=`
 
-    <td>
-     ${formatDate(
-      dateString
-     )}
-    </td>
+    <h3>📅 KUNLIK HISOBOT</h3>
 
-    <td class="blue">
-     ${plus}
-    </td>
+    <p style="margin:10px 0">
+      🗓 Sana: <b>${date}</b>
+    </p>
 
-    <td class="red">
-     ${minus}
-    </td>
+    <div class="statCards">
 
-    <td>
-     ${total}
-    </td>
+      <div class="statCard">
+        🧑‍🎓 O‘quvchilar
+        <strong>${students.length}</strong>
+      </div>
 
-   `;
+      <div class="statCard">
+        ✅ Keldi
+        <strong>${present}</strong>
+      </div>
 
+      <div class="statCard">
+        ❌ Qoldirdi
+        <strong>${absent}</strong>
+      </div>
 
-   body.appendChild(
-    tr
-   );
+      <div class="statCard">
+        📊 Davomat
+        <strong>${percent}%</strong>
+      </div>
 
-  }
- );
+    </div>
+
+  `;
 
 }
 
@@ -3884,216 +2573,139 @@ function renderDailyReport(){
    WEEKLY REPORT
 ========================= */
 
-function renderWeeklyReport(){
+function renderWeeklyReport(content){
 
- const body=
-  document.getElementById(
-   "weeklyBody"
-  );
+  const now=new Date();
 
+  const day=now.getDay();
 
- body.innerHTML=
-  "";
+  const diff=day===0 ? 6 : day-1;
 
 
- const weeks={};
-
-
- dates.forEach(
-  dateString=>{
-
-   const date=
+  const monday=
     new Date(
-     dateString+
-     "T00:00:00"
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate()-diff
     );
 
 
-   const monday=
-    getMonday(
-     date
+  let weekDates=[];
+
+
+  for(let i=0;i<7;i++){
+
+    const d=new Date(monday);
+
+    d.setDate(
+      monday.getDate()+i
     );
 
 
-   const key=
-    dateKey(
-     monday
-    );
+    const str=formatDate(d);
 
 
-   if(
-    !weeks[key]
-   ){
+    if(
+      str>=startDate &&
+      str<=endDate
+    ){
 
-    weeks[key]={
-
-     plus:0,
-
-     minus:0,
-
-     total:0
-
-    };
-
-   }
-
-
-   const dateLock=
-    date.getDay()===0 ||
-    holidays[dateString] ||
-    vacations.some(
-     v=>
-      dateString>=v.start &&
-      dateString<=v.end
-    );
-
-
-   if(
-    dateLock
-   ){
-
-    return;
-
-   }
-
-
-   const lessons=
-    lessonsPerDay[
-     date.getDay()
-    ] ||
-    0;
-
-
-   students.forEach(
-    (_,index)=>{
-
-     const value=
-      getAttendance(
-       dateString,
-       index
-      );
-
-
-     if(
-      value===
-      "+"
-     ){
-
-      weeks[key].plus+=
-       lessons;
-
-     }
-
-
-     if(
-      value===
-      "-"
-     ){
-
-      weeks[key].minus+=
-       lessons;
-
-     }
-
-
-     if(
-      value===
-      "+" ||
-      value===
-      "-"
-     ){
-
-      weeks[key].total+=
-       lessons;
-
-     }
+      weekDates.push(str);
 
     }
-   );
 
   }
- );
 
 
- Object.keys(
-  weeks
- )
- .sort()
- .forEach(
-  key=>{
+  let total=0;
 
-   const data=
-    weeks[key];
+  let present=0;
+
+  let absent=0;
 
 
-   if(
-    data.total===0
-   ){
+  weekDates.forEach(date=>{
 
-    return;
+    if(isLocked(date)){
 
-   }
+      return;
 
-
-   const monday=
-    new Date(
-     key+
-     "T00:00:00"
-    );
+    }
 
 
-   const saturday=
-    new Date(
-     monday
-    );
+    students.forEach(student=>{
+
+      const value=
+        attendanceData[
+          getAttendanceKey(
+            student,
+            date
+          )
+        ] || "";
 
 
-   saturday.setDate(
-    saturday.getDate()+5
-   );
+      if(value==="present"){
+
+        total++;
+
+        present++;
+
+      }
+      else if(value==="absent"){
+
+        total++;
+
+        absent++;
+
+      }
+
+    });
+
+  });
 
 
-   const tr=
-    document.createElement(
-     "tr"
-    );
+  const percent=
+    total===0
+      ? 0
+      : Math.round(
+          present/total*100
+        );
 
 
-   tr.innerHTML=`
+  content.innerHTML=`
 
-    <td>
-     ${formatDate(
-      key
-     )}
-     —
-     ${formatDate(
-      dateKey(
-       saturday
-      )
-     )}
-    </td>
+    <h3>📅 HAFTALIK HISOBOT</h3>
 
-    <td class="blue">
-     ${data.plus}
-    </td>
+    <p style="margin:10px 0">
+      🗓 Belgilangan kunlar:
+      <b>${weekDates.length}</b>
+    </p>
 
-    <td class="red">
-     ${data.minus}
-    </td>
+    <div class="statCards">
 
-    <td>
-     ${data.total}
-    </td>
+      <div class="statCard">
+        🗓 Belgilangan
+        <strong>${total}</strong>
+      </div>
 
-   `;
+      <div class="statCard">
+        ✅ Keldi
+        <strong>${present}</strong>
+      </div>
 
+      <div class="statCard">
+        ❌ Qoldirdi
+        <strong>${absent}</strong>
+      </div>
 
-   body.appendChild(
-    tr
-   );
+      <div class="statCard">
+        📊 Davomat
+        <strong>${percent}%</strong>
+      </div>
 
-  }
- );
+    </div>
+
+  `;
 
 }
 
@@ -4102,616 +2714,158 @@ function renderWeeklyReport(){
    MONTHLY REPORT
 ========================= */
 
-const monthNames=[
+function renderMonthlyReport(content){
 
- "Yanvar",
- "Fevral",
- "Mart",
- "Aprel",
- "May",
- "Iyun",
- "Iyul",
- "Avgust",
- "Sentabr",
- "Oktabr",
- "Noyabr",
- "Dekabr"
+  const now=new Date();
 
-];
+  const year=now.getFullYear();
+
+  const month=
+    String(now.getMonth()+1)
+      .padStart(2,"0");
 
 
-function renderMonthlyReport(){
-
- const body=
-  document.getElementById(
-   "monthlyBody"
-  );
+  const prefix=
+    `${year}-${month}`;
 
 
- body.innerHTML=
-  "";
+  let total=0;
+
+  let present=0;
+
+  let absent=0;
+
+  let countedDays=0;
 
 
- const months={};
+  dates.forEach(date=>{
 
+    if(!date.startsWith(prefix)){
 
- dates.forEach(
-  dateString=>{
-
-   const date=
-    new Date(
-     dateString+
-     "T00:00:00"
-    );
-
-
-   const year=
-    date.getFullYear();
-
-
-   const month=
-    date.getMonth();
-
-
-   const key=
-    `${year}-${String(
-     month+1
-    ).padStart(
-     2,
-     "0"
-    )}`;
-
-
-   if(
-    !months[key]
-   ){
-
-    months[key]={
-
-     year,
-
-     month,
-
-     plus:0,
-
-     minus:0,
-
-     total:0
-
-    };
-
-   }
-
-
-   const dateLock=
-    date.getDay()===0 ||
-    holidays[dateString] ||
-    vacations.some(
-     v=>
-      dateString>=v.start &&
-      dateString<=v.end
-    );
-
-
-   if(
-    dateLock
-   ){
-
-    return;
-
-   }
-
-
-   const lessons=
-    lessonsPerDay[
-     date.getDay()
-    ] ||
-    0;
-
-
-   students.forEach(
-    (_,index)=>{
-
-     const value=
-      getAttendance(
-       dateString,
-       index
-      );
-
-
-     if(
-      value===
-      "+"
-     ){
-
-      months[key].plus+=
-       lessons;
-
-     }
-
-
-     if(
-      value===
-      "-"
-     ){
-
-      months[key].minus+=
-       lessons;
-
-     }
-
-
-     if(
-      value===
-      "+" ||
-      value===
-      "-"
-     ){
-
-      months[key].total+=
-       lessons;
-
-     }
+      return;
 
     }
-   );
-
-  }
- );
 
 
- Object.keys(
-  months
- )
- .sort()
- .forEach(
-  key=>{
+    if(isLocked(date)){
 
-   const data=
-    months[key];
+      return;
+
+    }
 
 
-   if(
-    data.total===0
-   ){
-
-    return;
-
-   }
+    countedDays++;
 
 
-   const tr=
-    document.createElement(
-     "tr"
-    );
+    students.forEach(student=>{
+
+      const value=
+        attendanceData[
+          getAttendanceKey(
+            student,
+            date
+          )
+        ] || "";
 
 
-   tr.innerHTML=`
+      if(value==="present"){
 
-    <td>
-     ${monthNames[
-      data.month
-     ]}
-     ${data.year}
-    </td>
+        total++;
 
-    <td class="blue">
-     ${data.plus}
-    </td>
+        present++;
 
-    <td class="red">
-     ${data.minus}
-    </td>
+      }
+      else if(value==="absent"){
 
-    <td>
-     ${data.total}
-    </td>
+        total++;
 
-   `;
+        absent++;
+
+      }
+
+    });
+
+  });
 
 
-   body.appendChild(
-    tr
-   );
+  const percent=
+    total===0
+      ? 0
+      : Math.round(
+          present/total*100
+        );
 
-  }
- );
+
+  content.innerHTML=`
+
+    <h3>📈 OYLIK HISOBOT</h3>
+
+    <p style="margin:10px 0">
+      📅 Oy:
+      <b>M${Number(month)}</b>
+    </p>
+
+    <p style="margin:10px 0">
+      🗓 Belgilangan kunlar:
+      <b>${countedDays}</b>
+    </p>
+
+    <div class="statCards">
+
+      <div class="statCard">
+        🗓 Belgilangan
+        <strong>${total}</strong>
+      </div>
+
+      <div class="statCard">
+        ✅ Keldi
+        <strong>${present}</strong>
+      </div>
+
+      <div class="statCard">
+        ❌ Qoldirdi
+        <strong>${absent}</strong>
+      </div>
+
+      <div class="statCard">
+        📊 Davomat
+        <strong>${percent}%</strong>
+      </div>
+
+    </div>
+
+  `;
 
 }
 
 
 /* =========================
-   AUTH STATE
+   ENTER KEY LOGIN
 ========================= */
 
-onAuthStateChanged(
- auth,
- user=>{
-
-  /*
-   Login yo‘q.
-  */
-
-  if(
-   !user
-  ){
-
-   currentUser=
-    null;
-
-
-   document.getElementById(
-    "loginPage"
-   ).style.display=
-    "flex";
-
-
-   document.getElementById(
-    "mainPage"
-   ).style.display=
-    "none";
-
-
-   document.getElementById(
-    "reportPage"
-   ).style.display=
-    "none";
-
-
-   return;
-
-  }
-
-
-  /*
-   ANONYMOUS
-  */
-
-  if(
-   user.isAnonymous
-  ){
-
-   currentUser={
-
-    username:
-     "guest",
-
-    name:
-     "Kuzatuvchi",
-
-    canEdit:
-     false,
-
-    mode:
-     "viewer",
-
-    uid:
-     user.uid
-
-   };
-
-
-   sessionStorage.setItem(
-    "davomat_user",
-    JSON.stringify(
-     currentUser
-    )
-   );
-
-
-   showMain();
-
-   startFirebaseListener();
-
-   return;
-
-  }
-
-
-  /*
-   EDITOR
-  */
-
-  if(
-   editorUIDs.includes(
-    user.uid
-   )
-  ){
-
-   let username=
-    "editor";
-
-
-   if(
-    user.email===
-    "abdullohhabibullayev2009@gmail.com"
-   ){
-
-    username=
-     "abdulloh04072009";
-
-   }
-
-
-   if(
-    user.email===
-    "muhammadaliabdumutallipov0@gmail.com"
-   ){
-
-    username=
-     "muhammadali2010";
-
-   }
-
-
-   currentUser={
-
-    username:
-
-     username,
-
-    name:
-
-     user.email===
-     "abdullohhabibullayev2009@gmail.com"
-
-      ? "Abdulloh"
-
-      : "Muhammadali",
-
-    canEdit:
-     true,
-
-    mode:
-     "editor",
-
-    uid:
-     user.uid
-
-   };
-
-
-   sessionStorage.setItem(
-    "davomat_user",
-    JSON.stringify(
-     currentUser
-    )
-   );
-
-
-   showMain();
-
-   startFirebaseListener();
-
-  }
-
- });
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-document
- .getElementById(
-  "loginButton"
- )
- .addEventListener(
-  "click",
-  login
- );
-
-
-document
- .getElementById(
-  "guestButton"
- )
- .addEventListener(
-  "click",
-  guestLogin
- );
-
-
-document
- .getElementById(
-  "reportButton"
- )
- .addEventListener(
-  "click",
-  openReport
- );
-
-
-document
- .getElementById(
-  "darkButton"
- )
- .addEventListener(
-  "click",
-  toggleDark
- );
-
-
-document
- .getElementById(
-  "logoutButton"
- )
- .addEventListener(
-  "click",
-  logout
- );
-
-
-document
- .getElementById(
-  "backButton"
- )
- .addEventListener(
-  "click",
-  closeReport
- );
-
-
-document
- .getElementById(
-  "reportDarkButton"
- )
- .addEventListener(
-  "click",
-  toggleDark
- );
-
-
-document
- .getElementById(
-  "tabStudents"
- )
- .addEventListener(
-  "click",
-  ()=>{
-
-   showReportTab(
-    "students"
-   );
-
-  }
- );
-
-
-document
- .getElementById(
-  "tabDaily"
- )
- .addEventListener(
-  "click",
-  ()=>{
-
-   showReportTab(
-    "daily"
-   );
-
-  }
- );
-
-
-document
- .getElementById(
-  "tabWeekly"
- )
- .addEventListener(
-  "click",
-  ()=>{
-
-   showReportTab(
-    "weekly"
-   );
-
-  }
- );
-
-
-document
- .getElementById(
-  "tabMonthly"
- )
- .addEventListener(
-  "click",
-  ()=>{
-
-   showReportTab(
-    "monthly"
-   );
-
-  }
- );
-
-
-document
- .getElementById(
-  "studentSearch"
- )
- .addEventListener(
-  "input",
-  renderReport
- );
-
-
-document
- .getElementById(
+document.getElementById(
   "password"
- )
- .addEventListener(
+).addEventListener(
   "keydown",
-  function(event){
+  event=>{
 
-   if(
-    event.key===
-    "Enter"
-   ){
+    if(event.key==="Enter"){
 
-    login();
+      login();
 
-   }
+    }
 
   }
- );
+);
 
 
 /* =========================
-   MIDNIGHT REFRESH
+   INITIALIZE
 ========================= */
 
-function scheduleMidnightRefresh(){
+loadSavedLogin();
 
- const now=
-  new Date();
-
-
- const tomorrow=
-  new Date(
-   now
-  );
-
-
- tomorrow.setDate(
-  tomorrow.getDate()+1
- );
-
-
- tomorrow.setHours(
-  0,
-  0,
-  1,
-  0
- );
-
-
- const delay=
-  tomorrow.getTime()-
-  now.getTime();
-
-
- setTimeout(
-  function(){
-
-   renderTable();
-
-   renderReport();
-
-   scheduleMidnightRefresh();
-
-  },
-  delay
- );
-
-}
-
-
-/* =========================
-   START
-========================= */
-
-scheduleMidnightRefresh();
+buildTable();
 
 </script>
 
