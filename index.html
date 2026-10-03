@@ -1,3953 +1,3794 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Davomat Jurnali — 11-A sinf</title>
 
-<meta name="description"
-content="Davomat Jurnali — 11-A sinf o‘quvchilari davomati uchun elektron jurnal.">
-
-<meta name="author"
-content="Abdulloh Habibullayev">
-
+<meta name="description" content="Davomat Jurnali — 11-A sinf o‘quvchilari davomati uchun elektron jurnal.">
+<meta name="author" content="Abdulloh Habibullayev">
 <meta name="robots" content="index, follow">
 
-<link rel="canonical"
-href="https://davomat11a.github.io/">
+<link rel="canonical" href="https://davomat11a.github.io/">
 
-<meta property="og:title"
-content="Davomat Jurnali — 11-A sinf">
-
-<meta property="og:description"
-content="11-A sinf o‘quvchilari davomati uchun qulay elektron jurnal.">
-
+<meta property="og:title" content="Davomat Jurnali — 11-A sinf">
+<meta property="og:description" content="11-A sinf o‘quvchilari davomati uchun qulay elektron jurnal.">
 <meta property="og:type" content="website">
-
-<meta property="og:url"
-content="https://davomat11a.github.io/">
+<meta property="og:url" content="https://davomat11a.github.io/">
 
 <meta name="theme-color" content="#229ED9">
 
-
 <style>
 
-/* =====================================================
-   ASOSIY
-===================================================== */
+/* =========================
+   MAIN
+========================= */
 
-* {
-    box-sizing: border-box;
+*{
+ box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+ scroll-behavior:smooth;
 }
 
-body {
-    margin: 0;
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef5ff,
-            #f7faff
-        );
-
-    color: #202124;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease;
+body{
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:linear-gradient(135deg,#eef5ff,#f7faff);
+ color:#202124;
+ transition:background .3s ease,color .3s ease;
 }
 
-button,
-input {
-    font-family: inherit;
+button,input{
+ font-family:inherit;
 }
 
-
-/* =====================================================
+/* =========================
    LOGIN
-===================================================== */
+========================= */
 
-#loginPage {
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
-
-    background:
-        radial-gradient(
-            circle at top left,
-            #d8efff,
-            transparent 40%
-        ),
-        radial-gradient(
-            circle at bottom right,
-            #dfe9ff,
-            transparent 40%
-        );
+#loginPage{
+ min-height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ padding:20px;
+ background:
+ radial-gradient(circle at top left,#d8efff,transparent 40%),
+ radial-gradient(circle at bottom right,#dfe9ff,transparent 40%);
 }
 
-.login-box {
-    width: 100%;
-    max-width: 400px;
-
-    padding: 32px;
-
-    border-radius: 24px;
-
-    background: rgba(255,255,255,0.94);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.12);
-
-    backdrop-filter: blur(12px);
-
-    animation:
-        loginAppear 0.5s ease;
+.login-box{
+ width:100%;
+ max-width:400px;
+ padding:32px;
+ border-radius:24px;
+ background:rgba(255,255,255,.94);
+ box-shadow:0 20px 60px rgba(0,0,0,.12);
+ backdrop-filter:blur(12px);
+ animation:loginAppear .5s ease;
 }
 
-@keyframes loginAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
+@keyframes loginAppear{
+ from{
+  opacity:0;
+  transform:translateY(20px) scale(.97);
+ }
+ to{
+  opacity:1;
+  transform:translateY(0) scale(1);
+ }
 }
 
-.login-logo {
-    width: 75px;
-    height: 75px;
-
-    margin: 0 auto 15px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #229ED9,
-            #0077b6
-        );
-
-    color: white;
-
-    font-size: 38px;
-
-    box-shadow:
-        0 10px 25px rgba(34,158,217,0.35);
+.login-logo{
+ width:75px;
+ height:75px;
+ margin:0 auto 15px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:22px;
+ background:linear-gradient(135deg,#229ED9,#0077b6);
+ color:white;
+ font-size:38px;
+ box-shadow:0 10px 25px rgba(34,158,217,.35);
 }
 
-.login-box h2 {
-    text-align: center;
-    margin: 0 0 8px;
+.login-box h2{
+ text-align:center;
+ margin:0 0 8px;
 }
 
-.login-subtitle {
-    text-align: center;
-    color: #777;
-    margin-bottom: 25px;
-    font-size: 14px;
+.login-subtitle{
+ text-align:center;
+ color:#777;
+ margin-bottom:25px;
+ font-size:14px;
 }
 
-.login-box input[type="text"],
-.login-box input[type="password"] {
-
-    width: 100%;
-
-    padding: 14px 15px;
-
-    margin: 7px 0;
-
-    border:
-        1px solid #d6dce5;
-
-    border-radius: 12px;
-
-    font-size: 16px;
-
-    outline: none;
-
-    transition:
-        border 0.2s,
-        box-shadow 0.2s;
+.login-box input[type=text],
+.login-box input[type=password]{
+ width:100%;
+ padding:14px 15px;
+ margin:7px 0;
+ border:1px solid #d6dce5;
+ border-radius:12px;
+ font-size:16px;
+ outline:none;
+ transition:border .2s,box-shadow .2s;
 }
 
-.login-box input:focus {
-
-    border-color: #229ED9;
-
-    box-shadow:
-        0 0 0 4px rgba(34,158,217,0.12);
+.login-box input:focus{
+ border-color:#229ED9;
+ box-shadow:0 0 0 4px rgba(34,158,217,.12);
 }
 
-.password-box {
-    position: relative;
+.password-box{
+ position:relative;
 }
 
-.password-box input {
-    padding-right: 50px !important;
+.password-box input{
+ padding-right:50px!important;
 }
 
-.eye-button {
-
-    position: absolute;
-
-    right: 8px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    font-size: 19px;
+.eye-button{
+ position:absolute;
+ right:8px;
+ top:50%;
+ transform:translateY(-50%);
+ width:40px;
+ height:40px;
+ border:none;
+ background:transparent;
+ cursor:pointer;
+ font-size:19px;
 }
 
-.login-box button:not(.eye-button) {
-
-    width: 100%;
-
-    padding: 14px;
-
-    margin-top: 12px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1976d2,
-            #229ED9
-        );
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s;
+.login-box button:not(.eye-button){
+ width:100%;
+ padding:14px;
+ margin-top:12px;
+ border:none;
+ border-radius:12px;
+ background:linear-gradient(135deg,#1976d2,#229ED9);
+ color:white;
+ font-size:16px;
+ font-weight:bold;
+ cursor:pointer;
+ transition:transform .2s,box-shadow .2s;
 }
 
-.login-box button:not(.eye-button):hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(25,118,210,0.3);
+.login-box button:not(.eye-button):hover{
+ transform:translateY(-2px);
+ box-shadow:0 8px 20px rgba(25,118,210,.3);
 }
 
-.remember {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 12px;
-
-    font-size: 14px;
-
-    color: #666;
+.remember{
+ display:flex;
+ align-items:center;
+ gap:8px;
+ margin-top:12px;
+ font-size:14px;
+ color:#666;
 }
 
-#loginError {
-
-    color: #e53935;
-
-    text-align: center;
-
-    margin-top: 12px;
-
-    font-size: 14px;
+#loginError{
+ color:#e53935;
+ text-align:center;
+ margin-top:12px;
+ font-size:14px;
 }
 
+/* =========================
+   GUEST BUTTON
+========================= */
 
-/* =====================================================
-   DARK MODE
-===================================================== */
-
-body.dark {
-
-    background:
-        linear-gradient(
-            135deg,
-            #10151c,
-            #171d25
-        );
-
-    color: #eeeeee;
+.guest-button{
+ background:linear-gradient(135deg,#455a64,#607d8b)!important;
 }
 
-.dark #loginPage {
+.guest-button:hover{
+ box-shadow:0 8px 20px rgba(69,90,100,.3)!important;
+}
 
-    background:
-        radial-gradient(
-            circle at top left,
-            #12334a,
-            transparent 40%
-        ),
-        #10151c;
+.guest-info{
+ margin-top:12px;
+ padding:10px;
+ border-radius:10px;
+ background:#eef6fa;
+ color:#546e7a;
+ font-size:12px;
+ text-align:center;
+ line-height:1.5;
+}
+
+/* =========================
+   DARK
+========================= */
+
+body.dark{
+ background:linear-gradient(135deg,#10151c,#171d25);
+ color:#eee;
+}
+
+.dark #loginPage{
+ background:
+ radial-gradient(circle at top left,#12334a,transparent 40%),
+ #10151c;
 }
 
 .dark .login-box,
 .dark .info,
 .dark .table-wrapper,
 .dark .card,
-.dark .student-detail {
-
-    background:
-        rgba(30,35,42,0.96);
-
-    color: #eee;
+.dark .student-detail{
+ background:rgba(30,35,42,.96);
+ color:#eee;
 }
 
 .dark .login-box input,
-.dark .search-box input {
-
-    background: #252b33;
-
-    color: white;
-
-    border-color: #444;
+.dark .search-box input{
+ background:#252b33;
+ color:white;
+ border-color:#444;
 }
 
 .dark .remember,
-.dark .login-subtitle {
-
-    color: #aaa;
+.dark .login-subtitle{
+ color:#aaa;
 }
 
+.dark .guest-info{
+ background:#252b33;
+ color:#b0bec5;
+}
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 #mainPage,
-#reportPage {
-    display: none;
+#reportPage{
+ display:none;
 }
 
-header {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 20;
-
-    color: white;
-
-    padding: 13px 15px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1976d2,
-            #229ED9
-        );
-
-    box-shadow:
-        0 4px 20px rgba(0,0,0,0.12);
+header{
+ position:sticky;
+ top:0;
+ z-index:20;
+ color:white;
+ padding:13px 15px;
+ background:linear-gradient(135deg,#1976d2,#229ED9);
+ box-shadow:0 4px 20px rgba(0,0,0,.12);
 }
 
-.header-inner {
-
-    max-width: 1400px;
-
-    margin: auto;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 12px;
+.header-inner{
+ max-width:1400px;
+ margin:auto;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:12px;
 }
 
-header h2 {
-
-    margin: 0;
-
-    font-size: 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
+header h2{
+ margin:0;
+ font-size:20px;
+ display:flex;
+ align-items:center;
+ gap:8px;
 }
 
-.header-buttons {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    flex-wrap: wrap;
+.header-buttons{
+ display:flex;
+ align-items:center;
+ gap:7px;
+ flex-wrap:wrap;
 }
 
-.header-buttons button {
-
-    border: none;
-
-    border-radius: 10px;
-
-    padding: 9px 13px;
-
-    cursor: pointer;
-
-    background: white;
-
-    color: #1976d2;
-
-    font-weight: bold;
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s;
+.header-buttons button{
+ border:none;
+ border-radius:10px;
+ padding:9px 13px;
+ cursor:pointer;
+ background:white;
+ color:#1976d2;
+ font-weight:bold;
+ transition:transform .2s,box-shadow .2s;
 }
 
-.header-buttons button:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 5px 14px rgba(0,0,0,0.15);
+.header-buttons button:hover{
+ transform:translateY(-2px);
+ box-shadow:0 5px 14px rgba(0,0,0,.15);
 }
 
+/* =========================
+   VIEW MODE
+========================= */
 
-/* =====================================================
-   TELEGRAM TUGMASI
-===================================================== */
-
-.telegram-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    padding: 9px 14px;
-
-    border-radius: 10px;
-
-    text-decoration: none;
-
-    color: white;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    background:
-        linear-gradient(
-            135deg,
-            #2AABEE,
-            #0088cc
-        );
-
-    box-shadow:
-        0 5px 15px rgba(0,136,204,0.30);
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s,
-        filter 0.2s;
+.viewer-badge{
+ display:inline-flex;
+ align-items:center;
+ gap:6px;
+ padding:8px 12px;
+ border-radius:10px;
+ background:rgba(255,255,255,.18);
+ color:white;
+ font-size:13px;
+ font-weight:bold;
 }
 
-.telegram-button:hover {
-
-    transform: translateY(-2px);
-
-    filter: brightness(1.08);
-
-    box-shadow:
-        0 8px 20px rgba(0,136,204,0.40);
+.editor-badge{
+ background:rgba(255,255,255,.18);
 }
 
-.telegram-button:active {
+/* =========================
+   TELEGRAM
+========================= */
 
-    transform: scale(0.96);
+.telegram-button{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:8px;
+ padding:9px 14px;
+ border-radius:10px;
+ text-decoration:none;
+ color:white;
+ font-size:14px;
+ font-weight:bold;
+ background:linear-gradient(135deg,#2AABEE,#0088cc);
+ box-shadow:0 5px 15px rgba(0,136,204,.30);
+ transition:transform .2s,box-shadow .2s,filter .2s;
 }
 
-.telegram-icon {
-
-    width: 21px;
-    height: 21px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 18px;
+.telegram-button:hover{
+ transform:translateY(-2px);
+ filter:brightness(1.08);
+ box-shadow:0 8px 20px rgba(0,136,204,.40);
 }
 
+.telegram-button:active{
+ transform:scale(.96);
+}
 
-/* =====================================================
+.telegram-icon{
+ width:21px;
+ height:21px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:18px;
+}
+
+/* =========================
    CONTAINER
-===================================================== */
+========================= */
 
 .container,
-.report-container {
-
-    max-width: 1400px;
-
-    margin: auto;
-
-    padding: 18px;
+.report-container{
+ max-width:1400px;
+ margin:auto;
+ padding:18px;
 }
 
-
-/* =====================================================
+/* =========================
    INFO
-===================================================== */
+========================= */
 
-.info {
-
-    background: white;
-
-    padding: 16px 18px;
-
-    border-radius: 16px;
-
-    margin-bottom: 16px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.06);
+.info{
+ background:white;
+ padding:16px 18px;
+ border-radius:16px;
+ margin-bottom:16px;
+ box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
-.firebase-status {
-
-    margin-top: 10px;
-
-    font-weight: bold;
-
-    color: #2e7d32;
+.firebase-status{
+ margin-top:10px;
+ font-weight:bold;
+ color:#2e7d32;
 }
 
+.viewer-warning{
+ margin-top:12px;
+ padding:11px 13px;
+ border-radius:10px;
+ background:#fff3cd;
+ color:#795548;
+ font-weight:bold;
+ font-size:14px;
+}
 
-/* =====================================================
+.dark .viewer-warning{
+ background:#3b3422;
+ color:#ffe082;
+}
+
+/* =========================
    TABLE
-===================================================== */
+========================= */
 
-.table-wrapper {
-
-    overflow-x: auto;
-
-    background: white;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.07);
+.table-wrapper{
+ overflow-x:auto;
+ background:white;
+ border-radius:16px;
+ box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
-table {
-
-    border-collapse: collapse;
-
-    width: 100%;
-
-    min-width: 900px;
+table{
+ border-collapse:collapse;
+ width:100%;
+ min-width:900px;
 }
 
-th,
-td {
-
-    border: 1px solid #e0e0e0;
-
-    text-align: center;
-
-    padding: 8px;
+th,td{
+ border:1px solid #e0e0e0;
+ text-align:center;
+ padding:8px;
 }
 
-th {
-
-    background:
-        linear-gradient(
-            135deg,
-            #1976d2,
-            #229ED9
-        );
-
-    color: white;
-
-    font-weight: bold;
+th{
+ background:linear-gradient(135deg,#1976d2,#229ED9);
+ color:white;
+ font-weight:bold;
 }
 
-.name-column {
-
-    min-width: 220px;
-
-    text-align: left;
-
-    position: sticky;
-
-    left: 0;
-
-    z-index: 3;
-
-    background: white;
+.name-column{
+ min-width:220px;
+ text-align:left;
+ position:sticky;
+ left:0;
+ z-index:3;
+ background:white;
 }
 
-.dark .name-column {
-
-    background: #1e232a;
+.dark .name-column{
+ background:#1e232a;
 }
 
-th.name-column {
-
-    background: #1976d2;
+th.name-column{
+ background:#1976d2;
 }
 
-.date-column {
-
-    width: 60px;
-
-    min-width: 60px;
+.date-column{
+ width:60px;
+ min-width:60px;
 }
 
+/* =========================
+   TODAY
+========================= */
 
-/* =====================================================
-   BUGUNGI SANA
-===================================================== */
-
-.today-column {
-
-    background: #fff3cd !important;
-
-    color: #222 !important;
-
-    font-weight: bold;
+.today-column{
+ background:#fff3cd!important;
+ color:#222!important;
+ font-weight:bold;
 }
 
-.dark .today-column {
-
-    background: #ffffff !important;
-
-    color: #111 !important;
+.dark .today-column{
+ background:#fff!important;
+ color:#111!important;
 }
 
+/* =========================
+   ATTENDANCE
+========================= */
 
-/* =====================================================
-   DAVOMAT
-===================================================== */
-
-.attendance-cell {
-
-    width: 55px;
-
-    min-width: 55px;
-
-    height: 43px;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    transition:
-        background 0.15s;
+.attendance-cell{
+ width:55px;
+ min-width:55px;
+ height:43px;
+ font-size:18px;
+ font-weight:bold;
+ transition:background .15s;
 }
 
-.attendance-cell[contenteditable="true"] {
-
-    cursor: text;
+.attendance-cell[contenteditable=true]{
+ cursor:text;
 }
 
-.attendance-cell[contenteditable="true"]:hover {
-
-    background: #f2f8ff;
+.attendance-cell[contenteditable=true]:hover{
+ background:#f2f8ff;
 }
 
-.dark .attendance-cell[contenteditable="true"]:hover {
-
-    background: #29333e;
+.dark .attendance-cell[contenteditable=true]:hover{
+ background:#29333e;
 }
 
-.attendance-cell.plus {
-
-    color: #1976d2;
+.attendance-cell.plus{
+ color:#1976d2;
 }
 
-.attendance-cell.minus {
-
-    color: #e53935;
+.attendance-cell.minus{
+ color:#e53935;
 }
 
-.today-attendance.plus {
-
-    color: #1976d2 !important;
+.today-attendance.plus{
+ color:#1976d2!important;
 }
 
-.today-attendance.minus {
-
-    color: #e53935 !important;
+.today-attendance.minus{
+ color:#e53935!important;
 }
 
+/* =========================
+   LOCKED
+========================= */
 
-/* =====================================================
-   BLOKLANGAN
-===================================================== */
-
-.locked {
-
-    background: #eeeeee;
-
-    color: #777;
-
-    cursor: not-allowed;
+.locked{
+ background:#eee;
+ color:#777;
+ cursor:not-allowed;
 }
 
-.dark .locked {
-
-    background: #333;
-
-    color: #aaa;
+.dark .locked{
+ background:#333;
+ color:#aaa;
 }
 
-.locked.minus {
-
-    color: #e53935 !important;
+.locked.minus{
+ color:#e53935!important;
 }
 
-.dark .locked.minus {
-
-    color: #e53935 !important;
+.dark .locked.minus{
+ color:#e53935!important;
 }
 
+.viewer-locked{
+ background:#e7eaee!important;
+ color:#888!important;
+ cursor:not-allowed!important;
+}
 
-/* =====================================================
+.dark .viewer-locked{
+ background:#2f343a!important;
+ color:#999!important;
+}
+
+/* =========================
    REPORT
-===================================================== */
+========================= */
 
-.search-box {
-
-    margin-bottom: 16px;
+.search-box{
+ margin-bottom:16px;
 }
 
-.search-box input {
-
-    width: 100%;
-
-    max-width: 500px;
-
-    padding: 14px;
-
-    border:
-        1px solid #ccc;
-
-    border-radius: 12px;
-
-    font-size: 16px;
-
-    outline: none;
+.search-box input{
+ width:100%;
+ max-width:500px;
+ padding:14px;
+ border:1px solid #ccc;
+ border-radius:12px;
+ font-size:16px;
+ outline:none;
 }
 
-.search-box input:focus {
-
-    border-color: #229ED9;
-
-    box-shadow:
-        0 0 0 4px rgba(34,158,217,0.10);
+.search-box input:focus{
+ border-color:#229ED9;
+ box-shadow:0 0 0 4px rgba(34,158,217,.10);
 }
 
-.report-tabs {
-
-    display: flex;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 16px;
+.report-tabs{
+ display:flex;
+ gap:8px;
+ flex-wrap:wrap;
+ margin-bottom:16px;
 }
 
-.report-tabs button {
-
-    padding: 10px 15px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    background: #e4e7eb;
-
-    font-weight: bold;
-
-    transition: 0.2s;
+.report-tabs button{
+ padding:10px 15px;
+ border:none;
+ border-radius:10px;
+ cursor:pointer;
+ background:#e4e7eb;
+ font-weight:bold;
+ transition:.2s;
 }
 
-.report-tabs button:hover {
-
-    transform: translateY(-1px);
+.report-tabs button:hover{
+ transform:translateY(-1px);
 }
 
-.dark .report-tabs button {
-
-    background: #333;
-
-    color: white;
+.dark .report-tabs button{
+ background:#333;
+ color:white;
 }
 
-.report-tabs button.active {
-
-    background:
-        linear-gradient(
-            135deg,
-            #1976d2,
-            #229ED9
-        );
-
-    color: white;
+.report-tabs button.active{
+ background:linear-gradient(135deg,#1976d2,#229ED9);
+ color:white;
 }
 
-.report-section {
-
-    display: none;
+.report-section{
+ display:none;
 }
 
-.report-section.active {
-
-    display: block;
+.report-section.active{
+ display:block;
 }
 
-
-/* =====================================================
+/* =========================
    CARDS
-===================================================== */
+========================= */
 
-.summary {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(160px, 1fr)
-        );
-
-    gap: 13px;
-
-    margin-bottom: 16px;
+.summary{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+ gap:13px;
+ margin-bottom:16px;
 }
 
-.card {
-
-    background: white;
-
-    padding: 17px;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 5px 18px rgba(0,0,0,0.06);
-
-    transition:
-        transform 0.2s;
+.card{
+ background:white;
+ padding:17px;
+ border-radius:16px;
+ box-shadow:0 5px 18px rgba(0,0,0,.06);
+ transition:transform .2s;
 }
 
-.card:hover {
-
-    transform: translateY(-2px);
+.card:hover{
+ transform:translateY(-2px);
 }
 
-.card-title {
-
-    font-size: 14px;
-
-    color: #777;
+.card-title{
+ font-size:14px;
+ color:#777;
 }
 
-.dark .card-title {
-
-    color: #aaa;
+.dark .card-title{
+ color:#aaa;
 }
 
-.card-value {
-
-    font-size: 26px;
-
-    font-weight: bold;
-
-    margin-top: 6px;
+.card-value{
+ font-size:26px;
+ font-weight:bold;
+ margin-top:6px;
 }
 
-.blue {
-
-    color: #1976d2;
+.blue{
+ color:#1976d2;
 }
 
-.red {
-
-    color: #e53935;
+.red{
+ color:#e53935;
 }
 
-.green {
-
-    color: #2e7d32;
+.green{
+ color:#2e7d32;
 }
 
-
-/* =====================================================
+/* =========================
    STUDENT DETAIL
-===================================================== */
+========================= */
 
-.student-detail {
-
-    margin-top: 16px;
-
-    background: white;
-
-    border-radius: 16px;
-
-    padding: 20px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.07);
+.student-detail{
+ margin-top:16px;
+ background:white;
+ border-radius:16px;
+ padding:20px;
+ box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
-.student-detail h3 {
-
-    margin-top: 0;
+.student-detail h3{
+ margin-top:0;
 }
 
-.detail-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(160px, 1fr)
-        );
-
-    gap: 12px;
+.detail-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+ gap:12px;
 }
 
-.detail-card {
-
-    padding: 16px;
-
-    border-radius: 12px;
-
-    background: #f2f4f7;
+.detail-card{
+ padding:16px;
+ border-radius:12px;
+ background:#f2f4f7;
 }
 
-.dark .detail-card {
-
-    background: #2a3038;
+.dark .detail-card{
+ background:#2a3038;
 }
 
-.detail-card .title {
-
-    font-size: 13px;
-
-    color: #777;
+.detail-card .title{
+ font-size:13px;
+ color:#777;
 }
 
-.dark .detail-card .title {
-
-    color: #aaa;
+.dark .detail-card .title{
+ color:#aaa;
 }
 
-.detail-card .value {
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    margin-top: 6px;
+.detail-card .value{
+ font-size:22px;
+ font-weight:bold;
+ margin-top:6px;
 }
 
-
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
-@media (max-width: 700px) {
+@media(max-width:700px){
 
-    .header-inner {
+ .header-inner{
+  flex-direction:column;
+  align-items:stretch;
+ }
 
-        flex-direction: column;
+ header h2{
+  font-size:17px;
+  justify-content:center;
+ }
 
-        align-items: stretch;
-    }
+ .header-buttons{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+ }
 
-    header h2 {
+ .header-buttons button,
+ .telegram-button{
+  width:100%;
+  text-align:center;
+ }
 
-        font-size: 17px;
+ .container,
+ .report-container{
+  padding:10px;
+ }
 
-        justify-content: center;
-    }
+ .name-column{
+  min-width:180px;
+ }
 
-    .header-buttons {
+ .login-box{
+  padding:25px 20px;
+ }
 
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .header-buttons button,
-    .telegram-button {
-
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .container,
-    .report-container {
-
-        padding: 10px;
-    }
-
-    .name-column {
-
-        min-width: 180px;
-    }
-
-    .login-box {
-
-        padding: 25px 20px;
-    }
-
+ .viewer-badge{
+  justify-content:center;
+ }
 }
 
-
-/* =====================================================
+/* =========================
    SCROLLBAR
-===================================================== */
+========================= */
 
-::-webkit-scrollbar {
-
-    width: 9px;
-    height: 9px;
+::-webkit-scrollbar{
+ width:9px;
+ height:9px;
 }
 
-::-webkit-scrollbar-track {
-
-    background: #edf0f3;
+::-webkit-scrollbar-track{
+ background:#edf0f3;
 }
 
-::-webkit-scrollbar-thumb {
-
-    background: #aeb8c2;
-
-    border-radius: 10px;
+::-webkit-scrollbar-thumb{
+ background:#aeb8c2;
+ border-radius:10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-
-    background: #7f8a95;
+::-webkit-scrollbar-thumb:hover{
+ background:#7f8a95;
 }
 
-.dark ::-webkit-scrollbar-track {
-
-    background: #1b2026;
+.dark ::-webkit-scrollbar-track{
+ background:#1b2026;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-
-    background: #555;
+.dark ::-webkit-scrollbar-thumb{
+ background:#555;
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     LOGIN
-===================================================== -->
+<!-- =========================
+     LOGIN PAGE
+========================= -->
 
 <div id="loginPage">
 
-    <div class="login-box">
+ <div class="login-box">
 
-        <div class="login-logo">
-            📋
-        </div>
+  <div class="login-logo">📋</div>
 
-        <h2>
-            Davomat jurnali
-        </h2>
+  <h2>Davomat jurnali</h2>
 
-        <div class="login-subtitle">
-            11-A sinf elektron jurnali
-        </div>
+  <div class="login-subtitle">
+   11-A sinf elektron jurnali
+  </div>
 
+  <input
+   type="text"
+   id="username"
+   placeholder="Login"
+   autocomplete="username"
+  >
 
-        <input
-            type="text"
-            id="username"
-            placeholder="Login"
-        >
+  <div class="password-box">
 
+   <input
+    type="password"
+    id="password"
+    placeholder="Parol"
+    autocomplete="current-password"
+   >
 
-        <div class="password-box">
+   <button
+    type="button"
+    class="eye-button"
+    id="eyeButton"
+   >
+    👁️
+   </button>
 
-            <input
-                type="password"
-                id="password"
-                placeholder="Parol"
-            >
+  </div>
 
-            <button
-                type="button"
-                class="eye-button"
-                id="eyeButton"
-            >
-                👁️
-            </button>
+  <label class="remember">
+   <input type="checkbox" id="rememberLogin">
+   Loginni eslab qolish
+  </label>
 
-        </div>
+  <button id="loginButton">
+   🔐 Kirish
+  </button>
 
+  <button id="guestButton" class="guest-button">
+   👀 Parolsiz kirish
+  </button>
 
-        <label class="remember">
+  <div class="guest-info">
+   Parolsiz kirish orqali saytni ko‘rish,
+   hisobotlardan foydalanish mumkin.
+   Davomat kiritish imkoniyati mavjud emas.
+  </div>
 
-            <input
-                type="checkbox"
-                id="rememberLogin"
-            >
+  <div id="loginError"></div>
 
-            Loginni eslab qolish
-
-        </label>
-
-
-        <button id="loginButton">
-            🔐 Kirish
-        </button>
-
-
-        <div id="loginError"></div>
-
-    </div>
+ </div>
 
 </div>
 
 
-
-<!-- =====================================================
-     MAIN
-===================================================== -->
+<!-- =========================
+     MAIN PAGE
+========================= -->
 
 <div id="mainPage">
 
 <header>
 
-    <div class="header-inner">
+ <div class="header-inner">
 
-        <h2>
-            📋 11-A sinf davomati
-        </h2>
+  <h2>
+   📋 11-A sinf davomati
+  </h2>
 
+  <div class="header-buttons">
 
-        <div class="header-buttons">
+   <span id="userModeBadge" class="viewer-badge">
+    👤
+   </span>
 
-            <button id="reportButton">
-                📊 Hisobot
-            </button>
+   <button id="reportButton">
+    📊 Hisobot
+   </button>
 
+   <a
+    href="https://t.me/davomat11a_bot"
+    target="_blank"
+    class="telegram-button"
+    title="Telegram botni ochish"
+   >
+    <span class="telegram-icon">✈️</span>
+    Telegram bot
+   </a>
 
-            <!-- TELEGRAM -->
+   <button id="darkButton">
+    🌙 Dark
+   </button>
 
-            <a
-                href="https://t.me/davomat11a_bot"
-                target="_blank"
-                class="telegram-button"
-                title="Telegram botni ochish"
-            >
+   <button id="logoutButton">
+    🚪 Chiqish
+   </button>
 
-                <span class="telegram-icon">
-                    ✈️
-                </span>
+  </div>
 
-                Telegram bot
-
-            </a>
-
-
-            <button id="darkButton">
-                🌙 Dark
-            </button>
-
-
-            <button id="logoutButton">
-                🚪 Chiqish
-            </button>
-
-        </div>
-
-    </div>
+ </div>
 
 </header>
 
 
-
 <div class="container">
 
+ <div class="info">
 
-    <div class="info">
+  <b>📅 O‘quv yili:</b>
+  28.09.2026 — 25.05.2027
 
-        <b>📅 O‘quv yili:</b>
+  <br><br>
 
-        28.09.2026 — 25.05.2027
+  <b>Belgilar:</b>
 
-        <br><br>
+  <span class="blue">+</span>
+  Keldi
 
+  &nbsp;&nbsp;
 
-        <b>Belgilar:</b>
+  <span class="red">-</span>
+  Qoldirdi
 
-        <span class="blue">+</span>
-        Keldi
+  &nbsp;&nbsp;
 
-        &nbsp;&nbsp;
+  🔒 Bloklangan kun
 
-        <span class="red">-</span>
-        Qoldirdi
+  <div id="firebaseStatus" class="firebase-status">
+   🔄 Firebase ulanmoqda...
+  </div>
 
-        &nbsp;&nbsp;
+  <div
+   id="viewerWarning"
+   class="viewer-warning"
+   style="display:none;"
+  >
+   👀 Siz kuzatuvchi rejimidasiz.
+   Davomat kiritish va o‘zgartirish imkoniyati yopilgan.
+  </div>
 
-        🔒 Bloklangan kun
-
-
-        <div
-            id="firebaseStatus"
-            class="firebase-status"
-        >
-            🔄 Firebase ulanmoqda...
-        </div>
-
-    </div>
-
-
-
-    <div class="table-wrapper">
-
-        <table>
-
-            <thead>
-
-                <tr id="dateHeader">
-
-                    <th>№</th>
-
-                    <th class="name-column">
-                        Ism va Familya
-                    </th>
-
-                </tr>
-
-            </thead>
+ </div>
 
 
-            <tbody
-                id="attendanceBody"
-            ></tbody>
+ <div class="table-wrapper">
 
-        </table>
+  <table>
 
-    </div>
+   <thead>
+
+    <tr id="dateHeader">
+
+     <th>№</th>
+
+     <th class="name-column">
+      Ism va Familya
+     </th>
+
+    </tr>
+
+   </thead>
+
+   <tbody id="attendanceBody"></tbody>
+
+  </table>
+
+ </div>
 
 </div>
 
 </div>
 
 
-
-<!-- =====================================================
-     REPORT
-===================================================== -->
+<!-- =========================
+     REPORT PAGE
+========================= -->
 
 <div id="reportPage">
 
 <header>
 
-    <div class="header-inner">
+ <div class="header-inner">
 
-        <h2>
-            📊 Davomat hisoboti
-        </h2>
+  <h2>
+   📊 Davomat hisoboti
+  </h2>
 
+  <div class="header-buttons">
 
-        <div class="header-buttons">
+   <button id="backButton">
+    ← Ortga
+   </button>
 
-            <button id="backButton">
-                ← Ortga
-            </button>
+   <a
+    href="https://t.me/davomat11a_bot"
+    target="_blank"
+    class="telegram-button"
+   >
+    <span class="telegram-icon">✈️</span>
+    Telegram bot
+   </a>
 
+   <button id="reportDarkButton">
+    🌙 Dark
+   </button>
 
-            <a
-                href="https://t.me/davomat11a_bot"
-                target="_blank"
-                class="telegram-button"
-            >
+  </div>
 
-                <span class="telegram-icon">
-                    ✈️
-                </span>
-
-                Telegram bot
-
-            </a>
-
-
-            <button id="reportDarkButton">
-                🌙 Dark
-            </button>
-
-        </div>
-
-    </div>
+ </div>
 
 </header>
 
 
-
 <div class="report-container">
 
+ <div class="search-box">
 
-    <div class="search-box">
+  <input
+   type="text"
+   id="studentSearch"
+   placeholder="🔎 O‘quvchini qidiring..."
+  >
 
-        <input
-            type="text"
-            id="studentSearch"
-            placeholder="🔎 O‘quvchini qidiring..."
-        >
+ </div>
 
+
+ <div class="report-tabs">
+
+  <button
+   id="tabStudents"
+   class="active"
+  >
+   👨‍🎓 O‘quvchilar
+  </button>
+
+  <button id="tabDaily">
+   📅 Kunlik
+  </button>
+
+  <button id="tabWeekly">
+   📆 Haftalik
+  </button>
+
+  <button id="tabMonthly">
+   🗓️ Oylik
+  </button>
+
+ </div>
+
+
+ <!-- STUDENTS -->
+
+ <div
+  id="studentsSection"
+  class="report-section active"
+ >
+
+  <div class="summary">
+
+   <div class="card">
+
+    <div class="card-title">
+     👨‍🎓 O‘quvchilar
     </div>
-
-
-
-    <div class="report-tabs">
-
-        <button
-            id="tabStudents"
-            class="active"
-        >
-            👨‍🎓 O‘quvchilar
-        </button>
-
-
-        <button id="tabDaily">
-            📅 Kunlik
-        </button>
-
-
-        <button id="tabWeekly">
-            📆 Haftalik
-        </button>
-
-
-        <button id="tabMonthly">
-            🗓️ Oylik
-        </button>
-
-    </div>
-
-
-
-    <!-- O‘QUVCHILAR -->
 
     <div
-        id="studentsSection"
-        class="report-section active"
+     class="card-value"
+     id="studentCount"
     >
-
-        <div class="summary">
-
-
-            <div class="card">
-
-                <div class="card-title">
-                    👨‍🎓 O‘quvchilar
-                </div>
-
-                <div
-                    class="card-value"
-                    id="studentCount"
-                >
-                    0
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-title">
-                    🔵 Jami kelgan
-                </div>
-
-                <div
-                    class="card-value blue"
-                    id="totalPlus"
-                >
-                    0
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-title">
-                    🔴 Jami qoldirilgan
-                </div>
-
-                <div
-                    class="card-value red"
-                    id="totalMinus"
-                >
-                    0
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-title">
-                    📅 Jami belgilangan
-                </div>
-
-                <div
-                    class="card-value"
-                    id="totalMarked"
-                >
-                    0
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="table-wrapper">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>№</th>
-
-                        <th>
-                            Ism va Familya
-                        </th>
-
-                        <th>
-                            🔵 Keldi
-                        </th>
-
-                        <th>
-                            🔴 Qoldirdi
-                        </th>
-
-                        <th>
-                            📅 Jami
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody
-                    id="reportBody"
-                ></tbody>
-
-            </table>
-
-        </div>
-
-
-
-        <div
-            id="studentDetail"
-            class="student-detail"
-            style="display:none;"
-        >
-
-            <h3 id="selectedStudentName"></h3>
-
-
-            <div class="detail-grid">
-
-
-                <div class="detail-card">
-
-                    <div class="title">
-                        📆 Shu hafta jami dars
-                    </div>
-
-                    <div
-                        class="value"
-                        id="selectedWeekTotal"
-                    >
-                        0
-                    </div>
-
-                </div>
-
-
-                <div class="detail-card">
-
-                    <div class="title">
-                        🔵 Shu hafta kelgan
-                    </div>
-
-                    <div
-                        class="value blue"
-                        id="selectedWeekPlus"
-                    >
-                        0
-                    </div>
-
-                </div>
-
-
-                <div class="detail-card">
-
-                    <div class="title">
-                        🔴 Shu hafta qoldirgan
-                    </div>
-
-                    <div
-                        class="value red"
-                        id="selectedWeekMinus"
-                    >
-                        0
-                    </div>
-
-                </div>
-
-
-                <div class="detail-card">
-
-                    <div class="title">
-                        📊 Haftalik davomat
-                    </div>
-
-                    <div
-                        class="value green"
-                        id="selectedWeekPercent"
-                    >
-                        0%
-                    </div>
-
-                </div>
-
-
-                <div class="detail-card">
-
-                    <div class="title">
-                        🗓️ Shu oy jami dars
-                    </div>
-
-                    <div
-                        class="value"
-                        id="selectedMonthTotal"
-                    >
-                        0
-                    </div>
-
-                </div>
-
-
-                <div class="detail-card">
-
-                    <div class="title">
-                        🔵 Shu oy kelgan
-                    </div>
-
-                    <div
-                        class="value blue"
-                        id="selectedMonthPlus"
-                    >
-                        0
-                    </div>
-
-                </div>
-
-
-                <div class="detail-card">
-
-                    <div class="title">
-                        🔴 Shu oy qoldirgan
-                    </div>
-
-                    <div
-                        class="value red"
-                        id="selectedMonthMinus"
-                    >
-                        0
-                    </div>
-
-                </div>
-
-
-                <div class="detail-card">
-
-                    <div class="title">
-                        📊 Oylik davomat
-                    </div>
-
-                    <div
-                        class="value green"
-                        id="selectedMonthPercent"
-                    >
-                        0%
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+     0
     </div>
 
+   </div>
 
 
-    <!-- KUNLIK -->
+   <div class="card">
+
+    <div class="card-title">
+     🔵 Jami kelgan
+    </div>
 
     <div
-        id="dailySection"
-        class="report-section"
+     class="card-value blue"
+     id="totalPlus"
     >
-
-        <div class="table-wrapper">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Sana</th>
-
-                        <th>🔵 Kelgan</th>
-
-                        <th>🔴 Qolgan</th>
-
-                        <th>📊 Jami</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="dailyBody"></tbody>
-
-            </table>
-
-        </div>
-
+     0
     </div>
 
+   </div>
 
 
-    <!-- HAFTALIK -->
+   <div class="card">
+
+    <div class="card-title">
+     🔴 Jami qoldirilgan
+    </div>
 
     <div
-        id="weeklySection"
-        class="report-section"
+     class="card-value red"
+     id="totalMinus"
     >
-
-        <div class="table-wrapper">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Hafta</th>
-
-                        <th>🔵 Kelgan</th>
-
-                        <th>🔴 Qolgan</th>
-
-                        <th>📊 Jami</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="weeklyBody"></tbody>
-
-            </table>
-
-        </div>
-
+     0
     </div>
 
+   </div>
 
 
-    <!-- OYLIK -->
+   <div class="card">
+
+    <div class="card-title">
+     📅 Jami belgilangan
+    </div>
 
     <div
-        id="monthlySection"
-        class="report-section"
+     class="card-value"
+     id="totalMarked"
     >
+     0
+    </div>
 
-        <div class="table-wrapper">
+   </div>
 
-            <table>
+  </div>
 
-                <thead>
 
-                    <tr>
+  <div class="table-wrapper">
 
-                        <th>Oy</th>
+   <table>
 
-                        <th>🔵 Kelgan</th>
+    <thead>
 
-                        <th>🔴 Qolgan</th>
+     <tr>
 
-                        <th>📊 Jami</th>
+      <th>№</th>
 
-                    </tr>
+      <th>Ism va Familya</th>
 
-                </thead>
+      <th>🔵 Keldi</th>
 
-                <tbody id="monthlyBody"></tbody>
+      <th>🔴 Qoldirdi</th>
 
-            </table>
+      <th>📅 Jami</th>
 
-        </div>
+     </tr>
+
+    </thead>
+
+    <tbody id="reportBody"></tbody>
+
+   </table>
+
+  </div>
+
+
+  <div
+   id="studentDetail"
+   class="student-detail"
+   style="display:none;"
+  >
+
+   <h3 id="selectedStudentName"></h3>
+
+   <div class="detail-grid">
+
+    <div class="detail-card">
+
+     <div class="title">
+      📆 Shu hafta jami dars
+     </div>
+
+     <div
+      class="value"
+      id="selectedWeekTotal"
+     >
+      0
+     </div>
 
     </div>
+
+
+    <div class="detail-card">
+
+     <div class="title">
+      🔵 Shu hafta kelgan
+     </div>
+
+     <div
+      class="value blue"
+      id="selectedWeekPlus"
+     >
+      0
+     </div>
+
+    </div>
+
+
+    <div class="detail-card">
+
+     <div class="title">
+      🔴 Shu hafta qoldirgan
+     </div>
+
+     <div
+      class="value red"
+      id="selectedWeekMinus"
+     >
+      0
+     </div>
+
+    </div>
+
+
+    <div class="detail-card">
+
+     <div class="title">
+      📊 Haftalik davomat
+     </div>
+
+     <div
+      class="value green"
+      id="selectedWeekPercent"
+     >
+      0%
+     </div>
+
+    </div>
+
+
+    <div class="detail-card">
+
+     <div class="title">
+      🗓️ Shu oy jami dars
+     </div>
+
+     <div
+      class="value"
+      id="selectedMonthTotal"
+     >
+      0
+     </div>
+
+    </div>
+
+
+    <div class="detail-card">
+
+     <div class="title">
+      🔵 Shu oy kelgan
+     </div>
+
+     <div
+      class="value blue"
+      id="selectedMonthPlus"
+     >
+      0
+     </div>
+
+    </div>
+
+
+    <div class="detail-card">
+
+     <div class="title">
+      🔴 Shu oy qoldirgan
+     </div>
+
+     <div
+      class="value red"
+      id="selectedMonthMinus"
+     >
+      0
+     </div>
+
+    </div>
+
+
+    <div class="detail-card">
+
+     <div class="title">
+      📊 Oylik davomat
+     </div>
+
+     <div
+      class="value green"
+      id="selectedMonthPercent"
+     >
+      0%
+     </div>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <!-- DAILY -->
+
+ <div
+  id="dailySection"
+  class="report-section"
+ >
+
+  <div class="table-wrapper">
+
+   <table>
+
+    <thead>
+
+     <tr>
+
+      <th>Sana</th>
+      <th>🔵 Kelgan</th>
+      <th>🔴 Qolgan</th>
+      <th>📊 Jami</th>
+
+     </tr>
+
+    </thead>
+
+    <tbody id="dailyBody"></tbody>
+
+   </table>
+
+  </div>
+
+ </div>
+
+
+ <!-- WEEKLY -->
+
+ <div
+  id="weeklySection"
+  class="report-section"
+ >
+
+  <div class="table-wrapper">
+
+   <table>
+
+    <thead>
+
+     <tr>
+
+      <th>Hafta</th>
+      <th>🔵 Kelgan</th>
+      <th>🔴 Qolgan</th>
+      <th>📊 Jami</th>
+
+     </tr>
+
+    </thead>
+
+    <tbody id="weeklyBody"></tbody>
+
+   </table>
+
+  </div>
+
+ </div>
+
+
+ <!-- MONTHLY -->
+
+ <div
+  id="monthlySection"
+  class="report-section"
+ >
+
+  <div class="table-wrapper">
+
+   <table>
+
+    <thead>
+
+     <tr>
+
+      <th>Oy</th>
+      <th>🔵 Kelgan</th>
+      <th>🔴 Qolgan</th>
+      <th>📊 Jami</th>
+
+     </tr>
+
+    </thead>
+
+    <tbody id="monthlyBody"></tbody>
+
+   </table>
+
+  </div>
+
+ </div>
 
 </div>
 
 </div>
 
 
+<!-- =========================
+     FIREBASE + JAVASCRIPT
+========================= -->
 
 <script type="module">
 
+import {
+ initializeApp
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-/* =====================================================
+import {
+ getDatabase,
+ ref,
+ onValue,
+ set
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+/* =========================
    FIREBASE
-===================================================== */
-
-import {
-    initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-
-import {
-    getDatabase,
-    ref,
-    onValue,
-    set
-}
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
+========================= */
 
 const firebaseConfig = {
 
-    apiKey:
-        "AIzaSyAo-tioaUvivf965VRhRjJao-WXyU0AVTY",
+ apiKey:
+ "AIzaSyAo-tioaUvivf965VRhRjJao-WXyU0AVTY",
 
-    authDomain:
-        "davomat-jurnali.firebaseapp.com",
+ authDomain:
+ "davomat-jurnali.firebaseapp.com",
 
-    databaseURL:
-        "https://davomat-jurnali-default-rtdb.firebaseio.com",
+ databaseURL:
+ "https://davomat-jurnali-default-rtdb.firebaseio.com",
 
-    projectId:
-        "davomat-jurnali",
+ projectId:
+ "davomat-jurnali",
 
-    storageBucket:
-        "davomat-jurnali.firebasestorage.app",
+ storageBucket:
+ "davomat-jurnali.firebasestorage.app",
 
-    messagingSenderId:
-        "859496944977",
+ messagingSenderId:
+ "859496944977",
 
-    appId:
-        "1:859496944977:web:ce853ba3191f6a086cef70",
+ appId:
+ "1:859496944977:web:ce853ba3191f6a086cef70",
 
-    measurementId:
-        "G-8CMSQF83T6"
+ measurementId:
+ "G-8CMSQF83T6"
 
 };
 
 
-const app =
-    initializeApp(firebaseConfig);
+const app=initializeApp(firebaseConfig);
 
-const db =
-    getDatabase(app);
+const db=getDatabase(app);
 
-const attendanceRef =
-    ref(db, "davomat_jurnali");
+const attendanceRef=
+ ref(db,"davomat_jurnali");
 
 
-/* =====================================================
-   O‘QUVCHILAR
-===================================================== */
+/* =========================
+   STUDENTS
+========================= */
 
-const students = [
+const students=[
 
-    "Abdumannobova Ruqiyaxon",
-    "Abdumutallibov Muhammadali",
-    "Abdug‘offorova Muslimaxon",
-    "Anvarova Muharram",
-    "Arabbekova Ruqiyaxon",
-    "Baxromova Xabibaxon",
-    "Baxodirjonova Kimyoxon",
-    "Habibullayev Abdulloh",
-    "Ibroximova Mo'minaxon",
-    "Jo'rayev Hikmatillo",
-    "Komilova Oydinoy",
-    "Komilova Rayyona",
-    "Muhammadsidiqova Shaxodatxon",
-    "Muqimjonova Muzayyanaxon",
-    "Muhammadkomilov Abduraxmon",
-    "Nishonboyeva Mo'mina",
-    "O'ktamov Rahmatillo",
-    "Oribjonova Robiyaxon",
-    "Qosimova Rayyona",
-    "Soyibjonov Abduqodir",
-    "Soyibjonova Mohlaroy",
-    "Ubaydullayeva Bibisora",
-    "Yaqubov Abdulboriy",
-    "Yo'ldashboyeva Rayyona",
-    "Yuldasheva Muhlisaxon"
+ "Abdumannobova Ruqiyaxon",
+ "Abdumutallibov Muhammadali",
+ "Abdug‘offorova Muslimaxon",
+ "Anvarova Muharram",
+ "Arabbekova Ruqiyaxon",
+ "Baxromova Xabibaxon",
+ "Baxodirjonova Kimyoxon",
+ "Habibullayev Abdulloh",
+ "Ibroximova Mo'minaxon",
+ "Jo'rayev Hikmatillo",
+ "Komilova Oydinoy",
+ "Komilova Rayyona",
+ "Muhammadsidiqova Shaxodatxon",
+ "Muqimjonova Muzayyanaxon",
+ "Muhammadkomilov Abduraxmon",
+ "Nishonboyeva Mo'mina",
+ "O'ktamov Rahmatillo",
+ "Oribjonova Robiyaxon",
+ "Qosimova Rayyona",
+ "Soyibjonov Abduqodir",
+ "Soyibjonova Mohlaroy",
+ "Ubaydullayeva Bibisora",
+ "Yaqubov Abdulboriy",
+ "Yo'ldashboyeva Rayyona",
+ "Yuldasheva Muhlisaxon"
 
 ];
 
 
-/* =====================================================
-   SANALAR
-===================================================== */
+/* =========================
+   DATES
+========================= */
 
-const startDate =
-    new Date("2026-09-28T00:00:00");
+const startDate=
+ new Date("2026-09-28T00:00:00");
 
-const endDate =
-    new Date("2027-05-25T00:00:00");
+const endDate=
+ new Date("2027-05-25T00:00:00");
 
 
-/* =====================================================
-   DARSLAR
-===================================================== */
+const lessonsPerDay={
+ 0:0,
+ 1:5,
+ 2:6,
+ 3:6,
+ 4:5,
+ 5:6,
+ 6:4
+};
 
-const lessonsPerDay = {
 
-    0: 0,
-    1: 5,
-    2: 6,
-    3: 6,
-    4: 5,
-    5: 6,
-    6: 4
+const holidays={
+
+ "2026-10-01":
+ "O‘qituvchi va murabbiylar kuni",
+
+ "2026-12-08":
+ "Konstitutsiya kuni",
+
+ "2027-01-01":
+ "Yangi yil",
+
+ "2027-03-08":
+ "Xotin-qizlar kuni",
+
+ "2027-03-21":
+ "Navro‘z",
+
+ "2027-05-09":
+ "Xotira va qadrlash kuni"
 
 };
 
 
-/* =====================================================
-   BAYRAMLAR
-===================================================== */
+const vacations=[
 
-const holidays = {
+ {
+  start:"2026-11-04",
+  end:"2026-11-09",
+  name:"Kuzgi ta’til"
+ },
 
-    "2026-10-01":
-        "O‘qituvchi va murabbiylar kuni",
+ {
+  start:"2026-12-28",
+  end:"2027-01-10",
+  name:"Qishki ta’til"
+ },
 
-    "2026-12-08":
-        "Konstitutsiya kuni",
-
-    "2027-01-01":
-        "Yangi yil",
-
-    "2027-03-08":
-        "Xotin-qizlar kuni",
-
-    "2027-03-21":
-        "Navro‘z",
-
-    "2027-05-09":
-        "Xotira va qadrlash kuni"
-
-};
-
-
-/* =====================================================
-   TA’TILLAR
-===================================================== */
-
-const vacations = [
-
-    {
-        start: "2026-11-04",
-        end: "2026-11-09",
-        name: "Kuzgi ta’til"
-    },
-
-    {
-        start: "2026-12-28",
-        end: "2027-01-10",
-        name: "Qishki ta’til"
-    },
-
-    {
-        start: "2027-03-21",
-        end: "2027-03-27",
-        name: "Bahorgi ta’til"
-    }
+ {
+  start:"2027-03-21",
+  end:"2027-03-27",
+  name:"Bahorgi ta’til"
+ }
 
 ];
 
 
-let attendanceData = {};
+/* =========================
+   LOGIN USERS
+========================= */
+
+const users={
+
+ "abdulloh04072009":{
+  password:"abdulloh2009.",
+  name:"Abdulloh",
+  canEdit:true
+ },
+
+ "muhammadali2010":{
+  password:"muhammadali2010.",
+  name:"Muhammadali",
+  canEdit:true
+ }
+
+};
 
 
-/* =====================================================
+/*
+  Hozirgi foydalanuvchi:
+
+  editor = davomat kiritishi mumkin
+  viewer = faqat ko‘rishi mumkin
+*/
+
+let currentUser=null;
+
+
+/* =========================
+   ATTENDANCE
+========================= */
+
+let attendanceData={};
+
+
+/* =========================
    LOGIN
-===================================================== */
+========================= */
 
-const LOGIN =
-    "abdulloh04072009";
+function login(){
 
-const PASSWORD =
-    "abdulloh2009.";
+ const username=
+  document.getElementById("username").value.trim();
 
+ const password=
+  document.getElementById("password").value;
 
-function login() {
-
-    const username =
-        document.getElementById("username").value.trim();
-
-    const password =
-        document.getElementById("password").value;
-
-    const remember =
-        document.getElementById("rememberLogin").checked;
+ const remember=
+  document.getElementById("rememberLogin").checked;
 
 
-    if (
-        username === LOGIN &&
-        password === PASSWORD
-    ) {
+ const user=users[username];
 
-        sessionStorage.setItem(
-            "davomat_login",
-            "true"
+
+ if(user && user.password===password){
+
+  currentUser={
+   username:username,
+   name:user.name,
+   canEdit:user.canEdit,
+   mode:"editor"
+  };
+
+
+  sessionStorage.setItem(
+   "davomat_user",
+   JSON.stringify(currentUser)
+  );
+
+
+  if(remember){
+
+   localStorage.setItem(
+    "davomat_user",
+    JSON.stringify(currentUser)
+   );
+
+  }else{
+
+   localStorage.removeItem(
+    "davomat_user"
+   );
+
+  }
+
+
+  document.getElementById(
+   "loginError"
+  ).textContent="";
+
+
+  showMain();
+
+ }else{
+
+  document.getElementById(
+   "loginError"
+  ).textContent=
+   "Login yoki parol noto‘g‘ri!";
+
+ }
+
+}
+
+
+/* =========================
+   GUEST LOGIN
+========================= */
+
+function guestLogin(){
+
+ currentUser={
+
+  username:"guest",
+
+  name:"Kuzatuvchi",
+
+  canEdit:false,
+
+  mode:"viewer"
+
+ };
+
+
+ sessionStorage.setItem(
+  "davomat_user",
+  JSON.stringify(currentUser)
+ );
+
+
+ localStorage.removeItem(
+  "davomat_user"
+ );
+
+
+ document.getElementById(
+  "loginError"
+ ).textContent="";
+
+
+ showMain();
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+function logout(){
+
+ sessionStorage.removeItem(
+  "davomat_user"
+ );
+
+ localStorage.removeItem(
+  "davomat_user"
+ );
+
+ currentUser=null;
+
+
+ document.getElementById(
+  "mainPage"
+ ).style.display="none";
+
+ document.getElementById(
+  "reportPage"
+ ).style.display="none";
+
+ document.getElementById(
+  "loginPage"
+ ).style.display="flex";
+
+ document.getElementById(
+  "username"
+ ).value="";
+
+ document.getElementById(
+  "password"
+ ).value="";
+
+}
+
+
+/* =========================
+   SHOW MAIN
+========================= */
+
+function showMain(){
+
+ document.getElementById(
+  "loginPage"
+ ).style.display="none";
+
+ document.getElementById(
+  "reportPage"
+ ).style.display="none";
+
+ document.getElementById(
+  "mainPage"
+ ).style.display="block";
+
+
+ updateUserInterface();
+
+ renderTable();
+
+}
+
+
+/* =========================
+   USER INTERFACE
+========================= */
+
+function updateUserInterface(){
+
+ const badge=
+  document.getElementById(
+   "userModeBadge"
+  );
+
+ const warning=
+  document.getElementById(
+   "viewerWarning"
+  );
+
+
+ if(!currentUser)return;
+
+
+ if(currentUser.mode==="viewer"){
+
+  badge.textContent=
+   "👀 Kuzatuvchi";
+
+  badge.classList.remove(
+   "editor-badge"
+  );
+
+  warning.style.display="block";
+
+ }else{
+
+  badge.textContent=
+   "✏️ "+currentUser.name;
+
+  badge.classList.add(
+   "editor-badge"
+  );
+
+  warning.style.display="none";
+
+ }
+
+}
+
+
+/* =========================
+   PASSWORD EYE
+========================= */
+
+document
+ .getElementById("eyeButton")
+ .addEventListener(
+  "click",
+  function(){
+
+   const input=
+    document.getElementById("password");
+
+   if(input.type==="password"){
+
+    input.type="text";
+
+    this.textContent="🙈";
+
+   }else{
+
+    input.type="password";
+
+    this.textContent="👁️";
+
+   }
+
+  }
+ );
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+function toggleDark(){
+
+ document.body.classList.toggle(
+  "dark"
+ );
+
+ localStorage.setItem(
+  "davomat_dark",
+  document.body.classList.contains("dark")
+ );
+
+}
+
+
+if(
+ localStorage.getItem(
+  "davomat_dark"
+ )==="true"
+){
+
+ document.body.classList.add(
+  "dark"
+ );
+
+}
+
+
+/* =========================
+   DATE FUNCTIONS
+========================= */
+
+function dateKey(date){
+
+ const year=
+  date.getFullYear();
+
+ const month=
+  String(
+   date.getMonth()+1
+  ).padStart(2,"0");
+
+ const day=
+  String(
+   date.getDate()
+  ).padStart(2,"0");
+
+ return `${year}-${month}-${day}`;
+
+}
+
+
+function formatDate(value){
+
+ const p=value.split("-");
+
+ return `${p[2]}.${p[1]}.${p[0]}`;
+
+}
+
+
+function getTodayKey(){
+
+ return dateKey(
+  new Date()
+ );
+
+}
+
+
+/* =========================
+   LOCK REASON
+========================= */
+
+function getLockReason(dateString){
+
+ /*
+   VIEWER uchun barcha sanalar blok.
+ */
+
+ if(
+  currentUser &&
+  currentUser.mode==="viewer"
+ ){
+
+  return "👀 Kuzatuvchi rejimi";
+ }
+
+
+ const date=
+  new Date(
+   dateString+"T00:00:00"
+  );
+
+
+ const today=
+  new Date();
+
+ today.setHours(
+  0,0,0,0
+ );
+
+
+ if(date<today){
+
+  return "🔒 Kun yakunlangan";
+
+ }
+
+
+ if(date.getDay()===0){
+
+  return "Yakshanba";
+
+ }
+
+
+ if(holidays[dateString]){
+
+  return holidays[dateString];
+
+ }
+
+
+ for(
+  const vacation of vacations
+ ){
+
+  if(
+   dateString>=vacation.start &&
+   dateString<=vacation.end
+  ){
+
+   return vacation.name;
+
+  }
+
+ }
+
+
+ return null;
+
+}
+
+
+/* =========================
+   GENERATE DATES
+========================= */
+
+function generateDates(){
+
+ const result=[];
+
+ const current=
+  new Date(startDate);
+
+
+ while(current<=endDate){
+
+  result.push(
+   dateKey(current)
+  );
+
+  current.setDate(
+   current.getDate()+1
+  );
+
+ }
+
+ return result;
+
+}
+
+
+const dates=
+ generateDates();
+
+
+/* =========================
+   GET ATTENDANCE
+========================= */
+
+function getAttendance(
+ dateString,
+ studentIndex
+){
+
+ if(
+  !attendanceData[dateString]
+ ){
+
+  return "";
+
+ }
+
+
+ return (
+  attendanceData[dateString]
+  [studentIndex] || ""
+ );
+
+}
+
+
+/* =========================
+   CELL COLOR
+========================= */
+
+function updateCellColor(
+ cell,
+ value
+){
+
+ cell.classList.remove(
+  "plus",
+  "minus"
+ );
+
+
+ if(value==="+"){
+
+  cell.classList.add("plus");
+
+ }
+
+
+ if(value==="-"){
+
+  cell.classList.add("minus");
+
+ }
+
+}
+
+
+/* =========================
+   RENDER TABLE
+========================= */
+
+function renderTable(){
+
+ const header=
+  document.getElementById(
+   "dateHeader"
+  );
+
+ const body=
+  document.getElementById(
+   "attendanceBody"
+  );
+
+
+ const todayKey=
+  getTodayKey();
+
+
+ header.innerHTML=
+  `<th>№</th>
+   <th class="name-column">
+    Ism va Familya
+   </th>`;
+
+
+ dates.forEach(
+  dateString=>{
+
+   const th=
+    document.createElement("th");
+
+   th.className=
+    "date-column";
+
+
+   if(
+    dateString===todayKey
+   ){
+
+    th.classList.add(
+     "today-column"
+    );
+
+    th.textContent=
+     "📅 "+formatDate(
+      dateString
+     );
+
+    th.title=
+     "Bugungi sana";
+
+   }else{
+
+    th.textContent=
+     formatDate(
+      dateString
+     );
+
+   }
+
+
+   header.appendChild(th);
+
+  }
+ );
+
+
+ body.innerHTML="";
+
+
+ students.forEach(
+  (student,studentIndex)=>{
+
+   const tr=
+    document.createElement("tr");
+
+
+   const number=
+    document.createElement("td");
+
+   number.textContent=
+    studentIndex+1;
+
+
+   const name=
+    document.createElement("td");
+
+   name.className=
+    "name-column";
+
+   name.textContent=
+    student;
+
+
+   tr.appendChild(number);
+
+   tr.appendChild(name);
+
+
+   dates.forEach(
+    dateString=>{
+
+     const td=
+      document.createElement("td");
+
+     td.className=
+      "attendance-cell";
+
+
+     const isToday=
+      dateString===todayKey;
+
+
+     if(isToday){
+
+      td.classList.add(
+       "today-attendance"
+      );
+
+     }
+
+
+     const saved=
+      getAttendance(
+       dateString,
+       studentIndex
+      );
+
+
+     /*
+       MUHIM:
+
+       Viewer bo‘lsa,
+       barcha sanalar bloklanadi.
+     */
+
+     const lock=
+      getLockReason(
+       dateString
+      );
+
+
+     if(lock){
+
+      td.classList.add(
+       "locked"
+      );
+
+
+      if(
+       currentUser &&
+       currentUser.mode==="viewer"
+      ){
+
+       td.classList.add(
+        "viewer-locked"
+       );
+
+       td.textContent=
+        saved || "🔒";
+
+       td.title=
+        "Davomat kiritish uchun maxsus login kerak";
+
+      }else{
+
+       td.textContent=
+        saved || "🔒";
+
+       td.title=
+        lock;
+
+      }
+
+
+      td.contentEditable=
+       "false";
+
+
+      updateCellColor(
+       td,
+       saved
+      );
+
+
+     }else{
+
+      /*
+        Faqat EDITOR yozishi mumkin.
+      */
+
+      if(
+       !currentUser ||
+       currentUser.mode!=="editor"
+      ){
+
+       td.classList.add(
+        "viewer-locked"
+       );
+
+       td.contentEditable=
+        "false";
+
+       td.textContent=
+        saved || "🔒";
+
+       td.title=
+        "Davomat kiritish uchun maxsus login kerak";
+
+      }else{
+
+       td.contentEditable=
+        "true";
+
+       td.spellcheck=false;
+
+
+       if(saved){
+
+        td.textContent=
+         saved;
+
+        updateCellColor(
+         td,
+         saved
         );
 
-
-        if (remember) {
-
-            localStorage.setItem(
-                "davomat_remember",
-                "true"
-            );
-
-        } else {
-
-            localStorage.removeItem(
-                "davomat_remember"
-            );
-
-        }
+       }
 
 
-        showMain();
+       td.addEventListener(
+        "input",
+        function(){
 
-    } else {
-
-        document.getElementById(
-            "loginError"
-        ).textContent =
-            "Login yoki parol noto‘g‘ri!";
-
-    }
-
-}
+         let value=
+          td.textContent.trim();
 
 
-function logout() {
+         if(
+          value!=="+" &&
+          value!=="-"
+         ){
 
-    sessionStorage.removeItem(
-        "davomat_login"
-    );
+          value="";
 
-    localStorage.removeItem(
-        "davomat_remember"
-    );
+          td.textContent="";
 
-
-    document.getElementById(
-        "mainPage"
-    ).style.display = "none";
-
-    document.getElementById(
-        "reportPage"
-    ).style.display = "none";
-
-    document.getElementById(
-        "loginPage"
-    ).style.display = "flex";
-
-}
+         }
 
 
-function showMain() {
+         if(
+          !attendanceData[dateString]
+         ){
 
-    document.getElementById(
-        "loginPage"
-    ).style.display = "none";
+          attendanceData[dateString]={};
 
-    document.getElementById(
-        "reportPage"
-    ).style.display = "none";
-
-    document.getElementById(
-        "mainPage"
-    ).style.display = "block";
-
-}
+         }
 
 
-/* =====================================================
-   PAROL KO‘RISH
-===================================================== */
-
-document.getElementById(
-    "eyeButton"
-).addEventListener(
-    "click",
-    function() {
-
-        const input =
-            document.getElementById("password");
+         attendanceData
+          [dateString]
+          [studentIndex]=
+           value;
 
 
-        if (
-            input.type === "password"
-        ) {
+         updateCellColor(
+          td,
+          value
+         );
 
-            input.type = "text";
 
-            this.textContent = "🙈";
-
-        } else {
-
-            input.type = "password";
-
-            this.textContent = "👁️";
+         saveData();
 
         }
+       );
+
+      }
+
+     }
+
+
+     tr.appendChild(td);
 
     }
+   );
+
+
+   body.appendChild(tr);
+
+  }
+ );
+
+}
+
+
+/* =========================
+   SAVE DATA
+========================= */
+
+function saveData(){
+
+ /*
+   Faqat editor yozishi mumkin.
+ */
+
+ if(
+  !currentUser ||
+  currentUser.mode!=="editor"
+ ){
+
+  return;
+
+ }
+
+
+ set(
+  attendanceRef,
+  {
+   attendance:attendanceData,
+   updatedAt:Date.now()
+  }
+ );
+
+}
+
+
+/* =========================
+   FIREBASE
+========================= */
+
+onValue(
+ attendanceRef,
+ snapshot=>{
+
+  const data=
+   snapshot.val();
+
+
+  if(
+   data &&
+   data.attendance
+  ){
+
+   attendanceData=
+    data.attendance;
+
+  }else{
+
+   attendanceData={};
+
+  }
+
+
+  renderTable();
+
+
+  document.getElementById(
+   "firebaseStatus"
+  ).textContent=
+   "🟢 Firebase bilan sinxronlangan.";
+
+
+  if(
+   document.getElementById(
+    "reportPage"
+   ).style.display==="block"
+  ){
+
+   renderReport();
+
+  }
+
+ },
+ error=>{
+
+  console.error(error);
+
+  document.getElementById(
+   "firebaseStatus"
+  ).textContent=
+   "🔴 Firebase ulanishida xatolik.";
+
+ }
 );
 
 
-/* =====================================================
-   DARK MODE
-===================================================== */
+/* =========================
+   REPORT OPEN
+========================= */
 
-function toggleDark() {
+function openReport(){
 
-    document.body.classList.toggle("dark");
+ document.getElementById(
+  "mainPage"
+ ).style.display="none";
 
-    localStorage.setItem(
-        "davomat_dark",
-        document.body.classList.contains("dark")
-    );
-
-}
-
-
-if (
-    localStorage.getItem("davomat_dark") === "true"
-) {
-
-    document.body.classList.add("dark");
-
-}
+ document.getElementById(
+  "reportPage"
+ ).style.display="block";
 
 
-/* =====================================================
-   SANA
-===================================================== */
-
-function dateKey(date) {
-
-    const year =
-        date.getFullYear();
-
-    const month =
-        String(
-            date.getMonth() + 1
-        ).padStart(2, "0");
-
-    const day =
-        String(
-            date.getDate()
-        ).padStart(2, "0");
+ document.getElementById(
+  "studentSearch"
+ ).value="";
 
 
-    return `${year}-${month}-${day}`;
+ document.getElementById(
+  "studentDetail"
+ ).style.display="none";
+
+
+ showReportTab(
+  "students"
+ );
 
 }
 
 
-function formatDate(value) {
+/* =========================
+   REPORT CLOSE
+========================= */
 
-    const p =
-        value.split("-");
+function closeReport(){
 
-    return `${p[2]}.${p[1]}.${p[0]}`;
+ document.getElementById(
+  "reportPage"
+ ).style.display="none";
 
-}
-
-
-function getTodayKey() {
-
-    return dateKey(
-        new Date()
-    );
+ document.getElementById(
+  "mainPage"
+ ).style.display="block";
 
 }
 
 
-/* =====================================================
-   BLOKLANISH
-===================================================== */
+/* =========================
+   REPORT TAB
+========================= */
 
-function getLockReason(dateString) {
+function showReportTab(tab){
 
-    const date =
-        new Date(
-            dateString + "T00:00:00"
-        );
+ const sections=[
+  "students",
+  "daily",
+  "weekly",
+  "monthly"
+ ];
 
 
-    const today =
-        new Date();
+ sections.forEach(
+  name=>{
 
-    today.setHours(
-        0,
-        0,
-        0,
-        0
+   document
+    .getElementById(
+     name+"Section"
+    )
+    .classList.remove(
+     "active"
     );
 
 
-    if (date < today) {
-
-        return "🔒 Kun yakunlangan";
-
-    }
-
-
-    if (date.getDay() === 0) {
-
-        return "Yakshanba";
-
-    }
-
-
-    if (holidays[dateString]) {
-
-        return holidays[dateString];
-
-    }
-
-
-    for (
-        const vacation of vacations
-    ) {
-
-        if (
-            dateString >= vacation.start &&
-            dateString <= vacation.end
-        ) {
-
-            return vacation.name;
-
-        }
-
-    }
-
-
-    return null;
-
-}
-
-
-/* =====================================================
-   SANALAR YARATISH
-===================================================== */
-
-function generateDates() {
-
-    const result = [];
-
-    const current =
-        new Date(startDate);
-
-
-    while (
-        current <= endDate
-    ) {
-
-        result.push(
-            dateKey(current)
-        );
-
-        current.setDate(
-            current.getDate() + 1
-        );
-
-    }
-
-
-    return result;
-
-}
-
-
-const dates =
-    generateDates();
-
-
-/* =====================================================
-   DAVOMAT
-===================================================== */
-
-function getAttendance(
-    dateString,
-    studentIndex
-) {
-
-    if (
-        !attendanceData[dateString]
-    ) {
-
-        return "";
-
-    }
-
-
-    return (
-        attendanceData[dateString][studentIndex]
-        || ""
+   document
+    .getElementById(
+     "tab"+
+     name.charAt(0).toUpperCase()+
+     name.slice(1)
+    )
+    .classList.remove(
+     "active"
     );
 
+  }
+ );
+
+
+ document
+  .getElementById(
+   tab+"Section"
+  )
+  .classList.add(
+   "active"
+  );
+
+
+ document
+  .getElementById(
+   "tab"+
+   tab.charAt(0).toUpperCase()+
+   tab.slice(1)
+  )
+  .classList.add(
+   "active"
+  );
+
+
+ renderReport();
+
 }
 
 
-/* =====================================================
-   RANG
-===================================================== */
+/* =========================
+   STUDENT STATS
+========================= */
 
-function updateCellColor(
-    cell,
-    value
-) {
+function getStudentStats(index){
 
-    cell.classList.remove(
-        "plus",
-        "minus"
+ let plus=0;
+ let minus=0;
+
+
+ dates.forEach(
+  dateString=>{
+
+   const value=
+    getAttendance(
+     dateString,
+     index
     );
 
 
-    if (value === "+") {
-
-        cell.classList.add("plus");
-
-    }
+   if(value==="+")
+    plus++;
 
 
-    if (value === "-") {
+   if(value==="-")
+    minus++;
 
-        cell.classList.add("minus");
+  }
+ );
 
-    }
+
+ return{
+
+  plus,
+  minus,
+  total:
+   plus+minus
+
+ };
 
 }
 
 
-/* =====================================================
-   JADVAL
-===================================================== */
+/* =========================
+   MONDAY
+========================= */
 
-function renderTable() {
+function getMonday(date){
 
-    const header =
-        document.getElementById(
-            "dateHeader"
-        );
+ const result=
+  new Date(date);
 
-    const body =
-        document.getElementById(
-            "attendanceBody"
-        );
+ const day=
+  result.getDay();
 
-
-    const todayKey =
-        getTodayKey();
+ const difference=
+  day===0
+   ? -6
+   : 1-day;
 
 
-    header.innerHTML = `
+ result.setDate(
+  result.getDate()+
+  difference
+ );
 
-        <th>№</th>
 
-        <th class="name-column">
-            Ism va Familya
-        </th>
+ result.setHours(
+  0,0,0,0
+ );
+
+
+ return result;
+
+}
+
+
+/* =========================
+   WEEK STATS
+========================= */
+
+function getStudentWeekStats(index){
+
+ const today=
+  new Date();
+
+
+ const monday=
+  getMonday(today);
+
+
+ const saturday=
+  new Date(monday);
+
+
+ saturday.setDate(
+  saturday.getDate()+5
+ );
+
+
+ let plus=0;
+ let minus=0;
+ let total=0;
+
+
+ dates.forEach(
+  dateString=>{
+
+   const date=
+    new Date(
+     dateString+"T00:00:00"
+    );
+
+
+   if(
+    date<monday ||
+    date>saturday
+   ){
+
+    return;
+
+   }
+
+
+   if(
+    getLockReason(dateString)
+   ){
+
+    return;
+
+   }
+
+
+   const lessons=
+    lessonsPerDay[
+     date.getDay()
+    ] || 0;
+
+
+   const value=
+    getAttendance(
+     dateString,
+     index
+    );
+
+
+   if(value==="+")
+    plus+=lessons;
+
+
+   if(value==="-")
+    minus+=lessons;
+
+
+   if(
+    value==="+" ||
+    value==="-"
+   ){
+
+    total+=lessons;
+
+   }
+
+  }
+ );
+
+
+ return{
+  plus,
+  minus,
+  total
+ };
+
+}
+
+
+/* =========================
+   MONTH STATS
+========================= */
+
+function getStudentMonthStats(index){
+
+ const today=
+  new Date();
+
+
+ const year=
+  today.getFullYear();
+
+
+ const month=
+  today.getMonth();
+
+
+ let plus=0;
+ let minus=0;
+ let total=0;
+
+
+ dates.forEach(
+  dateString=>{
+
+   const date=
+    new Date(
+     dateString+"T00:00:00"
+    );
+
+
+   if(
+    date.getFullYear()!==year ||
+    date.getMonth()!==month
+   ){
+
+    return;
+
+   }
+
+
+   if(
+    getLockReason(dateString)
+   ){
+
+    return;
+
+   }
+
+
+   const lessons=
+    lessonsPerDay[
+     date.getDay()
+    ] || 0;
+
+
+   const value=
+    getAttendance(
+     dateString,
+     index
+    );
+
+
+   if(value==="+")
+    plus+=lessons;
+
+
+   if(value==="-")
+    minus+=lessons;
+
+
+   if(
+    value==="+" ||
+    value==="-"
+   ){
+
+    total+=lessons;
+
+   }
+
+  }
+ );
+
+
+ return{
+  plus,
+  minus,
+  total
+ };
+
+}
+
+
+/* =========================
+   STUDENT DETAIL
+========================= */
+
+function showStudentDetail(index){
+
+ const week=
+  getStudentWeekStats(
+   index
+  );
+
+
+ const month=
+  getStudentMonthStats(
+   index
+  );
+
+
+ document.getElementById(
+  "studentDetail"
+ ).style.display="block";
+
+
+ document.getElementById(
+  "selectedStudentName"
+ ).textContent=
+  "👨‍🎓 "+students[index];
+
+
+ document.getElementById(
+  "selectedWeekTotal"
+ ).textContent=
+  week.total+" dars";
+
+
+ document.getElementById(
+  "selectedWeekPlus"
+ ).textContent=
+  week.plus+" dars";
+
+
+ document.getElementById(
+  "selectedWeekMinus"
+ ).textContent=
+  week.minus+" dars";
+
+
+ const weekPercent=
+  week.total>0
+   ? (
+      week.plus/
+      week.total*
+      100
+     ).toFixed(1)
+   : "0.0";
+
+
+ document.getElementById(
+  "selectedWeekPercent"
+ ).textContent=
+  weekPercent+"%";
+
+
+ document.getElementById(
+  "selectedMonthTotal"
+ ).textContent=
+  month.total+" dars";
+
+
+ document.getElementById(
+  "selectedMonthPlus"
+ ).textContent=
+  month.plus+" dars";
+
+
+ document.getElementById(
+  "selectedMonthMinus"
+ ).textContent=
+  month.minus+" dars";
+
+
+ const monthPercent=
+  month.total>0
+   ? (
+      month.plus/
+      month.total*
+      100
+     ).toFixed(1)
+   : "0.0";
+
+
+ document.getElementById(
+  "selectedMonthPercent"
+ ).textContent=
+  monthPercent+"%";
+
+}
+
+
+/* =========================
+   RENDER REPORT
+========================= */
+
+function renderReport(){
+
+ const search=
+  document
+   .getElementById(
+    "studentSearch"
+   )
+   .value
+   .toLowerCase()
+   .trim();
+
+
+ const body=
+  document.getElementById(
+   "reportBody"
+  );
+
+
+ body.innerHTML="";
+
+
+ let totalPlus=0;
+ let totalMinus=0;
+
+
+ students.forEach(
+  (student,index)=>{
+
+   const stats=
+    getStudentStats(
+     index
+    );
+
+
+   totalPlus+=
+    stats.plus;
+
+
+   totalMinus+=
+    stats.minus;
+
+
+   if(
+    search &&
+    !student
+     .toLowerCase()
+     .includes(search)
+   ){
+
+    return;
+
+   }
+
+
+   const tr=
+    document.createElement("tr");
+
+
+   tr.style.cursor=
+    "pointer";
+
+
+   tr.addEventListener(
+    "click",
+    function(){
+
+     showStudentDetail(
+      index
+     );
+
+    }
+   );
+
+
+   tr.innerHTML=`
+
+    <td>${index+1}</td>
+
+    <td style="text-align:left">
+     ${student}
+    </td>
+
+    <td class="blue">
+     ${stats.plus}
+    </td>
+
+    <td class="red">
+     ${stats.minus}
+    </td>
+
+    <td>
+     ${stats.total}
+    </td>
+
+   `;
+
+
+   body.appendChild(tr);
+
+  }
+ );
+
+
+ document.getElementById(
+  "studentCount"
+ ).textContent=
+  students.length;
+
+
+ document.getElementById(
+  "totalPlus"
+ ).textContent=
+  totalPlus;
+
+
+ document.getElementById(
+  "totalMinus"
+ ).textContent=
+  totalMinus;
+
+
+ document.getElementById(
+  "totalMarked"
+ ).textContent=
+  totalPlus+totalMinus;
+
+
+ renderDailyReport();
+
+ renderWeeklyReport();
+
+ renderMonthlyReport();
+
+}
+
+
+/* =========================
+   DAILY REPORT
+========================= */
+
+function renderDailyReport(){
+
+ const body=
+  document.getElementById(
+   "dailyBody"
+  );
+
+
+ body.innerHTML="";
+
+
+ dates.forEach(
+  dateString=>{
+
+   let plus=0;
+   let minus=0;
+
+
+   students.forEach(
+    (_,index)=>{
+
+     const value=
+      getAttendance(
+       dateString,
+       index
+      );
+
+
+     if(value==="+")
+      plus++;
+
+
+     if(value==="-")
+      minus++;
+
+    }
+   );
+
+
+   const total=
+    plus+minus;
+
+
+   if(total===0)
+    return;
+
+
+   const tr=
+    document.createElement("tr");
+
+
+   tr.innerHTML=`
+
+    <td>
+     ${formatDate(dateString)}
+    </td>
+
+    <td class="blue">
+     ${plus}
+    </td>
+
+    <td class="red">
+     ${minus}
+    </td>
+
+    <td>
+     ${total}
+    </td>
+
+   `;
+
+
+   body.appendChild(tr);
+
+  }
+ );
+
+}
+
+
+/* =========================
+   WEEKLY REPORT
+========================= */
+
+function renderWeeklyReport(){
+
+ const body=
+  document.getElementById(
+   "weeklyBody"
+  );
+
+
+ body.innerHTML="";
+
+
+ const weeks={};
+
+
+ dates.forEach(
+  dateString=>{
+
+   const date=
+    new Date(
+     dateString+"T00:00:00"
+    );
+
+
+   const monday=
+    getMonday(date);
+
+
+   const key=
+    dateKey(monday);
+
+
+   if(!weeks[key]){
+
+    weeks[key]={
+     plus:0,
+     minus:0,
+     total:0
+    };
+
+   }
+
+
+   const lessons=
+    lessonsPerDay[
+     date.getDay()
+    ] || 0;
+
+
+   students.forEach(
+    (_,index)=>{
+
+     const value=
+      getAttendance(
+       dateString,
+       index
+      );
+
+
+     if(value==="+")
+      weeks[key].plus+=
+       lessons;
+
+
+     if(value==="-")
+      weeks[key].minus+=
+       lessons;
+
+
+     if(
+      value==="+" ||
+      value==="-"
+     ){
+
+      weeks[key].total+=
+       lessons;
+
+     }
+
+    }
+   );
+
+  }
+ );
+
+
+ Object.keys(weeks)
+  .sort()
+  .forEach(
+   key=>{
+
+    const data=
+     weeks[key];
+
+
+    if(
+     data.total===0
+    )
+     return;
+
+
+    const monday=
+     new Date(
+      key+"T00:00:00"
+     );
+
+
+    const saturday=
+     new Date(monday);
+
+
+    saturday.setDate(
+     saturday.getDate()+5
+    );
+
+
+    const tr=
+     document.createElement(
+      "tr"
+     );
+
+
+    tr.innerHTML=`
+
+     <td>
+      ${formatDate(key)}
+      —
+      ${formatDate(
+       dateKey(saturday)
+      )}
+     </td>
+
+     <td class="blue">
+      ${data.plus}
+     </td>
+
+     <td class="red">
+      ${data.minus}
+     </td>
+
+     <td>
+      ${data.total}
+     </td>
 
     `;
 
 
-    dates.forEach(
-        dateString => {
+    body.appendChild(tr);
 
-            const th =
-                document.createElement("th");
-
-            th.className =
-                "date-column";
-
-
-            if (
-                dateString === todayKey
-            ) {
-
-                th.classList.add(
-                    "today-column"
-                );
-
-                th.textContent =
-                    "📅 " +
-                    formatDate(dateString);
-
-                th.title =
-                    "Bugungi sana";
-
-            } else {
-
-                th.textContent =
-                    formatDate(dateString);
-
-            }
-
-
-            header.appendChild(th);
-
-        }
-    );
-
-
-    body.innerHTML = "";
-
-
-    students.forEach(
-        (
-            student,
-            studentIndex
-        ) => {
-
-            const tr =
-                document.createElement("tr");
-
-
-            const number =
-                document.createElement("td");
-
-            number.textContent =
-                studentIndex + 1;
-
-
-            const name =
-                document.createElement("td");
-
-            name.className =
-                "name-column";
-
-            name.textContent =
-                student;
-
-
-            tr.appendChild(number);
-
-            tr.appendChild(name);
-
-
-            dates.forEach(
-                dateString => {
-
-                    const td =
-                        document.createElement("td");
-
-                    td.className =
-                        "attendance-cell";
-
-
-                    const isToday =
-                        dateString === todayKey;
-
-
-                    const lock =
-                        getLockReason(
-                            dateString
-                        );
-
-
-                    if (isToday) {
-
-                        td.classList.add(
-                            "today-attendance"
-                        );
-
-                    }
-
-
-                    const saved =
-                        getAttendance(
-                            dateString,
-                            studentIndex
-                        );
-
-
-                    if (lock) {
-
-                        td.classList.add(
-                            "locked"
-                        );
-
-                        td.contentEditable =
-                            "false";
-
-                        td.textContent =
-                            saved || "🔒";
-
-                        td.title =
-                            lock;
-
-                        updateCellColor(
-                            td,
-                            saved
-                        );
-
-                    } else {
-
-                        td.contentEditable =
-                            "true";
-
-                        td.spellcheck =
-                            false;
-
-
-                        if (saved) {
-
-                            td.textContent =
-                                saved;
-
-                            updateCellColor(
-                                td,
-                                saved
-                            );
-
-                        }
-
-
-                        td.addEventListener(
-                            "input",
-                            function() {
-
-                                let value =
-                                    td.textContent.trim();
-
-
-                                if (
-                                    value !== "+" &&
-                                    value !== "-"
-                                ) {
-
-                                    value = "";
-
-                                    td.textContent =
-                                        "";
-
-                                }
-
-
-                                if (
-                                    !attendanceData[
-                                        dateString
-                                    ]
-                                ) {
-
-                                    attendanceData[
-                                        dateString
-                                    ] = {};
-
-                                }
-
-
-                                attendanceData[
-                                    dateString
-                                ][
-                                    studentIndex
-                                ] = value;
-
-
-                                updateCellColor(
-                                    td,
-                                    value
-                                );
-
-
-                                saveData();
-
-                            }
-                        );
-
-                    }
-
-
-                    tr.appendChild(td);
-
-                }
-            );
-
-
-            body.appendChild(tr);
-
-        }
-    );
+   }
+  );
 
 }
 
 
-/* =====================================================
-   FIREBASE SAQLASH
-===================================================== */
-
-function saveData() {
-
-    set(
-        attendanceRef,
-        {
-
-            attendance:
-                attendanceData,
-
-            updatedAt:
-                Date.now()
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   FIREBASE
-===================================================== */
-
-onValue(
-    attendanceRef,
-
-    snapshot => {
-
-        const data =
-            snapshot.val();
-
-
-        if (
-            data &&
-            data.attendance
-        ) {
-
-            attendanceData =
-                data.attendance;
-
-        } else {
-
-            attendanceData = {};
-
-        }
-
-
-        renderTable();
-
-
-        document.getElementById(
-            "firebaseStatus"
-        ).textContent =
-            "🟢 Firebase bilan sinxronlangan.";
-
-
-        if (
-            document.getElementById(
-                "reportPage"
-            ).style.display === "block"
-        ) {
-
-            renderReport();
-
-        }
-
-    },
-
-    error => {
-
-        console.error(error);
-
-        document.getElementById(
-            "firebaseStatus"
-        ).textContent =
-            "🔴 Firebase ulanishida xatolik.";
-
-    }
-);
-
-
-/* =====================================================
-   HISOBOTNI OCHISH
-===================================================== */
-
-function openReport() {
-
-    document.getElementById(
-        "mainPage"
-    ).style.display = "none";
-
-    document.getElementById(
-        "reportPage"
-    ).style.display = "block";
-
-
-    document.getElementById(
-        "studentSearch"
-    ).value = "";
-
-
-    document.getElementById(
-        "studentDetail"
-    ).style.display = "none";
-
-
-    showReportTab("students");
-
-}
-
-
-function closeReport() {
-
-    document.getElementById(
-        "reportPage"
-    ).style.display = "none";
-
-    document.getElementById(
-        "mainPage"
-    ).style.display = "block";
-
-}
-
-
-/* =====================================================
-   REPORT TAB
-===================================================== */
-
-function showReportTab(tab) {
-
-    const sections = [
-        "students",
-        "daily",
-        "weekly",
-        "monthly"
-    ];
-
-
-    sections.forEach(
-        name => {
-
-            document.getElementById(
-                name + "Section"
-            ).classList.remove("active");
-
-
-            document.getElementById(
-                "tab" +
-                name.charAt(0).toUpperCase() +
-                name.slice(1)
-            ).classList.remove("active");
-
-        }
-    );
-
-
-    document.getElementById(
-        tab + "Section"
-    ).classList.add("active");
-
-
-    document.getElementById(
-        "tab" +
-        tab.charAt(0).toUpperCase() +
-        tab.slice(1)
-    ).classList.add("active");
-
-
-    renderReport();
-
-}
-
-
-/* =====================================================
-   O‘QUVCHI STATISTIKASI
-===================================================== */
-
-function getStudentStats(index) {
-
-    let plus = 0;
-
-    let minus = 0;
-
-
-    dates.forEach(
-        dateString => {
-
-            const value =
-                getAttendance(
-                    dateString,
-                    index
-                );
-
-
-            if (value === "+") {
-
-                plus++;
-
-            }
-
-
-            if (value === "-") {
-
-                minus++;
-
-            }
-
-        }
-    );
-
-
-    return {
-
-        plus,
-
-        minus,
-
-        total:
-            plus + minus
-
-    };
-
-}
-
-
-/* =====================================================
-   HAFTA
-===================================================== */
-
-function getMonday(date) {
-
-    const result =
-        new Date(date);
-
-    const day =
-        result.getDay();
-
-
-    const difference =
-        day === 0
-            ? -6
-            : 1 - day;
-
-
-    result.setDate(
-        result.getDate() + difference
-    );
-
-
-    result.setHours(
-        0,
-        0,
-        0,
-        0
-    );
-
-
-    return result;
-
-}
-
-
-/* =====================================================
-   HAFTALIK
-===================================================== */
-
-function getStudentWeekStats(index) {
-
-    const today =
-        new Date();
-
-
-    const monday =
-        getMonday(today);
-
-
-    const saturday =
-        new Date(monday);
-
-
-    saturday.setDate(
-        saturday.getDate() + 5
-    );
-
-
-    let plus = 0;
-
-    let minus = 0;
-
-    let total = 0;
-
-
-    dates.forEach(
-        dateString => {
-
-            const date =
-                new Date(
-                    dateString +
-                    "T00:00:00"
-                );
-
-
-            if (
-                date < monday ||
-                date > saturday
-            ) {
-
-                return;
-
-            }
-
-
-            if (
-                getLockReason(dateString)
-            ) {
-
-                return;
-
-            }
-
-
-            const lessons =
-                lessonsPerDay[
-                    date.getDay()
-                ] || 0;
-
-
-            const value =
-                getAttendance(
-                    dateString,
-                    index
-                );
-
-
-            if (value === "+") {
-
-                plus += lessons;
-
-            }
-
-
-            if (value === "-") {
-
-                minus += lessons;
-
-            }
-
-
-            if (
-                value === "+" ||
-                value === "-"
-            ) {
-
-                total += lessons;
-
-            }
-
-        }
-    );
-
-
-    return {
-
-        plus,
-
-        minus,
-
-        total
-
-    };
-
-}
-
-
-/* =====================================================
-   OYLIK
-===================================================== */
-
-function getStudentMonthStats(index) {
-
-    const today =
-        new Date();
-
-
-    const year =
-        today.getFullYear();
-
-    const month =
-        today.getMonth();
-
-
-    let plus = 0;
-
-    let minus = 0;
-
-    let total = 0;
-
-
-    dates.forEach(
-        dateString => {
-
-            const date =
-                new Date(
-                    dateString +
-                    "T00:00:00"
-                );
-
-
-            if (
-                date.getFullYear() !== year ||
-                date.getMonth() !== month
-            ) {
-
-                return;
-
-            }
-
-
-            if (
-                getLockReason(dateString)
-            ) {
-
-                return;
-
-            }
-
-
-            const lessons =
-                lessonsPerDay[
-                    date.getDay()
-                ] || 0;
-
-
-            const value =
-                getAttendance(
-                    dateString,
-                    index
-                );
-
-
-            if (value === "+") {
-
-                plus += lessons;
-
-            }
-
-
-            if (value === "-") {
-
-                minus += lessons;
-
-            }
-
-
-            if (
-                value === "+" ||
-                value === "-"
-            ) {
-
-                total += lessons;
-
-            }
-
-        }
-    );
-
-
-    return {
-
-        plus,
-
-        minus,
-
-        total
-
-    };
-
-}
-
-
-/* =====================================================
-   O‘QUVCHI DETAIL
-===================================================== */
-
-function showStudentDetail(index) {
-
-    const week =
-        getStudentWeekStats(index);
-
-    const month =
-        getStudentMonthStats(index);
-
-
-    document.getElementById(
-        "studentDetail"
-    ).style.display = "block";
-
-
-    document.getElementById(
-        "selectedStudentName"
-    ).textContent =
-        "👨‍🎓 " + students[index];
-
-
-    document.getElementById(
-        "selectedWeekTotal"
-    ).textContent =
-        week.total + " dars";
-
-
-    document.getElementById(
-        "selectedWeekPlus"
-    ).textContent =
-        week.plus + " dars";
-
-
-    document.getElementById(
-        "selectedWeekMinus"
-    ).textContent =
-        week.minus + " dars";
-
-
-    const weekPercent =
-        week.total > 0
-            ? (
-                week.plus /
-                week.total *
-                100
-            ).toFixed(1)
-            : "0.0";
-
-
-    document.getElementById(
-        "selectedWeekPercent"
-    ).textContent =
-        weekPercent + "%";
-
-
-    document.getElementById(
-        "selectedMonthTotal"
-    ).textContent =
-        month.total + " dars";
-
-
-    document.getElementById(
-        "selectedMonthPlus"
-    ).textContent =
-        month.plus + " dars";
-
-
-    document.getElementById(
-        "selectedMonthMinus"
-    ).textContent =
-        month.minus + " dars";
-
-
-    const monthPercent =
-        month.total > 0
-            ? (
-                month.plus /
-                month.total *
-                100
-            ).toFixed(1)
-            : "0.0";
-
-
-    document.getElementById(
-        "selectedMonthPercent"
-    ).textContent =
-        monthPercent + "%";
-
-}
-
-
-/* =====================================================
-   ASOSIY HISOBOT
-===================================================== */
-
-function renderReport() {
-
-    const search =
-        document.getElementById(
-            "studentSearch"
-        ).value
-        .toLowerCase()
-        .trim();
-
-
-    const body =
-        document.getElementById(
-            "reportBody"
-        );
-
-
-    body.innerHTML = "";
-
-
-    let totalPlus = 0;
-
-    let totalMinus = 0;
-
-
-    students.forEach(
-        (
-            student,
-            index
-        ) => {
-
-            const stats =
-                getStudentStats(index);
-
-
-            totalPlus +=
-                stats.plus;
-
-            totalMinus +=
-                stats.minus;
-
-
-            if (
-                search &&
-                !student
-                    .toLowerCase()
-                    .includes(search)
-            ) {
-
-                return;
-
-            }
-
-
-            const tr =
-                document.createElement("tr");
-
-
-            tr.style.cursor =
-                "pointer";
-
-
-            tr.addEventListener(
-                "click",
-                function() {
-
-                    showStudentDetail(index);
-
-                }
-            );
-
-
-            tr.innerHTML = `
-
-                <td>
-                    ${index + 1}
-                </td>
-
-                <td style="text-align:left">
-                    ${student}
-                </td>
-
-                <td class="blue">
-                    ${stats.plus}
-                </td>
-
-                <td class="red">
-                    ${stats.minus}
-                </td>
-
-                <td>
-                    ${stats.total}
-                </td>
-
-            `;
-
-
-            body.appendChild(tr);
-
-        }
-    );
-
-
-    document.getElementById(
-        "studentCount"
-    ).textContent =
-        students.length;
-
-
-    document.getElementById(
-        "totalPlus"
-    ).textContent =
-        totalPlus;
-
-
-    document.getElementById(
-        "totalMinus"
-    ).textContent =
-        totalMinus;
-
-
-    document.getElementById(
-        "totalMarked"
-    ).textContent =
-        totalPlus + totalMinus;
-
-
-    renderDailyReport();
-
-    renderWeeklyReport();
-
-    renderMonthlyReport();
-
-}
-
-
-/* =====================================================
-   KUNLIK
-===================================================== */
-
-function renderDailyReport() {
-
-    const body =
-        document.getElementById(
-            "dailyBody"
-        );
-
-
-    body.innerHTML = "";
-
-
-    dates.forEach(
-        dateString => {
-
-            let plus = 0;
-
-            let minus = 0;
-
-
-            students.forEach(
-                (
-                    _,
-                    index
-                ) => {
-
-                    const value =
-                        getAttendance(
-                            dateString,
-                            index
-                        );
-
-
-                    if (value === "+") {
-
-                        plus++;
-
-                    }
-
-
-                    if (value === "-") {
-
-                        minus++;
-
-                    }
-
-                }
-            );
-
-
-            const total =
-                plus + minus;
-
-
-            if (total === 0) {
-
-                return;
-
-            }
-
-
-            const tr =
-                document.createElement("tr");
-
-
-            tr.innerHTML = `
-
-                <td>
-                    ${formatDate(dateString)}
-                </td>
-
-                <td class="blue">
-                    ${plus}
-                </td>
-
-                <td class="red">
-                    ${minus}
-                </td>
-
-                <td>
-                    ${total}
-                </td>
-
-            `;
-
-
-            body.appendChild(tr);
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   HAFTALIK HISOBOT
-===================================================== */
-
-function renderWeeklyReport() {
-
-    const body =
-        document.getElementById(
-            "weeklyBody"
-        );
-
-
-    body.innerHTML = "";
-
-
-    const weeks = {};
-
-
-    dates.forEach(
-        dateString => {
-
-            const date =
-                new Date(
-                    dateString +
-                    "T00:00:00"
-                );
-
-
-            const monday =
-                getMonday(date);
-
-
-            const key =
-                dateKey(monday);
-
-
-            if (!weeks[key]) {
-
-                weeks[key] = {
-
-                    plus: 0,
-
-                    minus: 0,
-
-                    total: 0
-
-                };
-
-            }
-
-
-            const lessons =
-                lessonsPerDay[
-                    date.getDay()
-                ] || 0;
-
-
-            students.forEach(
-                (
-                    _,
-                    index
-                ) => {
-
-                    const value =
-                        getAttendance(
-                            dateString,
-                            index
-                        );
-
-
-                    if (value === "+") {
-
-                        weeks[key].plus +=
-                            lessons;
-
-                    }
-
-
-                    if (value === "-") {
-
-                        weeks[key].minus +=
-                            lessons;
-
-                    }
-
-
-                    if (
-                        value === "+" ||
-                        value === "-"
-                    ) {
-
-                        weeks[key].total +=
-                            lessons;
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
-
-    Object.keys(weeks)
-        .sort()
-        .forEach(
-            key => {
-
-                const data =
-                    weeks[key];
-
-
-                if (
-                    data.total === 0
-                ) {
-
-                    return;
-
-                }
-
-
-                const monday =
-                    new Date(
-                        key +
-                        "T00:00:00"
-                    );
-
-
-                const saturday =
-                    new Date(monday);
-
-
-                saturday.setDate(
-                    saturday.getDate() + 5
-                );
-
-
-                const tr =
-                    document.createElement("tr");
-
-
-                tr.innerHTML = `
-
-                    <td>
-                        ${formatDate(key)}
-                        —
-                        ${formatDate(
-                            dateKey(saturday)
-                        )}
-                    </td>
-
-                    <td class="blue">
-                        ${data.plus}
-                    </td>
-
-                    <td class="red">
-                        ${data.minus}
-                    </td>
-
-                    <td>
-                        ${data.total}
-                    </td>
-
-                `;
-
-
-                body.appendChild(tr);
-
-            }
-        );
-
-}
-
-
-/* =====================================================
-   OYLAR
-===================================================== */
-
-const monthNames = [
-
-    "Yanvar",
-    "Fevral",
-    "Mart",
-    "Aprel",
-    "May",
-    "Iyun",
-    "Iyul",
-    "Avgust",
-    "Sentabr",
-    "Oktabr",
-    "Noyabr",
-    "Dekabr"
+/* =========================
+   MONTHLY REPORT
+========================= */
+
+const monthNames=[
+
+ "Yanvar",
+ "Fevral",
+ "Mart",
+ "Aprel",
+ "May",
+ "Iyun",
+ "Iyul",
+ "Avgust",
+ "Sentabr",
+ "Oktabr",
+ "Noyabr",
+ "Dekabr"
 
 ];
 
 
-/* =====================================================
-   OYLIK HISOBOT
-===================================================== */
+function renderMonthlyReport(){
 
-function renderMonthlyReport() {
-
-    const body =
-        document.getElementById(
-            "monthlyBody"
-        );
+ const body=
+  document.getElementById(
+   "monthlyBody"
+  );
 
 
-    body.innerHTML = "";
+ body.innerHTML="";
 
 
-    const months = {};
+ const months={};
 
 
-    dates.forEach(
-        dateString => {
+ dates.forEach(
+  dateString=>{
 
-            const date =
-                new Date(
-                    dateString +
-                    "T00:00:00"
-                );
-
-
-            const year =
-                date.getFullYear();
-
-            const month =
-                date.getMonth();
-
-
-            const key =
-                `${year}-${String(
-                    month + 1
-                ).padStart(2, "0")}`;
-
-
-            if (!months[key]) {
-
-                months[key] = {
-
-                    year,
-
-                    month,
-
-                    plus: 0,
-
-                    minus: 0,
-
-                    total: 0
-
-                };
-
-            }
-
-
-            const lessons =
-                lessonsPerDay[
-                    date.getDay()
-                ] || 0;
-
-
-            students.forEach(
-                (
-                    _,
-                    index
-                ) => {
-
-                    const value =
-                        getAttendance(
-                            dateString,
-                            index
-                        );
-
-
-                    if (value === "+") {
-
-                        months[key].plus +=
-                            lessons;
-
-                    }
-
-
-                    if (value === "-") {
-
-                        months[key].minus +=
-                            lessons;
-
-                    }
-
-
-                    if (
-                        value === "+" ||
-                        value === "-"
-                    ) {
-
-                        months[key].total +=
-                            lessons;
-
-                    }
-
-                }
-            );
-
-        }
+   const date=
+    new Date(
+     dateString+"T00:00:00"
     );
 
 
-    Object.keys(months)
-        .sort()
-        .forEach(
-            key => {
-
-                const data =
-                    months[key];
+   const year=
+    date.getFullYear();
 
 
-                if (
-                    data.total === 0
-                ) {
-
-                    return;
-
-                }
+   const month=
+    date.getMonth();
 
 
-                const tr =
-                    document.createElement("tr");
+   const key=
+    `${year}-${String(
+     month+1
+    ).padStart(2,"0")}`;
 
 
-                tr.innerHTML = `
+   if(!months[key]){
 
-                    <td>
-                        ${monthNames[
-                            data.month
-                        ]}
-                        ${data.year}
-                    </td>
+    months[key]={
+     year,
+     month,
+     plus:0,
+     minus:0,
+     total:0
+    };
 
-                    <td class="blue">
-                        ${data.plus}
-                    </td>
-
-                    <td class="red">
-                        ${data.minus}
-                    </td>
-
-                    <td>
-                        ${data.total}
-                    </td>
-
-                `;
+   }
 
 
-                body.appendChild(tr);
-
-            }
-        );
-
-}
+   const lessons=
+    lessonsPerDay[
+     date.getDay()
+    ] || 0;
 
 
-/* =====================================================
-   LOGIN TEKSHIRISH
-===================================================== */
+   students.forEach(
+    (_,index)=>{
 
-if (
-    sessionStorage.getItem(
-        "davomat_login"
-    ) === "true"
-    ||
-    localStorage.getItem(
-        "davomat_remember"
-    ) === "true"
-) {
-
-    showMain();
-
-} else {
-
-    document.getElementById(
-        "loginPage"
-    ).style.display = "flex";
-
-}
+     const value=
+      getAttendance(
+       dateString,
+       index
+      );
 
 
-/* =====================================================
-   TUGMALAR
-===================================================== */
-
-document.getElementById(
-    "loginButton"
-).addEventListener(
-    "click",
-    login
-);
+     if(value==="+")
+      months[key].plus+=
+       lessons;
 
 
-document.getElementById(
-    "reportButton"
-).addEventListener(
-    "click",
-    openReport
-);
+     if(value==="-")
+      months[key].minus+=
+       lessons;
 
 
-document.getElementById(
-    "darkButton"
-).addEventListener(
-    "click",
-    toggleDark
-);
+     if(
+      value==="+" ||
+      value==="-"
+     ){
 
+      months[key].total+=
+       lessons;
 
-document.getElementById(
-    "logoutButton"
-).addEventListener(
-    "click",
-    logout
-);
-
-
-document.getElementById(
-    "backButton"
-).addEventListener(
-    "click",
-    closeReport
-);
-
-
-document.getElementById(
-    "reportDarkButton"
-).addEventListener(
-    "click",
-    toggleDark
-);
-
-
-document.getElementById(
-    "tabStudents"
-).addEventListener(
-    "click",
-    () => showReportTab("students")
-);
-
-
-document.getElementById(
-    "tabDaily"
-).addEventListener(
-    "click",
-    () => showReportTab("daily")
-);
-
-
-document.getElementById(
-    "tabWeekly"
-).addEventListener(
-    "click",
-    () => showReportTab("weekly")
-);
-
-
-document.getElementById(
-    "tabMonthly"
-).addEventListener(
-    "click",
-    () => showReportTab("monthly")
-);
-
-
-document.getElementById(
-    "studentSearch"
-).addEventListener(
-    "input",
-    renderReport
-);
-
-
-/* =====================================================
-   ENTER
-===================================================== */
-
-document.getElementById(
-    "password"
-).addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Enter"
-        ) {
-
-            login();
-
-        }
+     }
 
     }
-);
+   );
+
+  }
+ );
 
 
-/* =====================================================
-   MIDNIGHT
-===================================================== */
+ Object.keys(months)
+  .sort()
+  .forEach(
+   key=>{
 
-function scheduleMidnightRefresh() {
-
-    const now =
-        new Date();
-
-
-    const tomorrow =
-        new Date(now);
+    const data=
+     months[key];
 
 
-    tomorrow.setDate(
-        tomorrow.getDate() + 1
-    );
+    if(
+     data.total===0
+    )
+     return;
 
 
-    tomorrow.setHours(
-        0,
-        0,
-        1,
-        0
-    );
+    const tr=
+     document.createElement(
+      "tr"
+     );
 
 
-    const delay =
-        tomorrow.getTime() -
-        now.getTime();
+    tr.innerHTML=`
+
+     <td>
+      ${monthNames[data.month]}
+      ${data.year}
+     </td>
+
+     <td class="blue">
+      ${data.plus}
+     </td>
+
+     <td class="red">
+      ${data.minus}
+     </td>
+
+     <td>
+      ${data.total}
+     </td>
+
+    `;
 
 
-    setTimeout(
-        function() {
+    body.appendChild(tr);
 
-            renderTable();
-
-            renderReport();
-
-            scheduleMidnightRefresh();
-
-        },
-        delay
-    );
+   }
+  );
 
 }
 
 
-/* =====================================================
-   BOSHLASH
-===================================================== */
+/* =========================
+   RESTORE LOGIN
+========================= */
+
+const savedSession=
+ sessionStorage.getItem(
+  "davomat_user"
+ );
+
+
+const savedLocal=
+ localStorage.getItem(
+  "davomat_user"
+ );
+
+
+if(savedSession){
+
+ try{
+
+  currentUser=
+   JSON.parse(
+    savedSession
+   );
+
+  showMain();
+
+ }catch{
+
+  sessionStorage.removeItem(
+   "davomat_user"
+  );
+
+ }
+
+}else if(savedLocal){
+
+ try{
+
+  currentUser=
+   JSON.parse(
+    savedLocal
+   );
+
+  sessionStorage.setItem(
+   "davomat_user",
+   JSON.stringify(
+    currentUser
+   )
+  );
+
+  showMain();
+
+ }catch{
+
+  localStorage.removeItem(
+   "davomat_user"
+  );
+
+ }
+
+}else{
+
+ document.getElementById(
+  "loginPage"
+ ).style.display="flex";
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+document
+ .getElementById(
+  "loginButton"
+ )
+ .addEventListener(
+  "click",
+  login
+ );
+
+
+document
+ .getElementById(
+  "guestButton"
+ )
+ .addEventListener(
+  "click",
+  guestLogin
+ );
+
+
+document
+ .getElementById(
+  "reportButton"
+ )
+ .addEventListener(
+  "click",
+  openReport
+ );
+
+
+document
+ .getElementById(
+  "darkButton"
+ )
+ .addEventListener(
+  "click",
+  toggleDark
+ );
+
+
+document
+ .getElementById(
+  "logoutButton"
+ )
+ .addEventListener(
+  "click",
+  logout
+ );
+
+
+document
+ .getElementById(
+  "backButton"
+ )
+ .addEventListener(
+  "click",
+  closeReport
+ );
+
+
+document
+ .getElementById(
+  "reportDarkButton"
+ )
+ .addEventListener(
+  "click",
+  toggleDark
+ );
+
+
+document
+ .getElementById(
+  "tabStudents"
+ )
+ .addEventListener(
+  "click",
+  ()=>{
+   showReportTab(
+    "students"
+   );
+  }
+ );
+
+
+document
+ .getElementById(
+  "tabDaily"
+ )
+ .addEventListener(
+  "click",
+  ()=>{
+   showReportTab(
+    "daily"
+   );
+  }
+ );
+
+
+document
+ .getElementById(
+  "tabWeekly"
+ )
+ .addEventListener(
+  "click",
+  ()=>{
+   showReportTab(
+    "weekly"
+   );
+  }
+ );
+
+
+document
+ .getElementById(
+  "tabMonthly"
+ )
+ .addEventListener(
+  "click",
+  ()=>{
+   showReportTab(
+    "monthly"
+   );
+  }
+ );
+
+
+document
+ .getElementById(
+  "studentSearch"
+ )
+ .addEventListener(
+  "input",
+  renderReport
+ );
+
+
+document
+ .getElementById(
+  "password"
+ )
+ .addEventListener(
+  "keydown",
+  function(event){
+
+   if(
+    event.key==="Enter"
+   ){
+
+    login();
+
+   }
+
+  }
+ );
+
+
+/* =========================
+   MIDNIGHT REFRESH
+========================= */
+
+function scheduleMidnightRefresh(){
+
+ const now=
+  new Date();
+
+
+ const tomorrow=
+  new Date(now);
+
+
+ tomorrow.setDate(
+  tomorrow.getDate()+1
+ );
+
+
+ tomorrow.setHours(
+  0,0,1,0
+ );
+
+
+ const delay=
+  tomorrow.getTime()-
+  now.getTime();
+
+
+ setTimeout(
+  function(){
+
+   renderTable();
+
+   renderReport();
+
+   scheduleMidnightRefresh();
+
+  },
+  delay
+ );
+
+}
+
 
 renderTable();
 
